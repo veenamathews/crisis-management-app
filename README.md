@@ -2,9 +2,10 @@
 A web app solution built to connect resourses and people in crisis 
 
 
-# to run app 
+# To run app 
 
-cd angular-tour-of-heroes
+cd crisis-management-app
+
 ng serve --open
 
 
