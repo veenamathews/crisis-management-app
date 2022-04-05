@@ -36,6 +36,14 @@
             "scripts": []
           },
           "configurations": {
+            "development": {
+              "vendorChunk": true,
+              "extractLicenses": false,
+              "buildOptimizer": false,
+              "sourceMap": true,
+              "optimization": false,
+              "namedChunks": true
+            },
             "production": {
               "fileReplacements": [
                 {
@@ -63,12 +71,14 @@
                 }
               ]
             }
-          }
+          },
+          "defaultConfiguration": "production"
         },
         "serve": {
           "builder": "@angular-devkit/build-angular:dev-server",
+          "defaultConfiguration": "",
           "options": {
-            "browserTarget": "crisis-management-app:build"
+            "browserTarget": "crisis-management-app:build:development"
           },
           "configurations": {
             "production": {
