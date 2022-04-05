@@ -1,0 +1,10 @@
+<ul *ngIf="dataService.getData() | async as data">
+  <li *ngFor="let item of data">
+    {{ item | json }}
+    <a [routerLink]="['/details', item.id]">(link)</a>
+  </li>
+</ul>
+
+<p>
+  <a routerLink="/map">(map view)</a>
+</p>
