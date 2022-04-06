@@ -1,3 +1,8 @@
+<nz-radio-group style="margin: 4px;">
+  <label nz-radio-button routerLink="/list">List</label>
+  <label nz-radio-button routerLink="/map">Map</label>
+</nz-radio-group>
+
 <app-information-view
   *ngFor="let item of data"
   [model]="item"
@@ -5,12 +10,4 @@
 
 <p>
   <a href="https://ng.ant.design/components/overview/en" target="_blank">https://ng.ant.design/components/overview/en</a>
-</p>
-
-<p>
-  <button nz-button nzType="primary">Button</button>
-</p>
-
-<p>
-  <a routerLink="/map">(map view)</a>
 </p>
