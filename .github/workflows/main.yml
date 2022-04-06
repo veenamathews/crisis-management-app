@@ -14,13 +14,8 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      - name: Configure NPM
-        working-directory: ./crisis-management-app
-        run: |
-          echo "//npm.pkg.github.com/:_authToken=\${NODE_AUTH_TOKEN}" >> .npmrc
-          echo "always-auth: true" >> .npmrc
-      - uses: actions/checkout@v1
-      - uses: actions/setup-node@v1 #this installs node and npm for us
+      - uses: actions/checkout@v2
+      - uses: actions/setup-node@v2 #this installs node and npm for us
         with:
           node-version: "14.x"
       - uses: actions/cache@v1 # this allows for re-using node_modules caching, making builds a bit faster.
@@ -29,14 +24,18 @@ jobs:
           key: ${{ runner.os }}-node-${{ hashFiles('**/package-lock.json') }}
           restore-keys: |
             ${{ runner.os }}-node-
-      - name: NPM Cache Clean 
+      - name: NPM Cache Clean
         run: npm cache clean --force
+        working-directory: ./crisis-management-app
       - name: NPM Install
         run: npm install
+        working-directory: ./crisis-management-app
       - name: NPM Install Angular
         run: npm install -g @angular/cli > /dev/null
+        working-directory: ./crisis-management-app
       - name: NPM build Angular Production
         run: ng build --prod
+        working-directory: ./crisis-management-app
 
       - name: copy file via ssh key
         uses: appleboy/scp-action@master
