@@ -49,6 +49,10 @@ export const INFORMATIONS: Information[] =  [
   {
     id: 'ulzzl4qq',
     originalContent: 'content ulzzl4qq',
+    coords: {
+      lat: 52.6256315,
+      lng: 13.2068687,
+    },
     source: 'telegram',
     sourceData: {
       "id": 68,
@@ -66,7 +70,7 @@ export const INFORMATIONS: Information[] =  [
        },
        " Philipp-Pforr-Straße 9A, 16761 (KaroMotors garage) Open Mon-Sat 9:00-16:00 Tel: 0176 566 195 47"
       ]
-     }
+    }
   },
   {
     id: '06lankgh',
