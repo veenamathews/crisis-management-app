@@ -1,9 +1,7 @@
-<ul *ngIf="data">
-  <li *ngFor="let item of data">
-    {{ item | json }}
-    <a [routerLink]="['/details', item.id]">(link)</a>
-  </li>
-</ul>
+<app-information-view
+  *ngFor="let item of data"
+  [model]="item"
+></app-information-view>
 
 <p>
   <a href="https://ng.ant.design/components/overview/en" target="_blank">https://ng.ant.design/components/overview/en</a>

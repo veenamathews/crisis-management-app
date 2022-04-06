@@ -1,0 +1,16 @@
+<div>
+  <div class="header">Processed message:</div>
+
+  <div class="information-header">
+    <span class="date">{{ model?.date| date:'dd MMM yyyy, hh:mm' }}</span>
+    <span class="flex"></span>
+    <span class="source">source: {{ model?.source }}</span>
+  </div>
+
+  <a [routerLink]="['/details', model?.id]">(link)</a>
+</div>
+
+<div>
+  <div class="header">Original message:</div>
+  {{ model?.sourceData | json }}
+</div>

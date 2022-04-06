@@ -15,6 +15,7 @@ import { FormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MapsModule } from './shared/maps';
+import { InformationViewComponent } from './information-view/information-view.component';
 
 registerLocaleData(en);
 
@@ -24,6 +25,7 @@ registerLocaleData(en);
     ListViewComponent,
     MapViewComponent,
     DetailsViewComponent,
+    InformationViewComponent,
   ],
   imports: [
     BrowserModule,
