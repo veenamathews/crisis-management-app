@@ -10,6 +10,25 @@ import { INFORMATIONS } from './mock-data/informations';
 })
 export class DataService {
 
+  knownTags = [
+    {
+      name: 'food',
+      color: '#37b24d'
+    },
+    {
+      name: 'shelter',
+      color: '#f08c00'
+    },
+    {
+      name: 'health',
+      color: '#d6336c'
+    },
+    {
+      name: 'transport',
+      color: '#1c7ed6'
+    },
+  ];
+
   getData(): Observable<Information[]> {
     return of(INFORMATIONS);
   }

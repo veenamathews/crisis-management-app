@@ -6,4 +6,5 @@ export interface Information {
   date?: string | Date;
   source?: string;
   sourceData?: any;
+  tags?: string[];
 }

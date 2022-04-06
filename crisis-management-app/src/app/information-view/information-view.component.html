@@ -4,7 +4,7 @@
   <div class="information-header">
     <span class="date">{{ model?.date| date:'dd MMM yyyy, hh:mm' }}</span>
     <span class="flex"></span>
-    <span class="source">source: {{ model?.source }}</span>
+    <span class="source">source: {{ model?.source || 'unknown' }}</span>
   </div>
 
   <a [routerLink]="['/details', model?.id]">(details)</a>
