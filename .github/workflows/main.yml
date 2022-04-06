@@ -36,8 +36,8 @@ jobs:
       - name: NPM build Angular Production
         run: ng build --prod
         working-directory: ./crisis-management-app
-      - run: ls -R /home/runner/work/crisis-management-app/
-      - run: ls -R ./ghost
+      - run: ls -l /home/runner/work/crisis-management-app/crisis-management-app/crisis-management-app/dist
+      - run: ls -l ./ghost
       - name: copy file via ssh key
         uses: appleboy/scp-action@master
         env:
@@ -46,6 +46,6 @@ jobs:
           PORT:  ${{ secrets.PORT }}
           PASSWORD: ${{ secrets.PASSWORD }}
         with:
-          source: "./ghost"
+          source: "/home/runner/work/crisis-management-app/crisis-management-app/crisis-management-app/dist"
           target: ${{ secrets.DESTINATION }}
           strip_components: 2  
