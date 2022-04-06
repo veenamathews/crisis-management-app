@@ -4,20 +4,23 @@
 </nz-radio-group>
 
 <div class="grid">
-  <div class="map" id="map"></div>
+  <div>
+    <div class="map" id="map"></div>
 
-  <div class="column">
-    <nz-tag
-      *ngFor="let tag of tags"
-      [nzColor]="tag.color"
-      [style.opacity]="(tag.visible) ? 1 : .4"
-      (click)="toogleLayer(tag)"
-    >
-      {{ tag.name }}
-    </nz-tag>
+    <div class="map-footer">
+      <nz-tag
+        *ngFor="let tag of tags"
+        [nzColor]="tag.color"
+        [style.opacity]="(tag.visible) ? 1 : .4"
+        (click)="toogleLayer(tag)"
+      >
+        {{ tag.name }}
+      </nz-tag>
+    </div>
+
   </div>
 
-  <div>
+  <div class="details">
     <div class="section-title">Location Details</div>
 
     <div *ngIf="!selectedLocation">No location selected.</div>

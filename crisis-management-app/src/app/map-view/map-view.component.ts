@@ -17,6 +17,7 @@ export class MapViewComponent implements OnInit {
   selectedLocation?: Information;
   tags?: any[];
   dataWithLocation?: Information[];
+  totalDataCount?: number;
 
   constructor(public dataService: DataService) { }
 
@@ -29,6 +30,7 @@ export class MapViewComponent implements OnInit {
     });
 
     this.dataService.getData().subscribe(data => {
+      this.totalDataCount = data.length;
       this.dataWithLocation = data
         .filter(item => !!item.coords);
 
