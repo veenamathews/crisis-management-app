@@ -15,7 +15,7 @@ jobs:
 
     steps:
       - name: Configure NPM
-        working-directory: crisis-management-app
+        working-directory: ./crisis-management-app
         run: |
           echo "//npm.pkg.github.com/:_authToken=\${NODE_AUTH_TOKEN}" >> .npmrc
           echo "always-auth: true" >> .npmrc
