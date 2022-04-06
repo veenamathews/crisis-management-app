@@ -1,4 +1,4 @@
-<ul *ngIf="dataService.getData() | async as data">
+<ul *ngIf="data">
   <li *ngFor="let item of data">
     {{ item | json }}
     <a [routerLink]="['/details', item.id]">(link)</a>
