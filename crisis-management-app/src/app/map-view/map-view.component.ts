@@ -18,7 +18,7 @@ export class MapViewComponent implements OnInit {
   tags?: any[];
   dataWithLocation?: Information[];
 
-  constructor(public dataService: DataService) {}
+  constructor(public dataService: DataService) { }
 
   ngOnInit(): void {
     this.tags = this.dataService.knownTags.map(tag => {
@@ -38,13 +38,20 @@ export class MapViewComponent implements OnInit {
 
   toogleLayer(tag: any): void {
     tag.visible = !tag.visible;
+
+    this.map!.setLayoutProperty(
+      tag.name,
+      'visibility',
+      (tag.visible) ? 'visible' : 'none'
+    );
   }
 
   private initializeMap(): void {
     this.map = new mapboxgl.Map({
       accessToken: environment.mapbox.accessToken,
       container: 'map',
-      style: 'mapbox://styles/mapbox/streets-v11',
+      style: 'mapbox://styles/mapbox/light-v10',
+      // style: 'mapbox://styles/mapbox/streets-v11',
       center: [-77.04, 38.907],
       zoom: 11.15
     });
@@ -55,6 +62,61 @@ export class MapViewComponent implements OnInit {
   }
 
   private setMapData(): void {
-    console.log('setting data', this.dataWithLocation);
+    // Create a map layer for every tag
+    for (const tag of this.tags!) {
+      const items = this.dataWithLocation!.filter(item => item.tags?.includes(tag.name));
+
+      const layerId = tag.name;
+      const features = items.map(item => ({
+        type: 'Feature' as const,
+        properties: {
+          id: item.id
+        },
+        geometry: {
+          type: 'Point' as const,
+          coordinates: [item.coords!.lng, item.coords!.lat]
+        }
+      }));
+
+      this.map!.addSource(layerId, {
+        type: 'geojson',
+        data: {
+          type: 'FeatureCollection',
+          features,
+        }
+      });
+
+      // Add a layer showing the places.
+      this.map!.addLayer({
+        id: layerId,
+        type: 'circle',
+        source: layerId,
+        paint: {
+          'circle-color': tag.color,
+          'circle-radius': 8,
+          'circle-stroke-width': 2,
+          'circle-stroke-color': '#ffffff'
+        }
+      });
+
+      this.map!.on('click', layerId, (e) => {
+        // const coordinates = e.features[0].geometry.coordinates.slice();
+        if (e.features) {
+          const id = e.features[0].properties!.id;
+          this.selectedLocation = this.dataWithLocation!.find(item => item.id === id);
+        }
+      });
+
+      // Change the cursor to a pointer when the mouse is over the places layer
+      this.map!.on('mouseenter', layerId, () => {
+        this.map!.getCanvas().style.cursor = 'pointer';
+      });
+
+      // Change it back to a pointer when it leaves
+      this.map!.on('mouseleave', layerId, () => {
+        this.map!.getCanvas().style.cursor = '';
+      });
+
+    }
   }
 }

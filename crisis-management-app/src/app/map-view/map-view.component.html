@@ -21,8 +21,7 @@
     <div class="section-title">Location Details</div>
 
     <div *ngIf="!selectedLocation">No location selected.</div>
+    <div *ngIf="selectedLocation">{{ selectedLocation | json }}</div>
   </div>
 
 </div>
-
-<div>{{ tags | json }}</div>
