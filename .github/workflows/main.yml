@@ -37,7 +37,6 @@ jobs:
         run: ng build --prod
         working-directory: ./crisis-management-app
       - run: ls -l /home/runner/work/crisis-management-app/crisis-management-app/crisis-management-app/dist
-      - run: ls -l ./ghost
       - name: copy file via ssh key
         uses: appleboy/scp-action@master
         env:
