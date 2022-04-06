@@ -9,4 +9,4 @@ cd crisis-management-app
 ng serve --open
 
 
-Your app should run in http://localhost:4200/
+Your app should run on http://localhost:4200/
