@@ -11,6 +11,29 @@ export class ListViewComponent implements OnInit {
 
   data?: Information[];
   showOriginalData = false;
+  data2 = [
+    {
+      title: 'Health Services'
+    },
+    {
+      title: 'Transport'
+    },
+    {
+      title: 'Food'
+    },
+    {
+      title: 'Translation'
+    },
+    {
+      title: 'Shelter'
+    },
+    {
+      title: 'Translation'
+    },
+    {
+      title: 'Other'
+    }
+  ];
 
   constructor(public dataService: DataService) {}
 

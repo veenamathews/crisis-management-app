@@ -23,6 +23,9 @@ import { MapViewComponent } from './map-view/map-view.component';
 import { DetailsViewComponent } from './details-view/details-view.component';
 import { InformationViewComponent } from './information-view/information-view.component';
 import { TelegramContentComponent } from './telegram-content/telegram-content.component';
+import { NzListModule } from 'ng-zorro-antd/list';
+import { NzCardModule } from 'ng-zorro-antd/card';
+import { NzGridModule } from 'ng-zorro-antd/grid';
 
 registerLocaleData(en);
 
@@ -46,6 +49,9 @@ registerLocaleData(en);
     NzRadioModule,
     NzTagModule,
     NzCheckboxModule,
+    NzListModule,
+    NzCardModule,
+    NzGridModule,
 
     MapsModule,
     AppRoutingModule,
