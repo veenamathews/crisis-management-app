@@ -14,7 +14,9 @@
   margin-bottom: 8px;
 }
 
-.information-header {
+.information-header,
+.information-footer
+ {
   display: flex;
 
   .source {
@@ -30,4 +32,9 @@
   font-size: .8rem;
   color: #777;
   margin-left: 8px;
+}
+
+app-telegram-content {
+  display: block;
+  margin: 16px 0;
 }

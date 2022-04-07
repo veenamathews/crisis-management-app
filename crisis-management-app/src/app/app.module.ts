@@ -21,6 +21,7 @@ import { ListViewComponent } from './list-view/list-view.component';
 import { MapViewComponent } from './map-view/map-view.component';
 import { DetailsViewComponent } from './details-view/details-view.component';
 import { InformationViewComponent } from './information-view/information-view.component';
+import { TelegramContentComponent } from './telegram-content/telegram-content.component';
 
 registerLocaleData(en);
 
@@ -31,6 +32,7 @@ registerLocaleData(en);
     MapViewComponent,
     DetailsViewComponent,
     InformationViewComponent,
+    TelegramContentComponent,
   ],
   imports: [
     BrowserModule,
