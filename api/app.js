@@ -1,12 +1,13 @@
-import {telegramConfig} from './telegram.config'
-
+const telegramConfig = {
+    api_id: '18760180',
+    api_hash: 'f38c0deb0f9ae111364403dba4604040'
+};
+const path = require('path');
 const express = require('express');
 const app = express();
 
 // use ENV variable from server
 const port = process.env.PORT || 3000;
-
-authenticate();
 
 // main route
 app.get('/', (req, res) => {
@@ -15,22 +16,28 @@ app.get('/', (req, res) => {
 
 // fetch latest telegram messages from given channel
 app.get('/api/telegramMessages/:channelname', async (req, res) => {
-    console.log('attempting to fetch messages from channel', req.params.channelname);
-    mtProto.call('help.getNearestDc')
-    res.send(await callTelegramApi('help.getNearestDc'));
+    const {phone_code_hash} = await sendCode('+16046907349');
+    res.send(phone_code_hash);
+    //res.send(await callTelegramApi('help.getNearestDc'));
 });
 
 app.listen(port, () => {
     console.log(`Listening on port ${port}...`);
 });
 
-// authenticate with telegram API
-async function authenticate(){
-    // 1. get an auth code for my phone number
-    console.log(await sendCode('+16046907349'));
-}
-
 async function callTelegramApi(method, params, options){
+    // access the Node module for MTProto
+    const MTProto = require('@mtproto/core');
+
+    const mtProto = new MTProto({
+        api_id: telegramConfig.api_id,
+        api_hash: telegramConfig.api_hash,
+        test: false,
+        storageOptions: {
+            path: path.resolve(__dirname, './1.json'),
+        }
+    });
+
     try {
         return await mtProto.call(method, params, options);
     } catch (error) {
@@ -40,17 +47,17 @@ async function callTelegramApi(method, params, options){
 }
 
 async function sendCode(phone){
-    // these lines are to solve an issue where the code thinks this is a browser
-    global.window = {document: {createElementNS: () => {return {}} }};
-    global.navigator = {};
-    global.btoa = () => {};
+    // access the Node module for MTProto
+    const MTProto = require('@mtproto/core');
 
-    const MTProto = require('@mtproto/core/envs/browser');
     const mtProto = new MTProto({
         api_id: telegramConfig.api_id,
         api_hash: telegramConfig.api_hash,
-        test: false
-    })
+        test: false,
+        storageOptions: {
+            path: path.resolve(__dirname, './1.json'),
+        }
+    });
 
     try {
         return await mtProto.call('auth.sendCode', {
@@ -58,7 +65,7 @@ async function sendCode(phone){
             settings: {
                 _: 'codeSettings'
             }
-        })
+        });
     } catch (error) {
         console.log(`error:`, error);
         return Promise.reject(error);
