@@ -10,6 +10,7 @@ import { TimeagoModule } from 'ngx-timeago';
 import { NzButtonModule } from 'ng-zorro-antd/button';
 import { NzRadioModule } from 'ng-zorro-antd/radio';
 import { NzTagModule } from 'ng-zorro-antd/tag';
+import { NzCheckboxModule } from 'ng-zorro-antd/checkbox';
 import { NZ_I18N } from 'ng-zorro-antd/i18n';
 import { en_US } from 'ng-zorro-antd/i18n';
 
@@ -44,6 +45,7 @@ registerLocaleData(en);
     NzButtonModule,
     NzRadioModule,
     NzTagModule,
+    NzCheckboxModule,
 
     MapsModule,
     AppRoutingModule,

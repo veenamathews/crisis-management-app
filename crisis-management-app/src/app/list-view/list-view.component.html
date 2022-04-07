@@ -1,11 +1,16 @@
-<nz-radio-group style="margin: 4px;">
-  <label nz-radio-button routerLink="/list">List</label>
-  <label nz-radio-button routerLink="/map">Map</label>
-</nz-radio-group>
+<div>
+  <nz-radio-group style="margin: 4px;">
+    <label nz-radio-button routerLink="/list">List</label>
+    <label nz-radio-button routerLink="/map">Map</label>
+  </nz-radio-group>
+
+  <label nz-checkbox [(ngModel)]="showOriginalData">showOriginalData</label>
+</div>
 
 <app-information-view
   *ngFor="let item of data"
   [model]="item"
+  [showOriginalData]="showOriginalData"
 ></app-information-view>
 
 <p>

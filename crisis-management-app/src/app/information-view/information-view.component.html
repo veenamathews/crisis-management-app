@@ -1,5 +1,5 @@
 <div>
-  <div class="header">Processed message:</div>
+  <div *ngIf="showOriginalData" class="header">Processed message:</div>
 
   <div class="information-header">
     <span class="date">{{ model?.date | date:'dd MMM yyyy, hh:mm' }}</span>
@@ -15,7 +15,7 @@
   </div>
 </div>
 
-<div>
+<div *ngIf="showOriginalData">
   <div class="header">Original message:</div>
   {{ model?.sourceData | json }}
 </div>
