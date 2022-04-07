@@ -16,8 +16,13 @@ app.get('/', (req, res) => {
 
 // fetch latest telegram messages from given channel
 app.get('/api/telegramMessages/:channelname', async (req, res) => {
-    const {phone_code_hash} = await sendCode('+16046907349');
-    res.send(phone_code_hash);
+    try{
+        const {phone_code_hash} = await sendCode('+16046907349');
+        res.send(phone_code_hash);
+    }
+    catch(error){
+        res.send(error);
+    }
     //res.send(await callTelegramApi('help.getNearestDc'));
 });
 
@@ -34,7 +39,7 @@ async function callTelegramApi(method, params, options){
         api_hash: telegramConfig.api_hash,
         test: false,
         storageOptions: {
-            path: path.resolve(__dirname, './1.json'),
+            path: path.resolve(__dirname, './telegram/store.json'),
         }
     });
 
@@ -55,7 +60,7 @@ async function sendCode(phone){
         api_hash: telegramConfig.api_hash,
         test: false,
         storageOptions: {
-            path: path.resolve(__dirname, './1.json'),
+            path: path.resolve(__dirname, './telegram/store.json'),
         }
     });
 

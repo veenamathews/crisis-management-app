@@ -2,9 +2,10 @@
   "name": "api",
   "version": "1.0.0",
   "description": "",
-  "main": "index.js",
+  "main": "app.js",
+  "nodemonConfig": { "ext": "js", "ignore": ["*.test.ts", "telegram/*"], "delay": "2" },
   "scripts": {
-    "start": "nodemon app.js",
+    "start": "nodemon",
     "build": "",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
