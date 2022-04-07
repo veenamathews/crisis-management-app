@@ -3,10 +3,6 @@
   align-items: flex-start;
   grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
   column-gap: 16px;
-
-  & > div {
-    padding: 0 4px;
-  }
 }
 
 .header {
@@ -14,14 +10,27 @@
   margin-bottom: 8px;
 }
 
-.information-header {
+.information-header,
+.information-footer
+ {
   display: flex;
 
   .source {
-    color: #777;
+    color: #666;
   }
 }
 
 .flex {
   flex: 1;
+}
+
+.time-ago {
+  font-size: .8rem;
+  color: #777;
+  margin-left: 8px;
+}
+
+app-telegram-content {
+  display: block;
+  margin: 16px 0;
 }

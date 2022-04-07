@@ -3,6 +3,32 @@
   <label nz-radio-button routerLink="/map">Map</label>
 </nz-radio-group>
 
-<locations-map [data]="mapData"></locations-map>
+<div class="grid">
+  <div>
+    <div class="map" id="map"></div>
 
-<div>{{ mapData | json }}</div>
+    <div class="map-footer">
+      <nz-tag
+        *ngFor="let tag of tags"
+        [nzColor]="tag.color"
+        [style.opacity]="(tag.visible) ? 1 : .4"
+        (click)="toogleLayer(tag)"
+      >
+        {{ tag.name }}
+      </nz-tag>
+    </div>
+
+  </div>
+
+  <div class="details">
+    <div class="section-title">Location Details</div>
+
+    <div *ngIf="!selectedLocation">No location selected.</div>
+
+    <app-information-view
+      *ngIf="selectedLocation"
+      [model]="selectedLocation"
+    ></app-information-view>
+  </div>
+
+</div>

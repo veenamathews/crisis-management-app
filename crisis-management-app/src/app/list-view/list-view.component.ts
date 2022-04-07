@@ -10,6 +10,7 @@ import { Information } from '../models';
 export class ListViewComponent implements OnInit {
 
   data?: Information[];
+  showOriginalData = false;
 
   constructor(public dataService: DataService) {}
 

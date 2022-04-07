@@ -9,6 +9,7 @@ import { Information } from '../models';
 export class InformationViewComponent implements OnInit {
 
   @Input() model?: Information;
+  @Input() showOriginalData = false;
 
   constructor() { }
 

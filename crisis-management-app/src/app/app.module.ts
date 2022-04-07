@@ -5,9 +5,12 @@ import en from '@angular/common/locales/en';
 import { FormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { TimeagoModule } from 'ngx-timeago';
 
 import { NzButtonModule } from 'ng-zorro-antd/button';
 import { NzRadioModule } from 'ng-zorro-antd/radio';
+import { NzTagModule } from 'ng-zorro-antd/tag';
+import { NzCheckboxModule } from 'ng-zorro-antd/checkbox';
 import { NZ_I18N } from 'ng-zorro-antd/i18n';
 import { en_US } from 'ng-zorro-antd/i18n';
 
@@ -19,6 +22,7 @@ import { ListViewComponent } from './list-view/list-view.component';
 import { MapViewComponent } from './map-view/map-view.component';
 import { DetailsViewComponent } from './details-view/details-view.component';
 import { InformationViewComponent } from './information-view/information-view.component';
+import { TelegramContentComponent } from './telegram-content/telegram-content.component';
 
 registerLocaleData(en);
 
@@ -29,15 +33,19 @@ registerLocaleData(en);
     MapViewComponent,
     DetailsViewComponent,
     InformationViewComponent,
+    TelegramContentComponent,
   ],
   imports: [
     BrowserModule,
     FormsModule,
     HttpClientModule,
     BrowserAnimationsModule,
+    TimeagoModule.forRoot(),
 
     NzButtonModule,
     NzRadioModule,
+    NzTagModule,
+    NzCheckboxModule,
 
     MapsModule,
     AppRoutingModule,

@@ -1,0 +1,47 @@
+.grid {
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  grid-template-rows: 1fr;
+  grid-column-gap: 0px;
+  grid-row-gap: 0px;
+
+   & > div {
+     padding: 0 8px;
+   }
+}
+
+@media only screen and (max-width: 720px)  {
+  .grid {
+    grid-template-columns: 1fr;
+    grid-template-rows: 2fr 1fr;
+  }
+}
+
+.section-title {
+  font-weight: 600;
+  margin-bottom: 12px;
+}
+
+#map {
+  height: 350px;
+}
+
+@media only screen and (min-width: 787px) {
+  #map {
+    height: 400px;
+  }
+}
+
+.map-footer {
+  margin: 8px 0;
+}
+
+.ant-tag {
+  margin-right: 4px;
+  margin-bottom: 4px;
+  cursor: pointer;
+}
+
+.details {
+  margin-left: 8px;
+}
