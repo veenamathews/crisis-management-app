@@ -2,7 +2,8 @@
   <div class="header">Processed message:</div>
 
   <div class="information-header">
-    <span class="date">{{ model?.date| date:'dd MMM yyyy, hh:mm' }}</span>
+    <span class="date">{{ model?.date | date:'dd MMM yyyy, hh:mm' }}</span>
+    <span class="time-ago">({{ model?.date | timeago:false }})</span>
     <span class="flex"></span>
     <span class="source">source: {{ model?.source || 'unknown' }}</span>
   </div>
