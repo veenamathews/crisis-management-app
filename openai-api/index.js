@@ -42,6 +42,13 @@ app.use((req, res, next) => {
   next();
 });
 
+app.get('/openai/heartbeat', async (req, res) => {
+  const response = {
+    result: 'crisis-management-openai-api is up and running!',
+  }
+  res.end(JSON.stringify(response));
+});
+
 app.post('/openai/ask', async (req, res) => {
   // Get results from AI
   const result = await askAI(req.body);
@@ -113,4 +120,4 @@ app.post('/openai/extractData', async (req, res) => {
   res.end(JSON.stringify(response));
 });
 
-app.listen(3000);
+app.listen(process.env.PORT || 3000);
