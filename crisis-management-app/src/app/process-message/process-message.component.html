@@ -1,0 +1,28 @@
+<div class="header">Message</div>
+
+<div>Put your message here and click "Process Message" to see how AI (artificial intelligence) analyses it and extracts information.</div>
+
+<textarea
+  nz-input
+  placeholder="Put your message here"
+  [(ngModel)]="model"
+  [nzAutosize]="{ minRows: 2, maxRows: 6 }"
+></textarea>
+
+<div>
+  <button
+    nz-button
+    nzType="primary"
+    [disabled]="!model"
+    (click)="processMessage()"
+    [nzLoading]="processing"
+  >
+    Process Message
+  </button>
+</div>
+
+<div class="ai-response" *ngIf="!!responseText">
+  <div class="header">AI response</div>
+
+  <div>{{ responseText }}</div>
+</div>
