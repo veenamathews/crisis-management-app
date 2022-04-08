@@ -3,7 +3,14 @@
   "version": "1.0.0",
   "description": "",
   "main": "app.js",
-  "nodemonConfig": { "ext": "js", "ignore": ["*.test.ts", "telegram/*"], "delay": "2" },
+  "nodemonConfig": {
+    "ext": "js",
+    "ignore": [
+      "*.test.ts",
+      "telegram/*"
+    ],
+    "delay": "2"
+  },
   "scripts": {
     "start": "nodemon",
     "build": "",
@@ -15,6 +22,7 @@
   "dependencies": {
     "@mtproto/core": "6.2.0",
     "express": "^4.17.3",
+    "openai": "^2.0.5",
     "prettier": "^2.6.2"
   },
   "devDependencies": {}
