@@ -13,6 +13,7 @@ import { NzTagModule } from 'ng-zorro-antd/tag';
 import { NzCheckboxModule } from 'ng-zorro-antd/checkbox';
 import { NzInputModule } from 'ng-zorro-antd/input';
 import { NzMessageModule } from 'ng-zorro-antd/message';
+import { NzIconModule } from 'ng-zorro-antd/icon';
 import { NZ_I18N } from 'ng-zorro-antd/i18n';
 import { en_US } from 'ng-zorro-antd/i18n';
 
@@ -53,6 +54,7 @@ registerLocaleData(en);
     NzCheckboxModule,
     NzInputModule,
     NzMessageModule,
+    NzIconModule,
 
     MapsModule,
     AppRoutingModule,
