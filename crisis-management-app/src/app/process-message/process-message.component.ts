@@ -9,7 +9,7 @@ import { OpenAIService } from '../openai.service';
 })
 export class ProcessMessageComponent implements OnInit {
 
-  model = `Extract city from this text:
+  model?: string | null = `Extract city from this text:
 
 Live in Berlin, would like to volunteer for ukrainian crisis. I'm a nurse with 10 years experience. I'm available after 4pm on weekdays. My email: nurse@example.com
 `;
@@ -27,7 +27,7 @@ Live in Berlin, would like to volunteer for ukrainian crisis. I'm a nurse with 1
 
     try {
       const response = await this.openAIService.ask({
-        prompt: this.model,
+        prompt: this.model!,
       });
   
       this.responseText = response.result; 
@@ -37,5 +37,10 @@ Live in Berlin, would like to volunteer for ukrainian crisis. I'm a nurse with 1
     } finally {
       this.processing = false;
     }    
+  }
+
+  clear() {
+    this.model = null;
+    this.responseText = null;
   }
 }

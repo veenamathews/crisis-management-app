@@ -9,7 +9,7 @@
   [nzAutosize]="{ minRows: 2, maxRows: 6 }"
 ></textarea>
 
-<div>
+<div class="buttons">
   <button
     nz-button
     nzType="primary"
@@ -19,6 +19,7 @@
   >
     Process Message
   </button>
+  <button nz-button nzType="default" style="margin-left: 4px;" [disabled]="!model" (click)="clear()">Clear</button>
 </div>
 
 <div class="ai-response" *ngIf="!!responseText">
