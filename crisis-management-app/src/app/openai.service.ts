@@ -18,8 +18,12 @@ export class OpenAIService {
 
   constructor(private http: HttpClient) {}
 
+  async extractData(request: OpenAIRequest): Promise<OpenAIResponse> {
+    const observable = this.http.post<any>(`${this.baseUri}/openai/extractData`, request)
+    return observable.toPromise();
+  }
+
   async ask(request: OpenAIRequest): Promise<OpenAIResponse> {
-    console.log('request', request);
     const observable = this.http.post<any>(`${this.baseUri}/openai/ask`, request)
     return observable.toPromise();
   }

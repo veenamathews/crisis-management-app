@@ -9,16 +9,33 @@ import { OpenAIService } from '../openai.service';
 })
 export class ProcessMessageComponent implements OnInit {
 
-  model?: string | null = `Extract city from this text:
-
-Live in Berlin, would like to volunteer for ukrainian crisis. I'm a nurse with 10 years experience. I'm available after 4pm on weekdays. My email: nurse@example.com
-`;
+  model?: string | null = `Live in Berlin, would like to volunteer for ukrainian crisis. I'm a nurse with 10 years experience. I'm available after 4pm on weekdays. My email: nurse@example.com`;
   responseText?: string | null;
   processing = false;
+  data?: any | null;
+  // data?: any | null = { "data": { "address": "Berlin, Germany", "email": "nurse@example.com" }, "log": [ { "q": "Extract home address from this text: ", "a": "Berlin, Germany" }, { "q": "Extract email address from this text: ", "a": "nurse@example.com" }, { "q": "Extract skills from this text: ", "a": "-Live in Berlin \n-Wants to volunteer for Ukrainian crisis \n-10 years of nursing experience \n-Available after 4pm on weekdays" }, { "q": "For each of those categories:\n - food\n - shelter\n - health\n - legal\n - transport \n assign the probability based on this text: ", "a": "food: 0.1\nshelter: 0.2\nhealth: 0.6\nlegal: 0.1\ntransport: 0.0" } ] };
 
   constructor(private openAIService: OpenAIService, private message: NzMessageService) { }
 
   ngOnInit(): void {
+  }
+
+  async extractData() {
+    this.processing = true;
+    this.responseText = null;
+
+    try {
+      const response = await this.openAIService.extractData({
+        prompt: this.model!,
+      });
+  
+      this.data = response; 
+    } catch (error: any) {
+      const errorMsg = (typeof error === 'object' ? error.message : error)
+      this.message.create('error', errorMsg);
+    } finally {
+      this.processing = false;
+    }    
   }
 
   async processMessage() {
@@ -41,6 +58,7 @@ Live in Berlin, would like to volunteer for ukrainian crisis. I'm a nurse with 1
 
   clear() {
     this.model = null;
+    this.data = null;
     this.responseText = null;
   }
 }

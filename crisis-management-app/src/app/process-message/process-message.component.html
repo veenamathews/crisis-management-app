@@ -14,16 +14,45 @@
     nz-button
     nzType="primary"
     [disabled]="!model"
-    (click)="processMessage()"
+    (click)="extractData()"
     [nzLoading]="processing"
   >
-    Process Message
+    Extract Data
   </button>
-  <button nz-button nzType="default" style="margin-left: 4px;" [disabled]="!model" (click)="clear()">Clear</button>
+
+  <div>
+    <button
+      nz-button
+      nzType="default"
+      [disabled]="!model"
+      (click)="processMessage()"
+      [nzLoading]="processing"
+    >
+      Process Message
+    </button>
+    <button nz-button nzType="default" style="margin-left: 4px;" [disabled]="!model" (click)="clear()">Clear</button>
+  </div>
 </div>
 
 <div class="ai-response" *ngIf="!!responseText">
   <div class="header">AI response</div>
 
   <div>{{ responseText }}</div>
+</div>
+
+<div class="ai-response" *ngIf="!!data">
+  <div class="header">Response object:</div>
+  <div style="margin-bottom: 12px;">{{ data.data | json }}</div>
+
+  <div class="header">AI Processing Log:</div>
+
+  <div class="qa-box" *ngFor="let item of data.log">
+    <div class="qa q">
+      ❓ {{ item.q }}
+    </div>
+    <div  class="qa a">
+      📢 {{ item.a }}
+    </div>
+  </div>
+  
 </div>

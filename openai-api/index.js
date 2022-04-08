@@ -55,4 +55,62 @@ app.post('/openai/ask', async (req, res) => {
   res.end(JSON.stringify(response));
 });
 
+app.post('/openai/extractData', async (req, res) => {
+
+  let result;
+  let question;
+  const response = {
+    data: {},
+    log: [],    
+  }
+  const prompt = req.body.prompt;
+
+  question = 'Extract home address from this text: ';
+  result = cleanUpAIResponse(await askAI({ prompt: question + prompt}));
+  response.data.address = result.replace(/\n/g, '');
+  response.log.push({
+    q: question,
+    a: result,
+  });
+
+  question = 'Extract email address from this text: ';
+  result = cleanUpAIResponse(await askAI({ prompt: question + prompt}));
+  response.data.email = result.replace(/\n/g, '');
+  response.log.push({
+    q: question,
+    a: result,
+  });
+
+  // question = 'Extract phone number from this text: ';
+  // result = cleanUpAIResponse(await askAI({ prompt: question + prompt}));
+  // response.data.phoneNo = result;
+  // response.log.push({
+  //   q: question,
+  //   a: result,
+  // });
+
+  question = 'Extract skills from this text: ';
+  result = cleanUpAIResponse(await askAI({ prompt: question + prompt}));
+  response.log.push({
+    q: question,
+    a: result,
+  });
+
+  question = `For each of those categories:
+  - food
+  - shelter
+  - health
+  - legal
+  - transport 
+  assign the probability based on this text: `;
+  result = cleanUpAIResponse(await askAI({ prompt: question + prompt}));
+  response.log.push({
+    q: question,
+    a: result,
+  });
+
+  // Response
+  res.end(JSON.stringify(response));
+});
+
 app.listen(3000);
