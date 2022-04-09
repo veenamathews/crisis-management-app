@@ -11,38 +11,21 @@ export class ListViewComponent implements OnInit {
 
   data?: Information[];
   showOriginalData = false;
-  data3: any;
-  data2 = [
-    {
-      title: 'Health Services'
-    },
-    {
-      title: 'Transport'
-    },
-    {
-      title: 'Food'
-    },
-    {
-      title: 'Translation'
-    },
-    {
-      title: 'Shelter'
-    },
-    {
-      title: 'Translation'
-    },
-    {
-      title: 'Other'
-    }
-  ];
+  categoryList: string[] = [];
 
-  constructor(public dataService: DataService) {}
+  constructor(public dataService: DataService) { }
 
   ngOnInit(): void {
     this.dataService.getData().subscribe(data => {
       this.data = data;
-      this.data3 = data.map(x => x.tags).filter(x => x != undefined);
-      console.log("Data 3: ", this.data3);
+      this.categoryList = ([...new Set(data.filter(x => x.category != undefined || null).map(x => x.category))] as string[]).sort();
+      this.categoryList.push("Other");
+      this.data.forEach((element) => {
+        if (element.category == null || undefined) {
+          element.category = "Other";
+        }
+      });
+      console.log(this.data.map(x => x.category))
     })
   }
 }

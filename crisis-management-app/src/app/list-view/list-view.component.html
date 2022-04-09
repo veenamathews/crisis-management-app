@@ -2,21 +2,18 @@
   <label nz-checkbox [(ngModel)]="showOriginalData">showOriginalData</label>
 </div>
 
-<app-information-view
-  *ngFor="let item of data"
-  [model]="item"
-  [showOriginalData]="showOriginalData"
-></app-information-view>
-
-<p>
-  <a href="https://ng.ant.design/components/overview/en" target="_blank">https://ng.ant.design/components/overview/en</a>
-</p>
-
 <nz-list nzGrid>
   <div nz-row [nzGutter]="16">
-    <div nz-col [nzSpan]="6" *ngFor="let item of data2">
+    <div nz-col [nzSpan]="6" *ngFor="let category of categoryList">
       <nz-list-item>
-        <nz-card [nzTitle]="item.title">Card content</nz-card>
+        <nz-card [nzTitle]="category">
+
+          <div *ngFor="let item of data">
+            <app-information-view *ngIf="item.category == category" [model]="item"
+              [showOriginalData]="showOriginalData"></app-information-view>
+
+          </div>
+        </nz-card>
       </nz-list-item>
     </div>
   </div>
