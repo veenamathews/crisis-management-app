@@ -11,6 +11,7 @@ export class ListViewComponent implements OnInit {
 
   data?: Information[];
   showOriginalData = false;
+  data3: any;
   data2 = [
     {
       title: 'Health Services'
@@ -40,6 +41,8 @@ export class ListViewComponent implements OnInit {
   ngOnInit(): void {
     this.dataService.getData().subscribe(data => {
       this.data = data;
+      this.data3 = data.map(x => x.tags).filter(x => x != undefined);
+      console.log("Data 3: ", this.data3);
     })
   }
 }
