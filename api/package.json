@@ -2,10 +2,18 @@
   "name": "api",
   "version": "1.0.0",
   "description": "",
-  "main": "index.js",
+  "main": "app.js",
+  "nodemonConfig": {
+    "ext": "js",
+    "ignore": [
+      "*.test.ts",
+      "telegram/*"
+    ],
+    "delay": "2"
+  },
   "scripts": {
-    "start": "nodemon built/index.js",
-    "build": "esbuild app.js --platform=node --bundle --minify --outfile=built/index.js --watch",
+    "start": "nodemon",
+    "build": "",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [],
@@ -14,9 +22,8 @@
   "dependencies": {
     "@mtproto/core": "6.2.0",
     "express": "^4.17.3",
+    "openai": "^2.0.5",
     "prettier": "^2.6.2"
   },
-  "devDependencies": {
-    "esbuild": "^0.14.32"
-  }
+  "devDependencies": {}
 }

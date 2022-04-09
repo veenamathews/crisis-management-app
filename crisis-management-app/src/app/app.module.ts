@@ -2,7 +2,7 @@ import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { registerLocaleData } from '@angular/common';
 import en from '@angular/common/locales/en';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { TimeagoModule } from 'ngx-timeago';
@@ -11,6 +11,9 @@ import { NzButtonModule } from 'ng-zorro-antd/button';
 import { NzRadioModule } from 'ng-zorro-antd/radio';
 import { NzTagModule } from 'ng-zorro-antd/tag';
 import { NzCheckboxModule } from 'ng-zorro-antd/checkbox';
+import { NzInputModule } from 'ng-zorro-antd/input';
+import { NzMessageModule } from 'ng-zorro-antd/message';
+import { NzIconModule } from 'ng-zorro-antd/icon';
 import { NZ_I18N } from 'ng-zorro-antd/i18n';
 import { en_US } from 'ng-zorro-antd/i18n';
 
@@ -26,6 +29,7 @@ import { TelegramContentComponent } from './telegram-content/telegram-content.co
 import { NzListModule } from 'ng-zorro-antd/list';
 import { NzCardModule } from 'ng-zorro-antd/card';
 import { NzGridModule } from 'ng-zorro-antd/grid';
+import { ProcessMessageComponent } from './process-message/process-message.component';
 
 registerLocaleData(en);
 
@@ -37,10 +41,12 @@ registerLocaleData(en);
     DetailsViewComponent,
     InformationViewComponent,
     TelegramContentComponent,
+    ProcessMessageComponent,
   ],
   imports: [
     BrowserModule,
     FormsModule,
+    ReactiveFormsModule,
     HttpClientModule,
     BrowserAnimationsModule,
     TimeagoModule.forRoot(),
@@ -52,6 +58,9 @@ registerLocaleData(en);
     NzListModule,
     NzCardModule,
     NzGridModule,
+    NzInputModule,
+    NzMessageModule,
+    NzIconModule,
 
     MapsModule,
     AppRoutingModule,
