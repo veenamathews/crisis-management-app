@@ -30,6 +30,8 @@ import { NzListModule } from 'ng-zorro-antd/list';
 import { NzCardModule } from 'ng-zorro-antd/card';
 import { NzGridModule } from 'ng-zorro-antd/grid';
 import { ProcessMessageComponent } from './process-message/process-message.component';
+import { NzDividerModule } from 'ng-zorro-antd/divider';
+import { NzLayoutModule } from 'ng-zorro-antd/layout';
 
 registerLocaleData(en);
 
@@ -61,6 +63,8 @@ registerLocaleData(en);
     NzInputModule,
     NzMessageModule,
     NzIconModule,
+    NzDividerModule,
+    NzLayoutModule,
 
     MapsModule,
     AppRoutingModule,

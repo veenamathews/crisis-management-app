@@ -1,5 +1,6 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { Information } from '../models';
+import * as moment from "moment"
 
 @Component({
   selector: 'app-information-view',
@@ -16,4 +17,7 @@ export class InformationViewComponent implements OnInit {
   ngOnInit(): void {
   }
 
+  getDate() {
+    return moment(this.model?.date).format('MMMM Do YYYY, h:mm:ss A');
+  }
 }

@@ -12,7 +12,10 @@ export class ListViewComponent implements OnInit {
   data?: Information[];
   showOriginalData = false;
   categoryList: string[] = [];
-
+  gridStyle = {
+    width: '25%',
+    textAlign: 'center'
+  };
   constructor(public dataService: DataService) { }
 
   ngOnInit(): void {
@@ -28,4 +31,5 @@ export class ListViewComponent implements OnInit {
       console.log(this.data.map(x => x.category))
     })
   }
+  
 }
