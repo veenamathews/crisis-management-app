@@ -21,15 +21,9 @@ export class ListViewComponent implements OnInit {
   ngOnInit(): void {
     this.dataService.getData().subscribe(data => {
       this.data = data;
-      this.categoryList = ([...new Set(data.filter(x => x.category != undefined || null).map(x => x.category))] as string[]).sort();
-      this.categoryList.push("Other");
-      this.data.forEach((element) => {
-        if (element.category == null || undefined) {
-          element.category = "Other";
-        }
-      });
-      console.log(this.data.map(x => x.category))
+    })
+    this.dataService.getCategoryList().then(data => {
+      this.categoryList = data;
     })
   }
-  
 }

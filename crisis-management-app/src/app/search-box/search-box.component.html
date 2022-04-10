@@ -1,7 +1,19 @@
-<nz-modal [(nzVisible)]="isVisible" nzTitle="The first Modal" (nzOnCancel)="handleCancel()" (nzOnOk)="handleOk()">
+<nz-modal [(nzVisible)]="isVisible" nzTitle="Filter By Category" (nzOnCancel)="handleCancel()" (nzOnOk)="handleOk()">
   <ng-container *nzModalContent>
-    <p>Content one</p>
-    <p>Content two</p>
-    <p>Content three</p>
+    <div style="border-bottom: 1px solid rgb(233, 233, 233);">
+      <label
+        nz-checkbox
+        [(ngModel)]="allChecked"
+        (ngModelChange)="updateAllChecked()"
+        [nzIndeterminate]="indeterminate"
+      >
+        Check all
+      </label>
+      <br />
+    </div>
+    <br />
+    <nz-checkbox-group [(ngModel)]="categoryList" (ngModelChange)="updateSingleChecked()"></nz-checkbox-group>
+  
+    <br />
   </ng-container>
 </nz-modal>

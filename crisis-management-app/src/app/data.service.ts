@@ -33,6 +33,17 @@ export class DataService {
     return of(INFORMATIONS);
   }
 
+  getCategoryList(): Promise<string[]> {
+    let categoryList = ([...new Set(INFORMATIONS.filter(x => x.category != undefined || null).map(x => x.category))] as string[]).sort();
+    categoryList.push("Other");
+    INFORMATIONS.forEach((element) => {
+      if (element.category == null || undefined || '') {
+        element.category = "Other";
+      }
+    });
+    return (categoryList) ? Promise.resolve(categoryList) : Promise.reject(`Item not found any category`);
+  }
+
   getDataById(id: string): Promise<Information> {
     const result = INFORMATIONS.find(item => item.id === id);
     return (result) ? Promise.resolve(result) : Promise.reject(`Item not found: ${id}`);

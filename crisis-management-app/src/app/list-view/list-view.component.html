@@ -11,14 +11,17 @@
           <nz-card [nzTitle]="category">
             <nz-list-item>
 
-              <div *ngFor="let item of data">
-                <app-information-view *ngIf="item.category == category" [model]="item"
+              <div class="arrange-vertically" *ngFor="let item of data">
+                <app-information-view  *ngIf="item.category == category" [model]="item"
                   [showOriginalData]="showOriginalData">
                 </app-information-view>
               </div>
 
             </nz-list-item>
+            
           </nz-card>
+          <br />
+          
         </div>
       </div>
     </div>
