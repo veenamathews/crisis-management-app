@@ -22,7 +22,7 @@
 
     <app-information-view
       *ngIf="selectedLocation"
-      [model]="selectedLocation"
+      (model)="selectedLocation"
     ></app-information-view>
   </div>
 

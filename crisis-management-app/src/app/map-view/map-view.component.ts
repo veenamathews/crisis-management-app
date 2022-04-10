@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import * as mapboxgl from 'mapbox-gl';
+import { BehaviorSubject } from 'rxjs';
 import { environment } from 'src/environments/environment';
 
 import { DataService } from '../data.service';
@@ -18,6 +19,8 @@ export class MapViewComponent implements OnInit {
   tags?: any[];
   dataWithLocation?: Information[];
   totalDataCount?: number;
+  private selectedLocSubject = new BehaviorSubject<Information>({});
+
 
   constructor(public dataService: DataService) { }
 
@@ -105,7 +108,16 @@ export class MapViewComponent implements OnInit {
         // const coordinates = e.features[0].geometry.coordinates.slice();
         if (e.features) {
           const id = e.features[0].properties!.id;
-          this.selectedLocation = this.dataWithLocation!.find(item => item.id === id);
+          var selectedLoc = this.dataWithLocation!.find(item => item.id === id);
+
+          this.selectedLocSubject?.next(selectedLoc as Information);
+
+          this.selectedLocSubject?.subscribe(value => {
+            this.selectedLocation = value
+          });
+
+
+
         }
       });
 
