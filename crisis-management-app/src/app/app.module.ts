@@ -32,6 +32,8 @@ import { NzGridModule } from 'ng-zorro-antd/grid';
 import { ProcessMessageComponent } from './process-message/process-message.component';
 import { NzDividerModule } from 'ng-zorro-antd/divider';
 import { NzLayoutModule } from 'ng-zorro-antd/layout';
+import { NzModalModule } from 'ng-zorro-antd/modal';
+import { SearchBoxComponent } from './search-box/search-box.component';
 
 registerLocaleData(en);
 
@@ -44,6 +46,7 @@ registerLocaleData(en);
     InformationViewComponent,
     TelegramContentComponent,
     ProcessMessageComponent,
+    SearchBoxComponent,
   ],
   imports: [
     BrowserModule,
@@ -65,6 +68,8 @@ registerLocaleData(en);
     NzIconModule,
     NzDividerModule,
     NzLayoutModule,
+    NzModalModule,
+
 
     MapsModule,
     AppRoutingModule,

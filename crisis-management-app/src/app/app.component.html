@@ -8,8 +8,8 @@
 
   <h3>Crisis Management App</h3>
 
-  <div class="search"><i nz-icon nzType="filter" nzTheme="outline"></i></div>
-  
+  <div class="search" (click)="displaySearchBox()"><i nz-icon nzType="filter" nzTheme="outline"></i></div>
+  <app-search-box [isVisible]="display"></app-search-box>
 </div>
 
 <router-outlet></router-outlet>
