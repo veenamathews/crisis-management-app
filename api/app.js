@@ -3,7 +3,7 @@ const telegramConfig = {
     api_id: 'YOUR_APIID_HERE',
     api_hash: 'YOUR_APIHASH_HERE'
 };
-const OPENAI_API_KEY = 'YOUR_KEY_HERE';
+const OPENAI_API_KEY = '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';
 const port = process.env.PORT || 3000; // use ENV variable from server
 
 // Imports
@@ -32,49 +32,44 @@ const mtProto = new MTProto({
 // Express setup
 const app = express();
 
-console.log(TELEGRAM_MOCK_DATA);
 // main route
 app.get('/', (req, res) => {
-    res.send('hello world');
+    res.end('hello world!');
 });
 
 // fetch latest telegram messages from given channel
-app.get('/api/telegramMessages/:channelname', async (req, res) => {
+app.get('/telegramMessages/:channelname', async (req, res) => {
     try{
         const {phone_code_hash} = await sendCode('16046907349');
-        res.send(phone_code_hash);
+        res.end(phone_code_hash);
     }
     catch(error){
-        res.send(error);
+        res.end(error);
     }
     //res.send(await callTelegramApi('help.getNearestDc'));
 });
 
-app.listen(port, () => {
-    console.log(`Listening on port ${port}...`);
-});
-
 app.get('/openai/heartbeat', async (req, res) => {
     const response = {
-      result: 'crisis-management-openai-api is up and running!',
+      result: 'crisis-management-api is up and running!',
     }
     res.end(JSON.stringify(response));
   });
   
-  app.post('/openai/ask', async (req, res) => {
+app.post('/openai/ask', async (req, res) => {
     // Get results from AI
     const result = await askAI(req.body);
-    
+
     // Prepare the response object
     const response = {
-      result: cleanUpAIResponse(result),
+        result: cleanUpAIResponse(result),
     }
-  
+
     // Response
     res.end(JSON.stringify(response));
-  });
+});
   
-  app.post('/openai/extractData', async (req, res) => {
+app.post('/openai/extractData', async (req, res) => {
   
     let result;
     let question;
@@ -120,7 +115,7 @@ app.get('/openai/heartbeat', async (req, res) => {
     - shelter
     - health
     - legal
-    - transport 
+    - transportation 
     assign the probability based on this text: `;
     result = cleanUpAIResponse(await askAI({ prompt: question + prompt}));
     response.log.push({
@@ -132,8 +127,45 @@ app.get('/openai/heartbeat', async (req, res) => {
     res.end(JSON.stringify(response));
 });
 
+app.get('/openai/extractMessageData', async (req, res) => {
+    const response = {
+        data: []
+    }
+    for (const message of TELEGRAM_MOCK_DATA.messages.slice(0,10)) {
+        if(message.text){
+            const sanitizedMessageText = messageToPlainString(message.text);
+
+            // attempt to extract location
+            console.log(`message ${message.id} to plain string: `, sanitizedMessageText);
+            let locationQuestion = "Extract location from this text: ";
+            let locationAnswer = cleanUpAIResponse(await askAI({ prompt: locationQuestion + sanitizedMessageText }));
+            console.log('   response is: ', locationAnswer);
+
+            // TODO: attempt to extract category
+    
+            let outputObject = {
+                sourceMessage:  sanitizedMessageText,
+                location: locationAnswer,
+                category: "",
+                timestamp: message.date
+            };
+            console.log('   output object', outputObject)
+            response.data.push(outputObject);
+        }
+        else{
+            console.log(`message ${message.id} is empty, skipping.`)
+        }
+    };
+    res.end(JSON.stringify(response));
+});
+
+app.listen(port, () => {
+    console.log(`Listening on port ${port}...`);
+});
+
 // telegram API helper functions
-async function sendCode(phone){
+// this is the first step on telegram authentication
+async function sendCode(phone) {
     try {
         return await mtProto.call('auth.sendCode', {
             phone_number: phone,
@@ -167,11 +199,30 @@ const askAI = async (params) => {
       ...options,
       max_tokens: 256,
     });
-  
     return response.data;
 }
 
 const cleanUpAIResponse = (response)  => {
     const str = response.choices[0].text;
-    return str.replace('\n', '');
+    return str.replace(/(\r\n|\n|\r)/gm,"");
+}
+
+// helper function in charge of unfolding an object that contains a message
+const messageToPlainString = (input) => {
+    if (typeof input === 'string'){
+        return input;
+    }
+    else if(Array.isArray(input)) {
+        let concatenatedMessages = "";
+        input.forEach(element => {
+            if (typeof element === 'string'){
+                concatenatedMessages = concatenatedMessages.concat(element+' ');
+            }
+            else if(typeof element === 'object'){
+                concatenatedMessages = concatenatedMessages.concat(element.text+' ');
+            }
+        });
+        return concatenatedMessages;
+    }
+
 }
