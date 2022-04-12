@@ -7,6 +7,7 @@ const OPENAI_API_KEY = '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';
 const port = process.env.PORT || 3000; // use ENV variable from server
 
 // Imports
+const fs = require('fs');
 const path = require('path');
 const MTProto = require('@mtproto/core');
 const { Configuration, OpenAIApi } = require("openai");
@@ -31,6 +32,14 @@ const mtProto = new MTProto({
 
 // Express setup
 const app = express();
+
+app.use(express.json());
+
+app.use((req, res, next) => {
+  res.header("Access-Control-Allow-Origin", "*");
+  res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
+  next();
+});
 
 // main route
 app.get('/', (req, res) => {
@@ -159,6 +168,17 @@ app.get('/openai/extractMessageData', async (req, res) => {
     res.end(JSON.stringify(response));
 });
 
+// Get parsed messages from cache
+app.get('/api/getMessages', async (req, res) => {
+  try {
+    const fileData = fs.readFileSync('./storage/messages.json');
+    const messages = JSON.parse(fileData);
+    res.end(JSON.stringify(messages));
+  } catch (error) {
+    res.end(JSON.stringify(error));
+  }  
+});
+
 app.listen(port, () => {
     console.log(`Listening on port ${port}...`);
 });
@@ -224,5 +244,4 @@ const messageToPlainString = (input) => {
         });
         return concatenatedMessages;
     }
-
 }
