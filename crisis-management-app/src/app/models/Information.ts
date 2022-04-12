@@ -7,4 +7,5 @@ export interface Information {
   source?: string;
   sourceData?: any;
   tags?: string[];
+  category?: string;
 }

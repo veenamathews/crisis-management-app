@@ -1,21 +1,25 @@
-<div>
-  <div *ngIf="showOriginalData" class="header">Processed message:</div>
+<div nz-row nzJustify="space-around" nzAlign="middle">
+  <nz-card nzType="inner" [nzTitle]="getDate().toString()">
 
-  <div class="information-header">
-    <span class="date">{{ model?.date | date:'dd MMM yyyy, hh:mm' }}</span>
-    <span class="time-ago">({{ model?.date | timeago:false }})</span>
-    <span class="flex"></span>
-  </div>
+    <div *ngIf="showOriginalData" class="header">Processed message:</div>
 
-  <app-telegram-content [model]="model?.sourceData?.text"></app-telegram-content>
+    <div class="information-header">
+      <span class="time-ago">({{ model?.date | timeago:false }})</span>
+      <span class="flex"></span>
+    </div>
+    <app-telegram-content [model]="model?.sourceData?.text"></app-telegram-content>
 
-  <div class="information-footer">
-    <span class="source flex">source: {{ model?.source || 'unknown' }}</span>
-    <a [routerLink]="['/details', model?.id]">(details)</a>
-  </div>
-</div>
+    <div class="information-footer">
+      <span class="source flex">source: {{ model?.source || 'unknown' }}</span>
+    </div>
 
-<div *ngIf="showOriginalData">
-  <div class="header">Original message:</div>
-  {{ model?.sourceData | json }}
+    <div>
+      <a [routerLink]="['/details', model?.id]"><i nz-icon nzType="arrow-right" nzTheme="outline"></i></a>
+    </div>
+
+    <div *ngIf="showOriginalData">
+      <div class="header">Original message:</div>
+      {{ model?.sourceData | json }}
+    </div>
+  </nz-card>
 </div>

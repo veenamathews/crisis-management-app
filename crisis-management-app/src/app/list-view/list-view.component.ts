@@ -11,12 +11,19 @@ export class ListViewComponent implements OnInit {
 
   data?: Information[];
   showOriginalData = false;
-
-  constructor(public dataService: DataService) {}
+  categoryList: any[] = [];
+  gridStyle = {
+    width: '25%',
+    textAlign: 'center'
+  };
+  constructor(public dataService: DataService) { }
 
   ngOnInit(): void {
     this.dataService.messages$.subscribe(data => {
       this.data = data;
     });
+    this.dataService.getCategoryList().then(data => {
+      this.categoryList = data;
+    })
   }
 }

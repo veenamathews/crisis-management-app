@@ -1,4 +1,5 @@
 <div class="header">
+
   <nz-radio-group>
     <label nz-radio-button routerLink="/list" nzValue="1">List</label>
     <label nz-radio-button routerLink="/map" nzValue="2">Map</label>
@@ -6,6 +7,9 @@
   </nz-radio-group>
 
   <h3>Crisis Management App</h3>
+
+  <div class="search" (click)="displaySearchBox()"><i nz-icon nzType="filter" nzTheme="outline"></i></div>
+  <app-search-box [isVisible]="display"></app-search-box>
 </div>
 
 <router-outlet></router-outlet>

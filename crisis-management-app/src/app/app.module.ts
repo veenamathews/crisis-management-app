@@ -26,7 +26,14 @@ import { MapViewComponent } from './map-view/map-view.component';
 import { DetailsViewComponent } from './details-view/details-view.component';
 import { InformationViewComponent } from './information-view/information-view.component';
 import { TelegramContentComponent } from './telegram-content/telegram-content.component';
+import { NzListModule } from 'ng-zorro-antd/list';
+import { NzCardModule } from 'ng-zorro-antd/card';
+import { NzGridModule } from 'ng-zorro-antd/grid';
 import { ProcessMessageComponent } from './process-message/process-message.component';
+import { NzDividerModule } from 'ng-zorro-antd/divider';
+import { NzLayoutModule } from 'ng-zorro-antd/layout';
+import { NzModalModule } from 'ng-zorro-antd/modal';
+import { SearchBoxComponent } from './search-box/search-box.component';
 
 registerLocaleData(en);
 
@@ -39,6 +46,7 @@ registerLocaleData(en);
     InformationViewComponent,
     TelegramContentComponent,
     ProcessMessageComponent,
+    SearchBoxComponent,
   ],
   imports: [
     BrowserModule,
@@ -52,9 +60,16 @@ registerLocaleData(en);
     NzRadioModule,
     NzTagModule,
     NzCheckboxModule,
+    NzListModule,
+    NzCardModule,
+    NzGridModule,
     NzInputModule,
     NzMessageModule,
     NzIconModule,
+    NzDividerModule,
+    NzLayoutModule,
+    NzModalModule,
+
 
     MapsModule,
     AppRoutingModule,
