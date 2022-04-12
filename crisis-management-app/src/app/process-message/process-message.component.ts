@@ -9,16 +9,16 @@ import { OpenAIService } from '../openai.service';
 })
 export class ProcessMessageComponent implements OnInit {
 
-  exampleMessage = 'Live in Berlin, would like to volunteer for ukrainian crisis. I\'m a nurse with 10 years experience. I\'m available after 4pm on weekdays. My email: nurse@example.com';
+  exampleMessage = 'I live in Berlin Pankow, would like to volunteer for ukrainian crisis. I\'m a nurse with 10 years experience. I\'m available after 4pm on weekdays. My email: nurse@example.com';
   model?: string | null;
   // model?: string | null = this.exampleMessage;
   responseText?: string | null;
   processing = false;
-  data?: any | null;
+  extractedData?: any | null;
   // data?: any | null = { "data": { "address": "Berlin, Germany", "email": "nurse@example.com" }, "log": [ { "q": "Extract home address from this text: ", "a": "Berlin, Germany" }, { "q": "Extract email address from this text: ", "a": "nurse@example.com" }, { "q": "Extract skills from this text: ", "a": "-Live in Berlin \n-Wants to volunteer for Ukrainian crisis \n-10 years of nursing experience \n-Available after 4pm on weekdays" }, { "q": "For each of those categories:\n - food\n - shelter\n - health\n - legal\n - transport \n assign the probability based on this text: ", "a": "food: 0.1\nshelter: 0.2\nhealth: 0.6\nlegal: 0.1\ntransport: 0.0" } ] };
   originalMessage?: string | null;
 
-  constructor(private openAIService: OpenAIService, private message: NzMessageService) { }
+  constructor(private openAIService: OpenAIService, private message: NzMessageService) {}
 
   ngOnInit(): void {
   }
@@ -33,7 +33,7 @@ export class ProcessMessageComponent implements OnInit {
         prompt: this.model!,
       });
 
-      this.data = response;
+      this.extractedData = response;
     } catch (error: any) {
       const errorMsg = (typeof error === 'object' ? error.message : error);
       this.message.create('error', errorMsg);
@@ -62,8 +62,12 @@ export class ProcessMessageComponent implements OnInit {
 
   clear(): void {
     this.model = null;
-    this.data = null;
+    this.extractedData = null;
     this.responseText = null;
     this.originalMessage = null;
+  }
+
+  addToMessages(): void {
+    //
   }
 }

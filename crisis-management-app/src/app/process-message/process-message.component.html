@@ -46,17 +46,17 @@
   <div>{{ responseText }}</div>
 </div>
 
-<div class="ai-response" *ngIf="!!data">
+<div class="ai-response" *ngIf="!!extractedData">
   <h3>Your message</h3>
   <p>{{ originalMessage }}</p>
 
   <h3>Extracted data</h3>
-  <pre style="margin-bottom: 12px;">{{ data.data | json }}</pre>
+  <pre style="margin-bottom: 12px;">{{ extractedData.data | json }}</pre>
 
   <h3>OpenAI Interaction Log</h3>
   <p>Below are all the queries send to OpenAI and its responses:</p>
 
-  <div class="qa-box" *ngFor="let item of data.log">
+  <div class="qa-box" *ngFor="let item of extractedData.log">
     <div class="qa q">
       ❓ {{ item.q }} (your message)
     </div>

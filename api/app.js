@@ -88,7 +88,7 @@ app.post('/openai/extractData', async (req, res) => {
     }
     const prompt = req.body.prompt;
   
-    question = 'Extract home address from this text: ';
+    question = 'Extract physical location from this text: ';
     result = cleanUpAIResponse(await askAI({ prompt: question + prompt}));
     response.data.address = result.replace(/\n/g, '');
     response.log.push({
@@ -96,13 +96,21 @@ app.post('/openai/extractData', async (req, res) => {
       a: result,
     });
   
-    question = 'Extract email address from this text: ';
-    result = cleanUpAIResponse(await askAI({ prompt: question + prompt}));
-    response.data.email = result.replace(/\n/g, '');
+    question = 'Extract latitude and longitude from this text as { lat, lng } JSON object: ';
+    result = cleanUpAIResponse(await askAI({ prompt: question + result})); // use result from the previous question
+    response.data.coords = result.replace(/\n/g, '').replace(/\"/g, '');
     response.log.push({
       q: question,
       a: result,
     });
+  
+    // question = 'Extract email address from this text: ';
+    // result = cleanUpAIResponse(await askAI({ prompt: question + prompt}));
+    // response.data.email = result.replace(/\n/g, '');
+    // response.log.push({
+    //   q: question,
+    //   a: result,
+    // });
   
     // question = 'Extract phone number from this text: ';
     // result = cleanUpAIResponse(await askAI({ prompt: question + prompt}));
