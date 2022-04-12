@@ -18,9 +18,6 @@ export class MapViewComponent implements OnInit {
   selectedLocation?: Information;
   tags?: any[];
   dataWithLocation?: Information[];
-  totalDataCount?: number;
-  private selectedLocSubject = new BehaviorSubject<Information>({});
-
 
   constructor(public dataService: DataService) { }
 
@@ -33,7 +30,6 @@ export class MapViewComponent implements OnInit {
     });
 
     this.dataService.messages$.subscribe(data => {
-      this.totalDataCount = data.length;
       this.dataWithLocation = data
         .filter(item => !!item.coords);
 
@@ -71,7 +67,7 @@ export class MapViewComponent implements OnInit {
   private setMapData(): void {
     // Create a map layer for every tag
     for (const tag of this.tags!) {
-      const items = this.dataWithLocation!.filter(item => item.tags?.includes(tag.name));
+      const items = this.dataWithLocation!.filter(item => item.category === tag.name);
 
       const layerId = tag.name;
       const features = items.map(item => ({
@@ -110,16 +106,7 @@ export class MapViewComponent implements OnInit {
         // const coordinates = e.features[0].geometry.coordinates.slice();
         if (e.features) {
           const id = e.features[0].properties!.id;
-          var selectedLoc = this.dataWithLocation!.find(item => item.id === id);
-
-          this.selectedLocSubject?.next(selectedLoc as Information);
-
-          this.selectedLocSubject?.subscribe(value => {
-            this.selectedLocation = value
-          });
-
-
-
+          this.selectedLocation = this.dataWithLocation!.find(item => item.id === id);
         }
       });
 

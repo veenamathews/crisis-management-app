@@ -17,7 +17,11 @@ export const INFORMATIONS: Information[] = [
       'author': 'Andrii Boiko',
       'text': 'Info. Bus, 56 empty seats. Left Berlin by bus to Przemyśl, Polen. If without incident, it should be around 8 o\'clock in the evening. Tomorrow morning people can be picked up.'
     },
-    category: "Transportation"
+    category: "Transportation",
+    coords: {
+      lat: 52.5109899,
+      lng: 13.4719436
+    }
   },
   {
     id: 'hbpox7xw',
@@ -33,7 +37,11 @@ export const INFORMATIONS: Information[] = [
       'author': 'Kirill',
       'text': 'Aid point Otto-Braun-Straße 70-72, 10178 Berlin needs plastic containers for food packaging and protection against rodents. Please bring them if you can. We would also appreciate food for volunteers working in The point is open until 8 pm Thank you 🙏'
     },
-    category: "Food"
+    category: "Food",
+    coords: {
+      lat: 52.52332,
+      lng: 13.41904
+    },
   },
   {
     id: 'cbgngmyz',
@@ -49,7 +57,11 @@ export const INFORMATIONS: Information[] = [
       'author': 'Kirill',
       'text': 'Aid collection point Otto-Braun-Straße 70-72, 10178 Berlin needs volunteers to sort things, open until 20:00. Thank you 🙏'
     },
-    category: "Volunteers Needed"
+    category: "Volunteers Needed",
+    coords: {
+      lat: 52.52332,
+      lng: 13.41904
+    },
   },
   {
     id: 'ulzzl4qq',
@@ -99,7 +111,11 @@ export const INFORMATIONS: Information[] = [
         ''
       ]
     },
-    category: "Health Services"
+    category: "Health Services",
+    coords: {
+      lat: 52.45548,
+      lng: 13.51447
+    },
   },
   {
     id: 'ltmsfq7e',
@@ -123,8 +139,8 @@ export const INFORMATIONS: Information[] = [
     id: 'gopcqi44',
     date: '2022-02-25T01:49:17',
     coords: {
-      lng: -77.090372,
-      lat: 38.881189,
+      lat: 52.6256315,
+      lng: 13.2090574
     },
     tags: ['shelter'],
     category: "Legal"
@@ -161,8 +177,8 @@ export const INFORMATIONS: Information[] = [
     id: '1g2j0bqc',
     date: '2022-02-25T01:49:17',
     coords: {
-      lng: -77.031706,
-      lat: 38.914581,
+      lat: 52.52332,
+      lng: 13.41904
     },
     tags: ['transport'],
     category: "Volunteering"
