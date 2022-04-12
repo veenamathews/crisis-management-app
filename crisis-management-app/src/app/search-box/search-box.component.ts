@@ -17,12 +17,8 @@ export class SearchBoxComponent implements OnInit {
 
   ngOnInit(): void {
     this.dataService.getCategoryList().then(data => {
-      data.forEach(value => {
-        this.categoryList?.push({ label: value, checked: false })
-      });
+      this.categoryList = data;
     });
-
-
   }
 
   showModal(): void {

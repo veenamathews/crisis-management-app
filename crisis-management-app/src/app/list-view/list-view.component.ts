@@ -11,7 +11,7 @@ export class ListViewComponent implements OnInit {
 
   data?: Information[];
   showOriginalData = false;
-  categoryList: string[] = [];
+  categoryList: any[] = [];
   gridStyle = {
     width: '25%',
     textAlign: 'center'

@@ -8,11 +8,11 @@
       <div nz-col [nzSpan]="6" *ngFor="let category of categoryList">
         <div nz-row >
 
-          <nz-card [nzTitle]="category">
+          <nz-card [nzTitle]="category.label" *ngIf="!category.checked">
             <nz-list-item>
 
               <div class="arrange-vertically" *ngFor="let item of data">
-                <app-information-view  *ngIf="item.category == category" [model]="item"
+                <app-information-view  *ngIf="item.category == category.label " [model]="item"
                   [showOriginalData]="showOriginalData">
                 </app-information-view>
               </div>
@@ -21,7 +21,7 @@
             
           </nz-card>
           <br />
-          
+
         </div>
       </div>
     </div>
