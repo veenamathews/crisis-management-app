@@ -1,6 +1,5 @@
 import { Component, OnInit } from '@angular/core';
 import * as mapboxgl from 'mapbox-gl';
-import { BehaviorSubject } from 'rxjs';
 import { environment } from 'src/environments/environment';
 
 import { DataService } from '../data.service';
@@ -28,13 +27,7 @@ export class MapViewComponent implements OnInit {
         visible: true,
       };
     });
-
-    this.dataService.messages$.subscribe(data => {
-      this.dataWithLocation = data
-        .filter(item => !!item.coords);
-
-      this.initializeMap();
-    });
+    this.initializeMap();
   }
 
   toogleLayer(tag: any): void {
@@ -48,7 +41,7 @@ export class MapViewComponent implements OnInit {
   }
 
   private initializeMap(): void {
-    const center = (this.dataWithLocation?.length) ? this.dataWithLocation[0].coords : { lat: -0.388663, lng: 51.528505};
+    const center = { lat: -0.388663, lng: 51.528505};
 
     this.map = new mapboxgl.Map({
       accessToken: environment.mapbox.accessToken,
@@ -56,15 +49,24 @@ export class MapViewComponent implements OnInit {
       style: 'mapbox://styles/mapbox/light-v10',
       // style: 'mapbox://styles/mapbox/streets-v11',
       center: [center!.lng, center!.lat],
-      zoom: 9
+      zoom: 9,
     });
 
     this.map.on('load', () => {
-      this.setMapData();
+      this.map?.resize();
+
+      this.dataService.messages$.subscribe(data => {
+        this.dataWithLocation = data.filter(item => !!item.coords);
+        this.setMapData();
+      });
     });
   }
 
   private setMapData(): void {
+    if (this.dataWithLocation?.length) {
+      this.map?.setCenter(this.dataWithLocation[0].coords!);
+    }
+
     // Create a map layer for every tag
     for (const tag of this.tags!) {
       const items = this.dataWithLocation!.filter(item => item.category === tag.name);

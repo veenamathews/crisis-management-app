@@ -53,7 +53,11 @@ export class DataService {
     },
   ];
 
-  constructor(private http: HttpClient) {}
+  constructor(private http: HttpClient) {
+    // this.http.get<Information[]>('http://localhost:3000/api/getMessages').subscribe(data => {
+    //   this.messagesSubject.next(data);
+    // });
+  }
 
   filter(): void {
     const filteredMessages = INFORMATIONS.filter(item => item.tags?.includes('food'));

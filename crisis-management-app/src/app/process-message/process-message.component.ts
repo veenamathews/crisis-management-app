@@ -11,7 +11,6 @@ export class ProcessMessageComponent implements OnInit {
 
   exampleMessage = 'I live in Berlin Pankow, would like to volunteer for ukrainian crisis. I\'m a nurse with 10 years experience. I\'m available after 4pm on weekdays. My email: nurse@example.com';
   model?: string | null;
-  // model?: string | null = this.exampleMessage;
   responseText?: string | null;
   processing = false;
   extractedData?: any | null;
@@ -23,35 +22,15 @@ export class ProcessMessageComponent implements OnInit {
   ngOnInit(): void {
   }
 
-  async extractData(): Promise<void> {
+  async processMessage(): Promise<void> {
     this.processing = true;
     this.responseText = null;
     this.originalMessage = this.model;
 
     try {
-      const response = await this.openAIService.extractData({
-        prompt: this.model!,
-      });
+      const response = await this.openAIService.processMessage(this.model!);
 
       this.extractedData = response;
-    } catch (error: any) {
-      const errorMsg = (typeof error === 'object' ? error.message : error);
-      this.message.create('error', errorMsg);
-    } finally {
-      this.processing = false;
-    }
-  }
-
-  async processMessage(): Promise<void> {
-    this.processing = true;
-    this.responseText = null;
-
-    try {
-      const response = await this.openAIService.ask({
-        prompt: this.model!,
-      });
-
-      this.responseText = response.result;
     } catch (error: any) {
       const errorMsg = (typeof error === 'object' ? error.message : error);
       this.message.create('error', errorMsg);
