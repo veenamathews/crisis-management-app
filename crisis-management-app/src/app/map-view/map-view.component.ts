@@ -49,13 +49,15 @@ export class MapViewComponent implements OnInit {
   }
 
   private initializeMap(): void {
+    const center = (this.dataWithLocation?.length) ? this.dataWithLocation[0].coords : { lat: -0.388663, lng: 51.528505};
+
     this.map = new mapboxgl.Map({
       accessToken: environment.mapbox.accessToken,
       container: 'map',
       style: 'mapbox://styles/mapbox/light-v10',
       // style: 'mapbox://styles/mapbox/streets-v11',
-      center: [-77.04, 38.907],
-      zoom: 11.15
+      center: [center!.lng, center!.lat],
+      zoom: 9
     });
 
     this.map.on('load', () => {

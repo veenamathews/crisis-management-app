@@ -23,7 +23,7 @@ export class TelegramContentComponent implements OnInit {
           // Assuming it's an array
           this.data = value.map((item: any) => {
             if (typeof item === 'object') {
-              return '📑 ' + item.text + ' 📑';
+              return item.text;
             } else {
               return item;
             }

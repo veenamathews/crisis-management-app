@@ -1,29 +1,24 @@
-<div class="grid">
-  <div>
-    <div class="map" id="map"></div>
+<div class="map-container">
+  <div class="map" id="map"></div>
 
-    <div class="map-footer">
-      <nz-tag
-        *ngFor="let tag of tags"
-        [nzColor]="tag.color"
-        [style.opacity]="(tag.visible) ? 1 : .4"
-        (click)="toogleLayer(tag)"
-      >
-        {{ tag.name }}
-      </nz-tag>
+  <div class="details" *ngIf="selectedLocation">
+    <div class="section-title">
+      Location Details
+      <i nz-icon nzType="close" nzTheme="outline" (click)="selectedLocation = undefined"></i>
     </div>
 
+    <app-information-view [model]="selectedLocation"></app-information-view>
   </div>
+</div>
 
-  <div class="details">
-    <div class="section-title">Location Details</div>
-
-    <div *ngIf="!selectedLocation">No location selected.</div>
-
-    <app-information-view
-      *ngIf="selectedLocation"
-      [model]="selectedLocation"
-    ></app-information-view>
-  </div>
-
+<div class="tags">
+  <span>Layers:</span>
+  <nz-tag
+    *ngFor="let tag of tags"
+    [nzColor]="tag.color"
+    [style.opacity]="(tag.visible) ? 1 : .4"
+    (click)="toogleLayer(tag)"
+  >
+    {{ tag.name }}
+  </nz-tag>
 </div>
