@@ -1,25 +1,27 @@
-<div nz-row nzJustify="space-around" nzAlign="middle">
-  <nz-card nzType="inner" [nzTitle]="getDate().toString()">
-
-    <div *ngIf="showOriginalData" class="header">Processed message:</div>
-
-    <div class="information-header">
-      <span class="time-ago">({{ model?.date | timeago:false }})</span>
-      <span class="flex"></span>
-    </div>
+<div class="mdc-card">
+  <mat-card-subtitle> {{getDate().toString()}}</mat-card-subtitle>
+  <div *ngIf="showOriginalData" class="header">Processed message:</div>
+  <div class="information-header">
+    <span class="time-ago">({{ model?.date | timeago:false }})</span>
+    <span class="flex"></span>
+  </div>
+  <mat-card-content>
     <app-telegram-content [model]="model?.sourceData?.text"></app-telegram-content>
-
     <div class="information-footer">
       <span class="source flex">source: {{ model?.source || 'unknown' }}</span>
     </div>
-
-    <div>
-      <a [routerLink]="['/details', model?.id]"><i nz-icon nzType="arrow-right" nzTheme="outline"></i></a>
-    </div>
-
-    <div *ngIf="showOriginalData">
-      <div class="header">Original message:</div>
-      {{ model?.sourceData | json }}
-    </div>
-  </nz-card>
+  </mat-card-content>
+  <div fxLayout="row" fxLayoutAlign="end center">
+    <button mat-icon-button [routerLink]="['/details', model?.id]">
+      <mat-icon>
+        <span class="material-icons-outlined">
+          arrow_forward
+        </span>
+      </mat-icon>
+    </button>
+  </div>
+  <div *ngIf="showOriginalData">
+    <div class="header">Original message:</div>
+    {{ model?.sourceData | json }}
+  </div>
 </div>

@@ -36,6 +36,8 @@ import { NzModalModule } from 'ng-zorro-antd/modal';
 import { SearchBoxComponent } from './search-box/search-box.component';
 import { MatIconModule } from '@angular/material/icon';
 import { MatButtonModule } from '@angular/material/button';
+import {MatCardModule} from '@angular/material/card';
+import { FlexLayoutModule } from "@angular/flex-layout";
 
 registerLocaleData(en);
 
@@ -73,7 +75,8 @@ registerLocaleData(en);
     NzModalModule,
     MatIconModule,
     MatButtonModule,
-
+    MatCardModule,
+    FlexLayoutModule,
 
     MapsModule,
     AppRoutingModule,
