@@ -1,17 +1,20 @@
 <header class="mdc-top-app-bar">
   <div class="mdc-top-app-bar__row">
     <section class="mdc-top-app-bar__section mdc-top-app-bar__section--align-start">
-      <button class="material-icons mdc-top-app-bar__navigation-icon mdc-icon-button"
-        aria-label="Open navigation menu">menu</button>
+      <button mat-icon-button>
+        <mat-icon><span class="material-icons-outlined">
+            menu
+          </span></mat-icon>
+      </button>
       <span class="mdc-top-app-bar__title">Crisis Management App</span>
     </section>
     <section class="mdc-top-app-bar__section mdc-top-app-bar__section--align-end" role="toolbar">
-      <button mat-icon-button aria-label="Example icon button with a vertical three dot icon">
+      <button mat-icon-button>
         <mat-icon><span class="material-icons-outlined">
             notifications
           </span></mat-icon>
       </button>
-      <button mat-icon-button aria-label="Example icon button with a vertical three dot icon" (click)="displaySearchBox()">
+      <button mat-icon-button (click)="displaySearchBox()">
         <mat-icon>search</mat-icon>
       </button>
       <app-search-box [isVisible]="display"></app-search-box>
@@ -26,7 +29,8 @@
     <div class="mdc-tab-scroller">
       <div class="mdc-tab-scroller__scroll-area">
         <div class="mdc-tab-scroller__scroll-content">
-          <button class="mdc-tab mdc-tab--active" role="tab" aria-selected="true" tabindex="0"  routerLink="/list" nzValue="1">
+          <button class="mdc-tab mdc-tab--active" role="tab" aria-selected="true" tabindex="0" routerLink="/list"
+            nzValue="1">
             <span class="mdc-tab__content">
               <span class="mdc-tab__icon material-icons" aria-hidden="true">list</span>
               <span class="mdc-tab__text-label">List View</span>
@@ -36,7 +40,8 @@
             </span>
             <span class="mdc-tab__ripple"></span>
           </button>
-          <button class="mdc-tab mdc-tab--active" role="tab" aria-selected="false" tabindex="0"  routerLink="/map" nzValue="2">
+          <button class="mdc-tab mdc-tab--active" role="tab" aria-selected="false" tabindex="0" routerLink="/map"
+            nzValue="2">
             <span class="mdc-tab__content">
               <span class="mdc-tab__icon material-icons" aria-hidden="false">map</span>
               <span class="mdc-tab__text-label">Map View</span>
