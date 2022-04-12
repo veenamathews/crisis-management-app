@@ -15,8 +15,8 @@ export class ListViewComponent implements OnInit {
   constructor(public dataService: DataService) {}
 
   ngOnInit(): void {
-    this.dataService.getData().subscribe(data => {
+    this.dataService.messages$.subscribe(data => {
       this.data = data;
-    })
+    });
   }
 }

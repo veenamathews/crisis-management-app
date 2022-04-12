@@ -1,14 +1,18 @@
 import { Injectable } from '@angular/core';
-import { Observable, of } from 'rxjs';
+import { BehaviorSubject, Observable, of } from 'rxjs';
 
 import { Information } from './models';
 
 import { INFORMATIONS } from './mock-data/informations';
+import { HttpClient } from '@angular/common/http';
 
 @Injectable({
   providedIn: 'root'
 })
 export class DataService {
+
+  private messagesSubject = new BehaviorSubject<Information[]>(INFORMATIONS);
+  messages$ = this.messagesSubject.asObservable();
 
   knownTags = [
     {
@@ -27,10 +31,19 @@ export class DataService {
       name: 'transport',
       color: '#1c7ed6'
     },
+    {
+      name: 'others',
+      color: '#ae3ec9'
+    },
   ];
 
-  getData(): Observable<Information[]> {
-    return of(INFORMATIONS);
+  constructor(private http: HttpClient) {}
+
+  filter(): void {
+    const filteredMessages = INFORMATIONS.filter(item => item.tags?.includes('food'));
+
+    // This will emit a new value, so everything that subscribes to messages$ (list, map) will get new a new list of messages
+    this.messagesSubject.next(filteredMessages);
   }
 
   getDataById(id: string): Promise<Information> {

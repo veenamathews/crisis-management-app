@@ -2,6 +2,8 @@
   <label nz-checkbox [(ngModel)]="showOriginalData">showOriginalData</label>
 </div>
 
+<button (click)="dataService.filter()">filter</button>
+
 <app-information-view
   *ngFor="let item of data"
   [model]="item"

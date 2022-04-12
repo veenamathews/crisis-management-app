@@ -29,7 +29,7 @@ export class MapViewComponent implements OnInit {
       };
     });
 
-    this.dataService.getData().subscribe(data => {
+    this.dataService.messages$.subscribe(data => {
       this.totalDataCount = data.length;
       this.dataWithLocation = data
         .filter(item => !!item.coords);
