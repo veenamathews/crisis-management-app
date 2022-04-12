@@ -34,6 +34,7 @@ import { NzDividerModule } from 'ng-zorro-antd/divider';
 import { NzLayoutModule } from 'ng-zorro-antd/layout';
 import { NzModalModule } from 'ng-zorro-antd/modal';
 import { SearchBoxComponent } from './search-box/search-box.component';
+import { MatIconModule } from '@angular/material/icon';
 
 registerLocaleData(en);
 
@@ -69,6 +70,7 @@ registerLocaleData(en);
     NzDividerModule,
     NzLayoutModule,
     NzModalModule,
+    MatIconModule,
 
 
     MapsModule,
