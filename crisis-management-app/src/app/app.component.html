@@ -1,7 +1,7 @@
 <header class="mdc-top-app-bar">
   <div class="mdc-top-app-bar__row">
     <section class="mdc-top-app-bar__section mdc-top-app-bar__section--align-start">
-      <button mat-icon-button>
+      <button mat-icon-button routerLink="/process-message"><i class="fab fa-cloud-showers"></i>
         <mat-icon><span class="material-icons-outlined">
             menu
           </span></mat-icon>
@@ -9,11 +9,11 @@
       <span class="mdc-top-app-bar__title">Crisis Management App</span>
     </section>
     <section class="mdc-top-app-bar__section mdc-top-app-bar__section--align-end" role="toolbar">
-      <button mat-icon-button>
+      <!-- <button mat-icon-button>
         <mat-icon><span class="material-icons-outlined">
             notifications
           </span></mat-icon>
-      </button>
+      </button> -->
       <button mat-icon-button (click)="displaySearchBox()">
         <mat-icon>search</mat-icon>
       </button>
