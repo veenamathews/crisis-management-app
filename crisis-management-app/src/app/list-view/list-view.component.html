@@ -8,7 +8,7 @@
       <div *ngFor="let category of categoryList">
         <nz-card [nzTitle]="category.name">
           <div fxLayout="column" fxLayoutAlign="space-around center">
-            <nz-list-item>
+            <nz-list-item fxLayout="column" fxLayoutAlign="space-around center">
               <div *ngFor="let item of data">
                 <app-information-view *ngIf="item.category == category.name " [model]="item"
                   [showOriginalData]="showOriginalData">
