@@ -6,11 +6,11 @@
   <div fxLayout="column" fxLayoutAlign="space-around center">
     <div fxLayout="column" fxLayoutAlign="center stretch">
       <div *ngFor="let category of categoryList">
-        <nz-card [nzTitle]="category.name">
+        <nz-card [nzTitle]="category">
           <div fxLayout="column" fxLayoutAlign="space-around center">
             <nz-list-item fxLayout="column" fxLayoutAlign="space-around center">
               <div *ngFor="let item of data">
-                <app-information-view *ngIf="item.category == category.name " [model]="item"
+                <app-information-view *ngIf="item.category == category " [model]="item"
                   [showOriginalData]="showOriginalData">
                 </app-information-view>
               </div>

@@ -11,7 +11,7 @@ export class ListViewComponent implements OnInit {
 
   data?: Information[];
   showOriginalData = false;
-  categoryList: any[] = [];
+  categoryList: string[] = [];
   gridStyle = {
     width: '25%',
     textAlign: 'center'
@@ -22,6 +22,6 @@ export class ListViewComponent implements OnInit {
     this.dataService.messages$.subscribe(data => {
       this.data = data;
     });
-    this.categoryList = this.dataService.knownCategory;
+    this.categoryList = this.dataService.knownTags.map(x => x.name);
   }
 }
