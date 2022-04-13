@@ -1,7 +1,7 @@
-<h3>How AI-powered message processing works?</h3>
+<h2>How AI-powered message processing works?</h2>
 <p>A message is send to the backend API where a bunch of queries are sent to the OpenAI. Its response is used to enrich the original text message with additional data used for categorizing, searching etc. purposes.</p>
 
-<h3>Try it out!</h3>
+<h2>Try it out!</h2>
 <p>Write a message in the box below and let OpenAI analyze it and extract additional information. You can use the message below as an example:</p>
 <blockquote>
   {{ exampleMessage }}
@@ -38,13 +38,13 @@
 </div>
 
 <div class="ai-response" *ngIf="!!extractedData">
-  <h3>Your message</h3>
+  <h2>Your message</h2>
   <p>{{ originalMessage }}</p>
 
-  <h3>Extracted data</h3>
+  <h2>Extracted data</h2>
   <pre style="margin-bottom: 12px;">{{ extractedData.data | json }}</pre>
 
-  <h3>OpenAI Interaction Log</h3>
+  <h2>OpenAI Interaction Log</h2>
   <p>Below are all the queries send to OpenAI and its responses:</p>
 
   <div class="qa-box" *ngFor="let item of extractedData.log">
