@@ -1,4 +1,4 @@
-import { LngLat } from 'mapbox-gl';
+/* tslint:disable:quotemark object-literal-key-quotes */
 import { Information } from '../models';
 
 

@@ -68,7 +68,7 @@ export class MapViewComponent implements OnInit {
 
   private setMapData(): void {
     if (this.dataWithLocation?.length) {
-      this.map?.setCenter(this.dataWithLocation[0].coords!);
+      this.map?.setCenter(this.dataWithLocation[this.dataWithLocation.length - 1].coords!);
     }
 
     // Create a map layer for every tag

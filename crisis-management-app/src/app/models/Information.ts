@@ -7,7 +7,13 @@ export interface Information {
   source?: string;
   sourceData?: any;
   tags?: string[];
-  category: string;
+  category?: string;
+  sourceMessagePlainText?: string;
+  gmapLink?: string | null;
+  aiErrors?: { key: string, value: string | null, error: string}[];
+  address?: any;
+  sentiment?: any;
+  aiLog?: { q: string, a: string}[];
 }
 
 export interface InformationNode {

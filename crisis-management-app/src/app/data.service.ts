@@ -1,9 +1,10 @@
 import { Injectable } from '@angular/core';
-import { BehaviorSubject, Observable, of } from 'rxjs';
+import { BehaviorSubject } from 'rxjs';
 
 import { Information } from './models';
 
 import { INFORMATIONS } from './mock-data/informations';
+import { MESSAGES_DATASET_002 } from './mock-data/messages_dataset_002';
 import { HttpClient } from '@angular/common/http';
 
 @Injectable({
@@ -11,62 +12,62 @@ import { HttpClient } from '@angular/common/http';
 })
 export class DataService {
 
-  private messagesSubject = new BehaviorSubject<Information[]>(INFORMATIONS);
+  private messagesSubject = new BehaviorSubject<Information[]>(MESSAGES_DATASET_002);
   messages$ = this.messagesSubject.asObservable();
 
   knownTags = [
     {
       name: 'Food',
       color: '#37b24d',
-      icon: "fastfood",
+      icon: 'fastfood',
       checked: true
     },
     {
       name: 'Shelter',
       color: '#f08c00',
-      icon: "hotel",
+      icon: 'hotel',
       checked: true
     },
     {
       name: 'Health Services',
       color: '#d6336c',
-      icon: "local_hospital",
+      icon: 'local_hospital',
       checked: true
     },
     {
       name: 'Transportation',
       color: '#1c7ed6',
-      icon: "directions_bus_filled",
+      icon: 'directions_bus_filled',
       checked: true
     },
     {
       name: 'Translation',
       color: '#ae3ec9',
-      icon: "interpreter_mode",
+      icon: 'interpreter_mode',
       checked: true
     },
     {
       name: 'Legal',
       color: '#22b8cf',
-      icon: "gavel",
+      icon: 'gavel',
       checked: true
     },
     {
       name: 'Volunteering',
       color: '#20c997',
-      icon: "sports_kabaddi",
+      icon: 'sports_kabaddi',
       checked: true
     },
     {
       name: 'Volunteers Needed',
       color: '#f06595',
-      icon: "group_add",
+      icon: 'group_add',
       checked: true
     },
     {
       name: 'Other',
       color: '#adb5bd',
-      icon: "info",
+      icon: 'info',
       checked: true
     },
   ];
