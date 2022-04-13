@@ -16,13 +16,14 @@ export class AppComponent {
   displaySearchBox(): void {
     const dialogRef = this.dialog.open(SearchMenuComponent, {
       width: '600px',
+      maxWidth:'600px',
       height: '500px',
-      data: { name: "x", animal: "x" },
+      maxHeight:'600px',
+      //data: { name: "x", animal: "x" },
     });
 
     dialogRef.afterClosed().subscribe(result => {
       console.log('The dialog was closed');
-      //this.animal = result;
     });
   }
 }
