@@ -2,12 +2,9 @@ import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { environment } from 'src/environments/environment';
 
-export interface OpenAIRequest {
-  prompt: string;
-}
-
 export interface OpenAIResponse {
-  result?: string;
+  data?: any;
+  log?: { q: string, a: string}[];
 }
 
 @Injectable({
@@ -19,13 +16,8 @@ export class OpenAIService {
 
   constructor(private http: HttpClient) {}
 
-  async extractData(request: OpenAIRequest): Promise<OpenAIResponse> {
-    const observable = this.http.post<any>(`${this.baseUri}/openai/extractData`, request);
-    return observable.toPromise();
-  }
-
-  async ask(request: OpenAIRequest): Promise<OpenAIResponse> {
-    const observable = this.http.post<any>(`${this.baseUri}/openai/ask`, request);
+  async processMessage(message: string): Promise<OpenAIResponse> {
+    const observable = this.http.post<any>(`${this.baseUri}/openai/processMessage`, { message });
     return observable.toPromise();
   }
 }
