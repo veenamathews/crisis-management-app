@@ -9,7 +9,7 @@ export class AppComponent {
   title = 'crisis-management-app';
   display = false;
 
-  displaySearchBox(){
+  displaySearchBox(): void {
     this.display = !this.display;
   }
 }

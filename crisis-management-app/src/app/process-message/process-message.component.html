@@ -20,22 +20,13 @@
     nz-button
     nzType="primary"
     [disabled]="!model"
-    (click)="extractData()"
+    (click)="processMessage()"
     [nzLoading]="processing"
   >
-    Extract Data
+    Process Message
   </button>
 
   <div>
-    <button
-      nz-button
-      nzType="default"
-      [disabled]="!model"
-      (click)="processMessage()"
-      [nzLoading]="processing"
-    >
-      Process Message
-    </button>
     <button nz-button nzType="default" style="margin-left: 4px;" [disabled]="!model" (click)="clear()">Clear</button>
   </div>
 </div>
@@ -46,17 +37,17 @@
   <div>{{ responseText }}</div>
 </div>
 
-<div class="ai-response" *ngIf="!!data">
+<div class="ai-response" *ngIf="!!extractedData">
   <h3>Your message</h3>
   <p>{{ originalMessage }}</p>
 
   <h3>Extracted data</h3>
-  <pre style="margin-bottom: 12px;">{{ data.data | json }}</pre>
+  <pre style="margin-bottom: 12px;">{{ extractedData.data | json }}</pre>
 
   <h3>OpenAI Interaction Log</h3>
   <p>Below are all the queries send to OpenAI and its responses:</p>
 
-  <div class="qa-box" *ngFor="let item of data.log">
+  <div class="qa-box" *ngFor="let item of extractedData.log">
     <div class="qa q">
       ❓ {{ item.q }} (your message)
     </div>
@@ -64,5 +55,13 @@
       📢 {{ item.a }}
     </div>
   </div>
+
+  <!-- <button
+    nz-button
+    nzType="primary"
+    (click)="addToMessages()"
+  >
+    Add To Messages
+  </button> -->
   
 </div>

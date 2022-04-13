@@ -10,7 +10,6 @@ import { Information } from '../models';
 export class ListViewComponent implements OnInit {
 
   data?: Information[];
-  showOriginalData = false;
   categoryList: any[] = [];
   gridStyle = {
     width: '25%',

@@ -16,28 +16,48 @@ export class DataService {
 
   knownTags = [
     {
-      name: 'food',
+      name: 'Food',
       color: '#37b24d'
     },
     {
-      name: 'shelter',
+      name: 'Shelter',
       color: '#f08c00'
     },
     {
-      name: 'health',
+      name: 'Health Services',
       color: '#d6336c'
     },
     {
-      name: 'transport',
+      name: 'Transportation',
       color: '#1c7ed6'
     },
     {
-      name: 'others',
+      name: 'Translation',
       color: '#ae3ec9'
+    },
+    {
+      name: 'Legal',
+      color: '#22b8cf'
+    },
+    {
+      name: 'Volunteering',
+      color: '#20c997'
+    },
+    {
+      name: 'Volunteers Needed',
+      color: '#f06595'
+    },
+    {
+      name: 'Other',
+      color: '#adb5bd'
     },
   ];
 
-  constructor(private http: HttpClient) {}
+  constructor(private http: HttpClient) {
+    // this.http.get<Information[]>('http://localhost:3000/api/getMessages').subscribe(data => {
+    //   this.messagesSubject.next(data);
+    // });
+  }
 
   filter(): void {
     const filteredMessages = INFORMATIONS.filter(item => item.tags?.includes('food'));
