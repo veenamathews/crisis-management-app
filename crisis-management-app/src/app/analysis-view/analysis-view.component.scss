@@ -1,0 +1,30 @@
+:host {
+  overflow: auto;
+  display: block;
+  padding: 16px;
+  max-width: 860px;
+  margin: 0 auto;
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 16px;
+}
+
+mat-expansion-panel {
+  margin-bottom: 16px;
+}
+
+mat-expansion-panel-header,
+mat-expansion-panel-header:hover {
+  border-bottom: 1px solid #ddd;
+  background-color: #f7f7f7;
+}
+
+::ng-deep {
+  .mat-expansion-panel-content {
+    margin-top: 16px;
+  }
+}

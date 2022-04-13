@@ -5,56 +5,6 @@ import { Information } from '../models';
 export const MESSAGES_DATASET_002: Information[] = [
   {
     "sourceData": {
-      "id": 1,
-      "type": "service",
-      "date": "2022-02-25T00:08:51",
-      "actor": "Help for Ukrainians in Germany",
-      "actor_id": "channel1650038103",
-      "action": "create_channel",
-      "title": "Help for Ukrainians in Germany",
-      "text": ""
-    },
-    "id": "1",
-    "source": "telegram",
-    "date": "2022-02-25T00:08:51",
-    "sourceMessagePlainText": "",
-    "aiErrors": [
-      {
-        "key": "category",
-        "value": null,
-        "error": "empty"
-      }
-    ],
-    "category": "Other"
-  },
-  {
-    "sourceData": {
-      "id": 2,
-      "type": "service",
-      "date": "2022-02-25T00:08:51",
-      "actor": "Help for Ukrainians in Germany",
-      "actor_id": "channel1650038103",
-      "action": "edit_group_photo",
-      "photo": "(File not included. Change data exporting settings to download.)",
-      "width": 640,
-      "height": 640,
-      "text": ""
-    },
-    "id": "2",
-    "source": "telegram",
-    "date": "2022-02-25T00:08:51",
-    "sourceMessagePlainText": "",
-    "aiErrors": [
-      {
-        "key": "category",
-        "value": null,
-        "error": "empty"
-      }
-    ],
-    "category": "Other"
-  },
-  {
-    "sourceData": {
       "id": 3,
       "type": "message",
       "date": "2022-02-25T00:15:01",
