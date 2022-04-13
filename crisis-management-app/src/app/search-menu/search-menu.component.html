@@ -7,59 +7,78 @@
     </button>
 </div>
 
-<h3>Points of Interest</h3>
-<mat-button-toggle-group name="ingredients" aria-label="Ingredients" multiple>
-    <div fxLayout="column" fxLayoutAlign="space-around center">
-        <div fxLayout="row" fxLayoutAlign="center start">
-            <mat-button-toggle value="flour" fxLayout="row" fxLayoutAlign="space-around center">
-                <mat-icon >fastfood</mat-icon>
-                Food
-            </mat-button-toggle>
-            <mat-button-toggle value="flour">
-                <mat-icon >hotel</mat-icon>
-                Shelter
-            </mat-button-toggle>
-        </div>
-        <div fxLayout="row" fxLayoutAlign="center start">
+<h3>Search here</h3>
+<div>
+    <form class="example-form">
+        <input type="text" placeholder="Type here..." aria-label="Type here..." matInput [formControl]="myControl"
+            [matAutocomplete]="auto">
+        <mat-autocomplete #auto="matAutocomplete">
+            <mat-option *ngFor="let option of options" [value]="option">
+                {{option}}
+            </mat-option>
+        </mat-autocomplete>
+    </form>
+</div>
 
-            <mat-button-toggle value="flour">
-                <mat-icon >local_hospital</mat-icon>
-                Health Services
-            </mat-button-toggle>
-            <mat-button-toggle value="flour">
-                <mat-icon >gavel</mat-icon>
-                Legal
-            </mat-button-toggle>
-        </div>
-        <div fxLayout="row" fxLayoutAlign="center start">
 
-            <mat-button-toggle value="flour">
-                <mat-icon >
-                    interpreter_mode
-                </mat-icon>
-                Translation
-            </mat-button-toggle>
-            <mat-button-toggle value="flour">
-                <mat-icon >directions_bus_filled</mat-icon>
-                Transportation
-            </mat-button-toggle>
-        </div>
-        <div fxLayout="row" fxLayoutAlign="center start">
+<div class="poi">
+    <h3>Points of Interest</h3>
+    <mat-button-toggle-group name="ingredients" aria-label="Ingredients" multiple>
+        <div fxLayout="column" fxLayoutAlign="space-around center">
+            <div fxLayout="row" fxLayoutAlign="center start">
+                <mat-button-toggle value="flour" fxLayout="row" fxLayoutAlign="space-around center">
+                    <mat-icon>fastfood</mat-icon>
+                    Food
+                </mat-button-toggle>
+                <mat-button-toggle value="flour">
+                    <mat-icon>hotel</mat-icon>
+                    Shelter
+                </mat-button-toggle>
+            </div>
+            <div fxLayout="row" fxLayoutAlign="center start">
 
-            <mat-button-toggle value="flour">
-                <mat-icon >group_add</mat-icon>
-                Volunteer Needed
-            </mat-button-toggle>
-            <mat-button-toggle value="flour">
-                <mat-icon >sports_kabaddi</mat-icon>
-                Volunteer
-            </mat-button-toggle>
+                <mat-button-toggle value="flour">
+                    <mat-icon>local_hospital</mat-icon>
+                    Health Services
+                </mat-button-toggle>
+                <mat-button-toggle value="flour">
+                    <mat-icon>gavel</mat-icon>
+                    Legal
+                </mat-button-toggle>
+            </div>
+            <div fxLayout="row" fxLayoutAlign="center start">
+
+                <mat-button-toggle value="flour">
+                    <mat-icon>
+                        interpreter_mode
+                    </mat-icon>
+                    Translation
+                </mat-button-toggle>
+                <mat-button-toggle value="flour">
+                    <mat-icon>directions_bus_filled</mat-icon>
+                    Transportation
+                </mat-button-toggle>
+            </div>
+            <div fxLayout="row" fxLayoutAlign="center start">
+
+                <mat-button-toggle value="flour">
+                    <mat-icon>group_add</mat-icon>
+                    Volunteer Needed
+                </mat-button-toggle>
+                <mat-button-toggle value="flour">
+                    <mat-icon>sports_kabaddi</mat-icon>
+                    Volunteer
+                </mat-button-toggle>
+            </div>
+            <div fxLayout="row" fxLayoutAlign="center start">
+                <mat-button-toggle value="flour">
+                    <mat-icon>info</mat-icon>
+                    Other
+                </mat-button-toggle>
+            </div>
         </div>
-        <div fxLayout="row" fxLayoutAlign="center start">
-            <mat-button-toggle value="flour">
-                <mat-icon >info</mat-icon>
-                Other
-            </mat-button-toggle>
-        </div>
-    </div>
-</mat-button-toggle-group>
+    </mat-button-toggle-group>
+</div>
+<mat-dialog-actions fxLayout="row" fxLayoutAlign="end center">
+    <button mat-flat-button [mat-dialog-close]="true" color="accent">Search</button>
+</mat-dialog-actions>
