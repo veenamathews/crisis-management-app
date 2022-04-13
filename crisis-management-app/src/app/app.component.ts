@@ -16,8 +16,8 @@ export class AppComponent {
   displaySearchBox(): void {
     const dialogRef = this.dialog.open(SearchMenuComponent, {
       width: '600px',
-      height: '600px',
-      data: { name: "Veena", animal: "MAttt" },
+      height: '500px',
+      data: { name: "x", animal: "x" },
     });
 
     dialogRef.afterClosed().subscribe(result => {
