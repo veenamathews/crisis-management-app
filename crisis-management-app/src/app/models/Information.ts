@@ -7,5 +7,10 @@ export interface Information {
   source?: string;
   sourceData?: any;
   tags?: string[];
-  category?: string;
+  category: string;
+}
+
+export interface InformationNode {
+  name: string;
+  children?: InformationNode[];
 }

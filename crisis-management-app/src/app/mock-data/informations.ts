@@ -109,6 +109,7 @@ export const INFORMATIONS: Information[] = [
       lat: 38.931567,
     },
     tags: ['food'],
+    category: "Other"
   },
   {
     id: '42jfhfxr',
@@ -118,6 +119,7 @@ export const INFORMATIONS: Information[] = [
       lat: 38.894651,
     },
     tags: ['food'],
+    category: "Other"
   },
   {
     id: 'gopcqi44',
@@ -137,6 +139,7 @@ export const INFORMATIONS: Information[] = [
       lat: 38.882342,
     },
     tags: ['shelter'],
+    category: "Other"
   },
   {
     id: 'dqg3rc43',
@@ -156,6 +159,7 @@ export const INFORMATIONS: Information[] = [
       lat: 38.909664,
     },
     tags: ['health'],
+    category: "Other"
   },
   {
     id: '1g2j0bqc',
@@ -175,5 +179,6 @@ export const INFORMATIONS: Information[] = [
       lat: 38.878241,
     },
     tags: ['transport'],
+    category: "Other"
   },
 ];

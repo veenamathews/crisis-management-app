@@ -36,8 +36,13 @@ import { NzModalModule } from 'ng-zorro-antd/modal';
 import { SearchBoxComponent } from './search-box/search-box.component';
 import { MatIconModule } from '@angular/material/icon';
 import { MatButtonModule } from '@angular/material/button';
-import {MatCardModule} from '@angular/material/card';
+import { MatCardModule } from '@angular/material/card';
 import { FlexLayoutModule } from "@angular/flex-layout";
+import { MatCheckboxModule } from '@angular/material/checkbox';
+import { MatDividerModule } from '@angular/material/divider';
+import { MatGridListModule } from '@angular/material/grid-list';
+import { MatListModule } from '@angular/material/list';
+import { MatTreeModule } from '@angular/material/tree';
 
 registerLocaleData(en);
 
@@ -77,9 +82,13 @@ registerLocaleData(en);
     MatButtonModule,
     MatCardModule,
     FlexLayoutModule,
-
+    MatCheckboxModule,
     MapsModule,
     AppRoutingModule,
+    MatDividerModule,
+    MatGridListModule,
+    MatListModule,
+    MatTreeModule
   ],
   providers: [{ provide: NZ_I18N, useValue: en_US }],
   bootstrap: [AppComponent]

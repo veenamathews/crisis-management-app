@@ -19,7 +19,7 @@ export class MapViewComponent implements OnInit {
   tags?: any[];
   dataWithLocation?: Information[];
   totalDataCount?: number;
-  private selectedLocSubject = new BehaviorSubject<Information>({});
+  private selectedLocSubject = new BehaviorSubject<Information>({category:"Other"});
 
 
   constructor(public dataService: DataService) { }

@@ -14,6 +14,33 @@ export class DataService {
   private messagesSubject = new BehaviorSubject<Information[]>(INFORMATIONS);
   messages$ = this.messagesSubject.asObservable();
 
+  knownCategory = [
+    {
+      name: 'Food',
+    },
+    {
+      name: 'Health Services',
+    },
+    {
+      name: 'Legal',
+    },
+    {
+      name: 'Shelter',
+    },
+    {
+      name: 'Translation',
+    },
+    {
+      name: 'Transportation',
+    },
+    {
+      name: 'Volunteer Needed',
+    },
+    {
+      name: 'Other',
+    },
+  ];
+
   knownTags = [
     {
       name: 'food',
@@ -37,29 +64,11 @@ export class DataService {
     },
   ];
 
-  constructor(private http: HttpClient) {}
+  constructor(private http: HttpClient) { }
 
-  filter(): void {
-    const filteredMessages = INFORMATIONS.filter(item => item.tags?.includes('food'));
-
-    // This will emit a new value, so everything that subscribes to messages$ (list, map) will get new a new list of messages
+  filter(category: string): void {
+    const filteredMessages = INFORMATIONS.filter(item => item.category == category);
     this.messagesSubject.next(filteredMessages);
-  }
-
-  getCategoryList(): Promise<any[]> {
-    let cList = ([...new Set(INFORMATIONS.filter(x => x.category != undefined || null).map(x => x.category))] as string[]).sort();
-    cList.push("Other");
-
-    INFORMATIONS.forEach((element) => {
-      if (element.category == null || undefined || '') {
-        element.category = "Other";
-      }
-    });
-    let categoryList: any[] = [];
-    cList.forEach(value => {
-      categoryList?.push({ label: value, checked: false })
-    });
-    return (categoryList) ? Promise.resolve(categoryList) : Promise.reject(`Item not found any category`);
   }
 
   getDataById(id: string): Promise<Information> {

@@ -16,9 +16,7 @@ export class SearchBoxComponent implements OnInit {
   constructor(public dataService: DataService) { }
 
   ngOnInit(): void {
-    this.dataService.getCategoryList().then(data => {
-      this.categoryList = data;
-    });
+    this.categoryList = this.dataService.knownCategory;
   }
 
   showModal(): void {
