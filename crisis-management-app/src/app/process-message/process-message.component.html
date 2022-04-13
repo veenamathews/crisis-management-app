@@ -1,8 +1,9 @@
 <h2>How AI-powered message processing works?</h2>
-<p>A message is send to the backend API where a bunch of queries are sent to the OpenAI. Its response is used to enrich the original text message with additional data used for categorizing, searching etc. purposes.</p>
+<p>A message is send to the backend API from where a bunch of queries are sent to the OpenAI. The response is used to enrich the original plain text message with additional data like: <i>category</i>, <i>location</i>, etc.</p>
+<p>By using OpenAI we potentially can extract any information by simply asking questions in a natural language. The challenge is to formulate the questions and how good AI is with answering them.</p>
 
 <h2>Try it out!</h2>
-<p>Write a message in the box below and let OpenAI analyze it and extract additional information. You can use the message below as an example:</p>
+<p>Write a message in the box below and let OpenAI analyze it and extract additional information. You can use this message below as an example:</p>
 <blockquote>
   {{ exampleMessage }}
   <i nz-icon nzType="copy" nzTheme="outline" (click)="model = exampleMessage"></i>

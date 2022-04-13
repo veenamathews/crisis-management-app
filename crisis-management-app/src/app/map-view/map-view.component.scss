@@ -43,13 +43,21 @@
   box-shadow: rgb(100 100 111 / 20%) 0px 7px 29px 0px;
 
   .section-title {
-    font-weight: 600;
-    margin-bottom: 12px;
+    font-weight: 500;
+    font-size: 16px;
+    margin-bottom: 16px;
     display: flex;
     justify-content: space-between;
 
     i {
       cursor: pointer;
+    }
+  }
+
+  ::ng-deep {
+    .mat-card {
+      padding: 0 !important;
+      box-shadow: none !important;
     }
   }
 }

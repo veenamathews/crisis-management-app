@@ -1,58 +1,30 @@
-<header class="mdc-top-app-bar">
-  <div class="mdc-top-app-bar__row">
-    <section class="mdc-top-app-bar__section mdc-top-app-bar__section--align-start">
-      <button mat-icon-button routerLink="/process-message"><i class="fab fa-cloud-showers"></i>
-        <mat-icon><span class="material-icons-outlined">
-            menu
-          </span></mat-icon>
-      </button>
-      <span class="mdc-top-app-bar__title">Crisis Management App</span>
-    </section>
-    <section class="mdc-top-app-bar__section mdc-top-app-bar__section--align-end" role="toolbar">
-      <!-- <button mat-icon-button>
-        <mat-icon><span class="material-icons-outlined">
-            notifications
-          </span></mat-icon>
-      </button> -->
-      <button mat-icon-button (click)="displaySearchBox()">
-        <mat-icon>search</mat-icon>
-      </button>
-      <!--app-search-box [isVisible]="display"></app-search-box -->
-    </section>
-  </div>
-</header>
+<mat-toolbar color="primary">
+  <button mat-icon-button [matMenuTriggerFor]="menu">
+    <mat-icon>menu</mat-icon>
+  </button>
+  <mat-menu #menu="matMenu">
+    <button mat-menu-item routerLink="/list">List View</button>
+    <button mat-menu-item routerLink="/map">Map View</button>
+    <mat-divider></mat-divider>
+    <button mat-menu-item routerLink="/process-message">AI Demo</button>
+  </mat-menu>
 
-<main class="mdc-top-app-bar--fixed-adjust">
-  <div class="mdc-tab-bar" role="tablist">
-    <div class="mdc-tab-scroller">
-      <div class="mdc-tab-scroller__scroll-area">
-        <div class="mdc-tab-scroller__scroll-content">
-          <button class="mdc-tab mdc-tab--active" role="tab" aria-selected="true" tabindex="0" routerLink="/list"
-            nzValue="1">
-            <span class="mdc-tab__content">
-              <span class="mdc-tab__icon material-icons" aria-hidden="true">list</span>
-              <span class="mdc-tab__text-label">List View</span>
-            </span>
-            <span class="mdc-tab-indicator mdc-tab-indicator--active">
-              <span class="mdc-tab-indicator__content mdc-tab-indicator__content--underline"></span>
-            </span>
-            <span class="mdc-tab__ripple"></span>
-          </button>
-          <button class="mdc-tab mdc-tab--active" role="tab" aria-selected="false" tabindex="0" routerLink="/map"
-            nzValue="2">
-            <span class="mdc-tab__content">
-              <span class="mdc-tab__icon material-icons" aria-hidden="false">map</span>
-              <span class="mdc-tab__text-label">Map View</span>
-            </span>
-            <span class="mdc-tab-indicator mdc-tab-indicator--active">
-              <span class="mdc-tab-indicator__content mdc-tab-indicator__content--underline"></span>
-            </span>
-            <span class="mdc-tab__ripple"></span>
-          </button>
-        </div>
-      </div>
-    </div>
-  </div>
-</main>
+  <span class="title">Crisis Management App</span>
+  <span class="example-spacer"></span>
+
+  <button mat-icon-button aria-label="search" (click)="displaySearchBox()">
+    <mat-icon>search</mat-icon>
+  </button>
+</mat-toolbar>
+
+<nav mat-tab-nav-bar>
+  <a mat-tab-link
+  *ngFor="let link of navLinks"
+  [routerLink]="link.link"
+  routerLinkActive #rla="routerLinkActive"
+  [active]="rla.isActive">
+    {{ link.label }}
+  </a>
+</nav>
 
 <router-outlet></router-outlet>

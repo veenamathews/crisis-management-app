@@ -1,6 +1,7 @@
 <mat-card class="my-card">
   <mat-card-subtitle>{{getDate().toString()}}</mat-card-subtitle>
-  <mat-card-title>({{ model?.date | timeago:false }})</mat-card-title>
+  <!-- TODO: timeago was giving some errors; check why some messages don't have correct data? -->
+  <mat-card-title *ngIf="model?.date">({{ model?.date | timeago:false }})</mat-card-title>
   <mat-card-content>
     <div *ngIf="showOriginalData">
       <br><div class="header">Original message:</div><br>Processed message:</div>

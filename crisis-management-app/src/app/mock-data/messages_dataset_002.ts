@@ -1,4 +1,8 @@
-[
+/* tslint:disable:quotemark object-literal-key-quotes */
+import { Information } from '../models';
+
+// Telegram: Help for Ukrainians in Germany
+export const MESSAGES_DATASET_002: Information[] = [
   {
     "sourceData": {
       "id": 1,
@@ -171,7 +175,6 @@
     "sourceMessagePlainText": "‼️‼️‼️If you are ready to transport people across the EU to refugee registration \n\n https://docs.google.com/forms/d/e/1FAIpQLSeLQvMqfQM6AFIMYmgJyUltwxpM8kDK-kRc-k5V_APtGpDZmQ/viewform?fbclid=IwAR0Ff5AOfz3yc8aYLtzQia38hFzeerg2954ye7Mfdz3KZffN4otsCxiKY1M \n\nRegister ",
     "gmapLink": null,
     "address": " to be a volunteer driverThis text is a Google Form for people who want to register to be volunteer drivers. There is no physical location mentioned.",
-    "coords": "",
     "sentiment": null,
     "category": "Transportation",
     "aiLog": [
@@ -4469,4 +4472,4 @@
     ],
     "category": "Other"
   }
-]
+];

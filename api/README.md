@@ -17,7 +17,9 @@ To run the app:
 
 `node ./cli.js` to run the methods available as API endpoints from the command line (uncomment whatever you need to run)
 
-# Docs
+# Docs, links
 
 - https://mtproto-core.js.org/docs/
 - https://beta.openai.com/docs/introduction
+
+- https://globalhappenings.com/entertainment/127018.html

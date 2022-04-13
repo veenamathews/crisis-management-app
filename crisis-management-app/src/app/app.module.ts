@@ -33,10 +33,11 @@ import { ProcessMessageComponent } from './process-message/process-message.compo
 import { NzDividerModule } from 'ng-zorro-antd/divider';
 import { NzLayoutModule } from 'ng-zorro-antd/layout';
 import { NzModalModule } from 'ng-zorro-antd/modal';
+
 import { MatIconModule } from '@angular/material/icon';
 import { MatButtonModule } from '@angular/material/button';
 import { MatCardModule } from '@angular/material/card';
-import { FlexLayoutModule } from "@angular/flex-layout";
+import { FlexLayoutModule } from '@angular/flex-layout';
 import { MatCheckboxModule } from '@angular/material/checkbox';
 import { MatDividerModule } from '@angular/material/divider';
 import { MatGridListModule } from '@angular/material/grid-list';
@@ -47,6 +48,9 @@ import { SearchMenuComponent } from './search-menu/search-menu.component';
 import { MatButtonToggleModule } from '@angular/material/button-toggle';
 import { MatAutocompleteModule } from '@angular/material/autocomplete';
 import { MatFormFieldModule } from '@angular/material/form-field';
+import { MatToolbarModule } from '@angular/material/toolbar';
+import { MatTabsModule } from '@angular/material/tabs';
+import { MatMenuModule } from '@angular/material/menu';
 
 registerLocaleData(en);
 
@@ -82,6 +86,7 @@ registerLocaleData(en);
     NzDividerModule,
     NzLayoutModule,
     NzModalModule,
+
     MatIconModule,
     MatButtonModule,
     MatCardModule,
@@ -96,7 +101,10 @@ registerLocaleData(en);
     MatDialogModule,
     MatButtonToggleModule,
     MatAutocompleteModule,
-    MatFormFieldModule
+    MatFormFieldModule,
+    MatToolbarModule,
+    MatTabsModule,
+    MatMenuModule,
   ],
   providers: [{ provide: NZ_I18N, useValue: en_US }],
   bootstrap: [AppComponent]
