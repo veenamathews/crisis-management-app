@@ -3,7 +3,7 @@ import { BehaviorSubject } from 'rxjs';
 
 import { Information } from './models';
 
-import { INFORMATIONS } from './mock-data/informations';
+// import { MESSAGES_DATASET_001 } from './mock-data/messages_dataset_001';
 import { MESSAGES_DATASET_002 } from './mock-data/messages_dataset_002';
 import { HttpClient } from '@angular/common/http';
 
@@ -75,12 +75,12 @@ export class DataService {
   constructor(private http: HttpClient) { }
 
   filter(category: string): void {
-    const filteredMessages = INFORMATIONS.filter(item => item.category == category);
+    const filteredMessages = this.messagesSubject.value.filter(item => item.category === category);
     this.messagesSubject.next(filteredMessages);
   }
 
   getDataById(id: string): Promise<Information> {
-    const result = INFORMATIONS.find(item => item.id === id);
+    const result = this.messagesSubject.value.find(item => item.id === id);
     return (result) ? Promise.resolve(result) : Promise.reject(`Item not found: ${id}`);
   }
 }

@@ -1,8 +1,8 @@
 /* tslint:disable:quotemark object-literal-key-quotes */
 import { Information } from '../models';
 
-
-export const INFORMATIONS: Information[] = [
+// Original dataset
+export const MESSAGES_DATASET_002: Information[] = [
   {
     id: 'a56kjdai',
     date: '2022-04-06T00:04:29',
