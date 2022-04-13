@@ -34,6 +34,9 @@ export class DataService {
       name: 'Transportation',
     },
     {
+      name: 'Volunteering',
+    },
+    {
       name: 'Volunteer Needed',
     },
     {

@@ -1,52 +1,65 @@
-<p>search-menu works!</p>
-<div>
-    <mat-button-toggle-group name="ingredients" aria-label="Ingredients" multiple>
-        <div fxLayout="column" fxLayoutAlign="space-around center">
-            <div fxLayout="row" fxLayoutAlign="center start">
-                <mat-button-toggle value="flour" fxLayout="row" fxLayoutAlign="space-around center">
-                    <mat-icon aria-label="Example home icon">fastfood</mat-icon>
-                    Food
-                </mat-button-toggle>
-                <mat-button-toggle value="flour">
-                    <mat-icon aria-label="Example home icon">hotel</mat-icon>
-                    Shelter
-                </mat-button-toggle>
-            </div>
-            <div fxLayout="row" fxLayoutAlign="center start">
-
-                <mat-button-toggle value="flour">
-                    <mat-icon aria-label="Example home icon">home</mat-icon>
-                    Health Services
-                </mat-button-toggle>
-                <mat-button-toggle value="flour">
-                    <mat-icon aria-label="Example home icon">gavel</mat-icon>
-                    Legal
-                </mat-button-toggle>
-            </div>
-            <div fxLayout="row" fxLayoutAlign="center start">
-
-                <mat-button-toggle value="flour">
-                    <mat-icon aria-label="Example home icon">
-                        interpreter_mode
-                    </mat-icon>
-                    Translation
-                </mat-button-toggle>
-                <mat-button-toggle value="flour">
-                    <mat-icon aria-label="Example home icon">directions_bus_filled</mat-icon>
-                    Transportation
-                </mat-button-toggle>
-            </div>
-            <div fxLayout="row" fxLayoutAlign="center start">
-
-                <mat-button-toggle value="flour">
-                    <mat-icon aria-label="Example home icon">sports_kabaddi</mat-icon>
-                    Volunteer Needed
-                </mat-button-toggle>
-                <mat-button-toggle value="flour">
-                    <mat-icon aria-label="Example home icon">info</mat-icon>
-                    Other
-                </mat-button-toggle>
-            </div>
-        </div>
-    </mat-button-toggle-group>
+<div fxLayout="row" fxLayoutAlign="space-between center">
+    <h2>Search Box</h2>
+    <button mat-icon-button [mat-dialog-close]><i class="fab fa-cloud-showers"></i>
+        <mat-icon><span class="material-icons-outlined">
+                close
+            </span></mat-icon>
+    </button>
 </div>
+
+<h3>Points of Interest</h3>
+<mat-button-toggle-group name="ingredients" aria-label="Ingredients" multiple>
+    <div fxLayout="column" fxLayoutAlign="space-around center">
+        <div fxLayout="row" fxLayoutAlign="center start">
+            <mat-button-toggle value="flour" fxLayout="row" fxLayoutAlign="space-around center">
+                <mat-icon aria-label="Example home icon">fastfood</mat-icon>
+                Food
+            </mat-button-toggle>
+            <mat-button-toggle value="flour">
+                <mat-icon aria-label="Example home icon">hotel</mat-icon>
+                Shelter
+            </mat-button-toggle>
+        </div>
+        <div fxLayout="row" fxLayoutAlign="center start">
+
+            <mat-button-toggle value="flour">
+                <mat-icon aria-label="Example home icon">local_hospital</mat-icon>
+                Health Services
+            </mat-button-toggle>
+            <mat-button-toggle value="flour">
+                <mat-icon aria-label="Example home icon">gavel</mat-icon>
+                Legal
+            </mat-button-toggle>
+        </div>
+        <div fxLayout="row" fxLayoutAlign="center start">
+
+            <mat-button-toggle value="flour">
+                <mat-icon aria-label="Example home icon">
+                    interpreter_mode
+                </mat-icon>
+                Translation
+            </mat-button-toggle>
+            <mat-button-toggle value="flour">
+                <mat-icon aria-label="Example home icon">directions_bus_filled</mat-icon>
+                Transportation
+            </mat-button-toggle>
+        </div>
+        <div fxLayout="row" fxLayoutAlign="center start">
+
+            <mat-button-toggle value="flour">
+                <mat-icon aria-label="Example home icon">group_add</mat-icon>
+                Volunteer Needed
+            </mat-button-toggle>
+            <mat-button-toggle value="flour">
+                <mat-icon aria-label="Example home icon">sports_kabaddi</mat-icon>
+                Volunteer
+            </mat-button-toggle>
+        </div>
+        <div fxLayout="row" fxLayoutAlign="center start">
+            <mat-button-toggle value="flour">
+                <mat-icon aria-label="Example home icon">info</mat-icon>
+                Other
+            </mat-button-toggle>
+        </div>
+    </div>
+</mat-button-toggle-group>
