@@ -33,7 +33,6 @@ import { ProcessMessageComponent } from './process-message/process-message.compo
 import { NzDividerModule } from 'ng-zorro-antd/divider';
 import { NzLayoutModule } from 'ng-zorro-antd/layout';
 import { NzModalModule } from 'ng-zorro-antd/modal';
-import { SearchBoxComponent } from './search-box/search-box.component';
 import { MatIconModule } from '@angular/material/icon';
 import { MatButtonModule } from '@angular/material/button';
 import { MatCardModule } from '@angular/material/card';
@@ -43,6 +42,9 @@ import { MatDividerModule } from '@angular/material/divider';
 import { MatGridListModule } from '@angular/material/grid-list';
 import { MatListModule } from '@angular/material/list';
 import { MatTreeModule } from '@angular/material/tree';
+import {MatDialogModule} from '@angular/material/dialog';
+import { SearchMenuComponent } from './search-menu/search-menu.component';
+import {MatButtonToggleModule} from '@angular/material/button-toggle';
 
 registerLocaleData(en);
 
@@ -55,7 +57,7 @@ registerLocaleData(en);
     InformationViewComponent,
     TelegramContentComponent,
     ProcessMessageComponent,
-    SearchBoxComponent,
+    SearchMenuComponent,
   ],
   imports: [
     BrowserModule,
@@ -88,7 +90,9 @@ registerLocaleData(en);
     MatDividerModule,
     MatGridListModule,
     MatListModule,
-    MatTreeModule
+    MatTreeModule,
+    MatDialogModule,
+    MatButtonToggleModule
   ],
   providers: [{ provide: NZ_I18N, useValue: en_US }],
   bootstrap: [AppComponent]
