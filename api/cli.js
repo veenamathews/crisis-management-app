@@ -3,13 +3,18 @@ const parser = require('./telegram/parser');
 const openAIModule = require('./core/openai');
 
 (async () => {
+  // Clear the console
+  process.stdout.write('\033c');
+  // ------
   // Store messages from the Telegram channel in the cache
-
   // parser.storeTelegramMessages(TELEGRAM_MOCK_DATA.messages);
 
+  // ------ 
   // Process messages stored in parser.MESSAGES_CACHE_FILE
   // await parser.parseStoredMessages();
+  // await parser.cleanupStoredMessages();
 
+  // ------
   // OpenAI
   // const openAI = new openAIModule.OpenAI();
   // const message = 'I live in Berlin Pankow, would like to volunteer for ukrainian crisis. I\'m a nurse with 10 years experience. I\'m available after 4pm on weekdays. My email: nurse@example.com';

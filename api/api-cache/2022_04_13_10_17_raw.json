@@ -13,15 +13,7 @@
     "id": "1",
     "source": "telegram",
     "date": "2022-02-25T00:08:51",
-    "sourceMessagePlainText": "",
-    "aiErrors": [
-      {
-        "key": "category",
-        "value": null,
-        "error": "empty"
-      }
-    ],
-    "category": "Other"
+    "sourceMessagePlainText": ""
   },
   {
     "sourceData": {
@@ -39,15 +31,7 @@
     "id": "2",
     "source": "telegram",
     "date": "2022-02-25T00:08:51",
-    "sourceMessagePlainText": "",
-    "aiErrors": [
-      {
-        "key": "category",
-        "value": null,
-        "error": "empty"
-      }
-    ],
-    "category": "Other"
+    "sourceMessagePlainText": ""
   },
   {
     "sourceData": {
@@ -64,8 +48,9 @@
     "date": "2022-02-25T00:15:01",
     "sourceMessagePlainText": "Friends! A tax consultant will also join us, who will be able to help with documentation, transfers, issues of withdrawing funds from accounts in Ukraine",
     "address": "The text does not contain enough information to determine a physical location.",
+    "coords": "The text does not contain enough information to determine a physical location.",
     "sentiment": null,
-    "category": "Legal",
+    "category": ".Legal",
     "aiLog": [
       {
         "q": "Extract physical location from this text: ",
@@ -82,18 +67,6 @@
       {
         "q": "Choose one of those categories:\n\n    - Food\n    - Shelter\n    - Health Services\n    - Transportation\n    - Translation\n    - Legal\n    - Volunteering\n    - Volunteers Needed\n    \n    based on this text:",
         "a": ".Legal"
-      }
-    ],
-    "aiErrors": [
-      {
-        "key": "coords",
-        "value": "The text does not contain enough information to determine a physical location.",
-        "error": "invalid coords"
-      },
-      {
-        "key": "category",
-        "value": ".Legal",
-        "error": "extra chars"
       }
     ]
   },
@@ -120,6 +93,7 @@
     "sourceMessagePlainText": "Attention‼️‼️‼️\nIf you have already crossed the EU Border and you/your family needs help with transportation: \n\n https://docs.google.com/forms/d/e/1FAIpQLSeHuzZ3ppgF5iKOXpFKeikguWn0ykZzLruJKZpiQHx23hnYbw/viewform?fbclid=IwAR01x3Oyh8ZUixPUYX4mOZTTX4kHzBsrSDbxibrRd4ZbiZXMTyHtydaDNTc \n\nWe leave the application and wait for the volunteers to contact you ",
     "gmapLink": null,
     "address": "This text does not contain a physical location.",
+    "coords": "This text does not contain a physical location.",
     "sentiment": null,
     "category": "Transportation",
     "aiLog": [
@@ -138,13 +112,6 @@
       {
         "q": "Choose one of those categories:\n\n    - Food\n    - Shelter\n    - Health Services\n    - Transportation\n    - Translation\n    - Legal\n    - Volunteering\n    - Volunteers Needed\n    \n    based on this text:",
         "a": "Transportation"
-      }
-    ],
-    "aiErrors": [
-      {
-        "key": "coords",
-        "value": "This text does not contain a physical location.",
-        "error": "invalid coords"
       }
     ]
   },
@@ -191,8 +158,7 @@
         "q": "Choose one of those categories:\n\n    - Food\n    - Shelter\n    - Health Services\n    - Transportation\n    - Translation\n    - Legal\n    - Volunteering\n    - Volunteers Needed\n    \n    based on this text:",
         "a": "Transportation"
       }
-    ],
-    "aiErrors": []
+    ]
   },
   {
     "sourceData": {
@@ -217,6 +183,7 @@
     "sourceMessagePlainText": "‼️‼️‼️If you are willing to accept refugees \n\n https://docs.google.com/forms/d/e/1FAIpQLScWDnuCXAxYoJ9WP-U7ZGzGoHqcR7Ll1shKg7Vorwdgw_ibtg/viewform?fbclid=IwAR3hQ-EsQhvlRtSePL1VcWuwxTQMLFQfkUfhbWvZzzWb_dJbOBUx9szGgQ0 \n\nRegister ",
     "gmapLink": null,
     "address": "The physical location is not specified in the text.",
+    "coords": "The physical location is not specified in the text.",
     "sentiment": [
       {
         "Food": 0.1
@@ -243,7 +210,7 @@
         "Volunteers Needed": 0.8
       }
     ],
-    "category": "Other",
+    "category": " to be a volunteer",
     "aiLog": [
       {
         "q": "Extract physical location from this text: ",
@@ -260,18 +227,6 @@
       {
         "q": "Choose one of those categories:\n\n    - Food\n    - Shelter\n    - Health Services\n    - Transportation\n    - Translation\n    - Legal\n    - Volunteering\n    - Volunteers Needed\n    \n    based on this text:",
         "a": " to be a volunteer"
-      }
-    ],
-    "aiErrors": [
-      {
-        "key": "coords",
-        "value": "The physical location is not specified in the text.",
-        "error": "invalid coords"
-      },
-      {
-        "key": "category",
-        "value": " to be a volunteer",
-        "error": "unknown"
       }
     ]
   },
@@ -290,6 +245,7 @@
     "date": "2022-02-25T01:02:51",
     "sourceMessagePlainText": "I've created a channel-bound chat where everyone can ask questions, offer suggestions, or get help.",
     "address": "This text does not contain enough information to determine a physical location.",
+    "coords": "This text does not contain enough information to determine a physical location.",
     "sentiment": [
       {
         "category": "Food",
@@ -342,13 +298,6 @@
         "q": "Choose one of those categories:\n\n    - Food\n    - Shelter\n    - Health Services\n    - Transportation\n    - Translation\n    - Legal\n    - Volunteering\n    - Volunteers Needed\n    \n    based on this text:",
         "a": "Volunteering"
       }
-    ],
-    "aiErrors": [
-      {
-        "key": "coords",
-        "value": "This text does not contain enough information to determine a physical location.",
-        "error": "invalid coords"
-      }
     ]
   },
   {
@@ -372,6 +321,7 @@
     "sourceMessagePlainText": "https://t.me/pomoc2022 ",
     "gmapLink": null,
     "address": "This text does not contain a physical location.",
+    "coords": "This text does not contain a physical location.",
     "sentiment": {
       "Food": 0.1,
       "Shelter": 0.2,
@@ -400,13 +350,6 @@
         "q": "Choose one of those categories:\n\n    - Food\n    - Shelter\n    - Health Services\n    - Transportation\n    - Translation\n    - Legal\n    - Volunteering\n    - Volunteers Needed\n    \n    based on this text:",
         "a": "Volunteers Needed"
       }
-    ],
-    "aiErrors": [
-      {
-        "key": "coords",
-        "value": "This text does not contain a physical location.",
-        "error": "invalid coords"
-      }
     ]
   },
   {
@@ -430,6 +373,7 @@
     "sourceMessagePlainText": "https://t.me/+ZM7gZZfM8Wc2YWM6 ",
     "gmapLink": null,
     "address": "This text does not contain a physical location.",
+    "coords": "This text does not contain a physical location.",
     "sentiment": [
       {
         "category": "Food",
@@ -482,13 +426,6 @@
         "q": "Choose one of those categories:\n\n    - Food\n    - Shelter\n    - Health Services\n    - Transportation\n    - Translation\n    - Legal\n    - Volunteering\n    - Volunteers Needed\n    \n    based on this text:",
         "a": "Volunteers Needed"
       }
-    ],
-    "aiErrors": [
-      {
-        "key": "coords",
-        "value": "This text does not contain a physical location.",
-        "error": "invalid coords"
-      }
     ]
   },
   {
@@ -506,6 +443,7 @@
     "date": "2022-02-25T01:04:21",
     "sourceMessagePlainText": "Ссылка на чат ⬆️⬆️⬆️⬆️",
     "address": "The text does not contain enough information to determine a physical location.",
+    "coords": "The text does not contain enough information to determine a physical location.",
     "sentiment": null,
     "category": "Volunteers Needed",
     "aiLog": [
@@ -524,13 +462,6 @@
       {
         "q": "Choose one of those categories:\n\n    - Food\n    - Shelter\n    - Health Services\n    - Transportation\n    - Translation\n    - Legal\n    - Volunteering\n    - Volunteers Needed\n    \n    based on this text:",
         "a": "Volunteers Needed"
-      }
-    ],
-    "aiErrors": [
-      {
-        "key": "coords",
-        "value": "The text does not contain enough information to determine a physical location.",
-        "error": "invalid coords"
       }
     ]
   },
@@ -556,10 +487,7 @@
     "sourceMessagePlainText": "https://m.facebook.com/groups/347615063908402/?ref=share \n\nMoldova has opened its borders. They accept Ukrainians. They rent apartments for free. ",
     "gmapLink": null,
     "address": "The physical location from this text is Moldova.",
-    "coords": {
-      "lat": 47.411631,
-      "lng": 28.369885
-    },
+    "coords": "{ lat: 47.411631, lng: 28.369885 }",
     "sentiment": null,
     "category": "Shelter",
     "aiLog": [
@@ -579,8 +507,7 @@
         "q": "Choose one of those categories:\n\n    - Food\n    - Shelter\n    - Health Services\n    - Transportation\n    - Translation\n    - Legal\n    - Volunteering\n    - Volunteers Needed\n    \n    based on this text:",
         "a": "Shelter"
       }
-    ],
-    "aiErrors": []
+    ]
   },
   {
     "sourceData": {
@@ -605,6 +532,7 @@
     "sourceMessagePlainText": "Health insurance for refugees. Who can make a memo?\n\n https://www.verbraucherzentrale.de/wissen/gesundheit-pflege/aerzte-und-kliniken/medical-supply-von-asylbewerbern-12312  ",
     "gmapLink": null,
     "address": "Germany",
+    "coords": ", Berlin{ lat: 52.5200, lng: 13.4050 }",
     "sentiment": [
       {
         "category": "Health Services",
@@ -637,13 +565,6 @@
         "q": "Choose one of those categories:\n\n    - Food\n    - Shelter\n    - Health Services\n    - Transportation\n    - Translation\n    - Legal\n    - Volunteering\n    - Volunteers Needed\n    \n    based on this text:",
         "a": "Health Services"
       }
-    ],
-    "aiErrors": [
-      {
-        "key": "coords",
-        "value": ", Berlin{ lat: 52.5200, lng: 13.4050 }",
-        "error": "invalid coords"
-      }
     ]
   },
   {
@@ -669,6 +590,7 @@
     "sourceMessagePlainText": "Medical care for people without health insurance in Germany \n\n https://www.malteser.de/menschen-ohne-krankenversicherung/unsere-standorte.html  ",
     "gmapLink": null,
     "address": "This text is from the website of the Malteser, a Catholic organization in Germany. The website provides a list of locations where the Malteser provide medical care for people without health insurance.",
+    "coords": "The latitude and longitude of the Malteser organization in Germany is { lat: 50.937531, lng: 6.960279 }.",
     "sentiment": [
       {
         "Food": 0.2
@@ -713,13 +635,6 @@
         "q": "Choose one of those categories:\n\n    - Food\n    - Shelter\n    - Health Services\n    - Transportation\n    - Translation\n    - Legal\n    - Volunteering\n    - Volunteers Needed\n    \n    based on this text:",
         "a": "Health Services"
       }
-    ],
-    "aiErrors": [
-      {
-        "key": "coords",
-        "value": "The latitude and longitude of the Malteser organization in Germany is { lat: 50.937531, lng: 6.960279 }.",
-        "error": "invalid coords"
-      }
     ]
   },
   {
@@ -744,10 +659,7 @@
     "sourceMessagePlainText": "https://www.instagram.com/p/CaWz0ijN_4s/?utm_medium=copy_link \n\nHousing for refugees from Ukraine in Frankfurt ",
     "gmapLink": null,
     "address": "Frankfurt, Germany",
-    "coords": {
-      "lat": 50.1109,
-      "lng": 8.6821
-    },
+    "coords": "{lat: 50.1109,lng: 8.6821}",
     "sentiment": [
       {
         "Food": 0.2
@@ -792,8 +704,7 @@
         "q": "Choose one of those categories:\n\n    - Food\n    - Shelter\n    - Health Services\n    - Transportation\n    - Translation\n    - Legal\n    - Volunteering\n    - Volunteers Needed\n    \n    based on this text:",
         "a": "Shelter"
       }
-    ],
-    "aiErrors": []
+    ]
   },
   {
     "sourceData": {
@@ -818,10 +729,7 @@
     "sourceMessagePlainText": "English speaking group to help Ukrainians in Berlin \n\n https://t.me/+pY4AEUY_0jZhMzQ0  ",
     "gmapLink": null,
     "address": "Berlin, Germany",
-    "coords": {
-      "lat": 52.52,
-      "lng": 13.405
-    },
+    "coords": "{ lat: 52.5200, lng: 13.4050 }",
     "sentiment": [
       {
         "category": "Volunteering",
@@ -850,8 +758,7 @@
         "q": "Choose one of those categories:\n\n    - Food\n    - Shelter\n    - Health Services\n    - Transportation\n    - Translation\n    - Legal\n    - Volunteering\n    - Volunteers Needed\n    \n    based on this text:",
         "a": "Volunteers Needed"
       }
-    ],
-    "aiErrors": []
+    ]
   },
   {
     "sourceData": {
@@ -868,6 +775,7 @@
     "date": "2022-02-25T04:45:18",
     "sourceMessagePlainText": "Transportation of refugees from the borders of Poland and Germany can be carried out by me with two more volunteers.",
     "address": "Poland and Germany",
+    "coords": " are separated by the Oder river{  lat: 0,  lng: 0}",
     "sentiment": [
       {
         "Food": 0
@@ -912,13 +820,6 @@
         "q": "Choose one of those categories:\n\n    - Food\n    - Shelter\n    - Health Services\n    - Transportation\n    - Translation\n    - Legal\n    - Volunteering\n    - Volunteers Needed\n    \n    based on this text:",
         "a": "Transportation"
       }
-    ],
-    "aiErrors": [
-      {
-        "key": "coords",
-        "value": " are separated by the Oder river{  lat: 0,  lng: 0}",
-        "error": "invalid coords"
-      }
     ]
   },
   {
@@ -944,10 +845,7 @@
     "sourceMessagePlainText": "Refugee Registration Berlin Brandenburg \n\n https://www.stadt-brandenburg.de/presse/hilfe-fuer-ukrainische-fluechtlinge?fbclid=IwAR3Bp0apQLDetQaVI7dGc-feZATk5dF2ZSwvbezY5CKd9D-RqJNS8SZK7rY  ",
     "gmapLink": null,
     "address": "Berlin Brandenburg, Germany",
-    "coords": {
-      "lat": 52.52,
-      "lng": 13.405
-    },
+    "coords": "{ lat: 52.5200, lng: 13.4050 }",
     "sentiment": [
       {
         "category": "Food",
@@ -1000,8 +898,7 @@
         "q": "Choose one of those categories:\n\n    - Food\n    - Shelter\n    - Health Services\n    - Transportation\n    - Translation\n    - Legal\n    - Volunteering\n    - Volunteers Needed\n    \n    based on this text:",
         "a": "Volunteers Needed"
       }
-    ],
-    "aiErrors": []
+    ]
   },
   {
     "sourceData": {
@@ -1019,15 +916,7 @@
     "id": "18",
     "source": "telegram",
     "date": "2022-02-25T09:46:46",
-    "sourceMessagePlainText": "",
-    "aiErrors": [
-      {
-        "key": "category",
-        "value": null,
-        "error": "empty"
-      }
-    ],
-    "category": "Other"
+    "sourceMessagePlainText": ""
   },
   {
     "sourceData": {
@@ -1044,10 +933,7 @@
     "date": "2022-02-25T11:13:32",
     "sourceMessagePlainText": "A refugee reception center is open in Berlin day and night. \nHaus 2 for registration. \n Oranienburger Straße 285\nD-13437 Berlin\n☏ +49 (0) 30 50 93 06 920\nPeople will be officially registered. ",
     "address": "The refugee reception center is located in Haus 2 on Oranienburger Straße 285 in D-13437 Berlin. The phone number for the center is +49 (0) 30 50 93 06 920.",
-    "coords": {
-      "lat": 52.54764,
-      "lng": 13.35573
-    },
+    "coords": "{ lat: 52.54764, lng: 13.35573 }",
     "sentiment": [
       {
         "Food": 0.1,
@@ -1060,7 +946,7 @@
         "Volunteers Needed": 0.1
       }
     ],
-    "category": "Other",
+    "category": "Refugees will be provided with- Food- Shelter- Health Services- Transportation- Translation- Legal- Volunteering- Volunteers Needed",
     "aiLog": [
       {
         "q": "Extract physical location from this text: ",
@@ -1077,18 +963,6 @@
       {
         "q": "Choose one of those categories:\n\n    - Food\n    - Shelter\n    - Health Services\n    - Transportation\n    - Translation\n    - Legal\n    - Volunteering\n    - Volunteers Needed\n    \n    based on this text:",
         "a": "Refugees will be provided with- Food- Shelter- Health Services- Transportation- Translation- Legal- Volunteering- Volunteers Needed"
-      }
-    ],
-    "aiErrors": [
-      {
-        "key": "category",
-        "value": "Refugees will be provided with- Food- Shelter- Health Services- Transportation- Translation- Legal- Volunteering- Volunteers Needed",
-        "error": "extra chars"
-      },
-      {
-        "key": "category",
-        "value": "Refugees will be provided withFood- Shelter- Health Services- Transportation- Translation- Legal- Volunteering- Volunteers Needed",
-        "error": "unknown"
       }
     ]
   },
@@ -1108,15 +982,7 @@
     "id": "20",
     "source": "telegram",
     "date": "2022-02-25T22:03:07",
-    "sourceMessagePlainText": "",
-    "aiErrors": [
-      {
-        "key": "category",
-        "value": null,
-        "error": "empty"
-      }
-    ],
-    "category": "Other"
+    "sourceMessagePlainText": ""
   },
   {
     "sourceData": {
@@ -1133,12 +999,9 @@
     "date": "2022-02-25T22:03:12",
     "sourceMessagePlainText": "Our team has created memos in Russian and Ukrainian for those who are going to seek shelter in Germany",
     "address": "Germany",
-    "coords": {
-      "lat": 51.165691,
-      "lng": 10.451526
-    },
+    "coords": "{ lat: 51.165691, lng: 10.451526 }",
     "sentiment": null,
-    "category": "Translation",
+    "category": "- Translation",
     "aiLog": [
       {
         "q": "Extract physical location from this text: ",
@@ -1155,13 +1018,6 @@
       {
         "q": "Choose one of those categories:\n\n    - Food\n    - Shelter\n    - Health Services\n    - Transportation\n    - Translation\n    - Legal\n    - Volunteering\n    - Volunteers Needed\n    \n    based on this text:",
         "a": "- Translation"
-      }
-    ],
-    "aiErrors": [
-      {
-        "key": "category",
-        "value": "- Translation",
-        "error": "extra chars"
       }
     ]
   },
@@ -1181,15 +1037,7 @@
     "id": "22",
     "source": "telegram",
     "date": "2022-02-25T22:04:00",
-    "sourceMessagePlainText": "",
-    "aiErrors": [
-      {
-        "key": "category",
-        "value": null,
-        "error": "empty"
-      }
-    ],
-    "category": "Other"
+    "sourceMessagePlainText": ""
   },
   {
     "sourceData": {
@@ -1214,6 +1062,7 @@
     "sourceMessagePlainText": "I remind you ‼️‼️‼️ There is a chat where you can offer or get help 🇺🇦🇺🇦🇺🇦\n\n https://t.me/+ZM7gZZfM8Wc2YWM6  ",
     "gmapLink": null,
     "address": "Ukraine",
+    "coords": ", Kyiv{ lat: 50.45, lng: 30.523333 }",
     "sentiment": null,
     "category": "Volunteers Needed",
     "aiLog": [
@@ -1232,13 +1081,6 @@
       {
         "q": "Choose one of those categories:\n\n    - Food\n    - Shelter\n    - Health Services\n    - Transportation\n    - Translation\n    - Legal\n    - Volunteering\n    - Volunteers Needed\n    \n    based on this text:",
         "a": "Volunteers Needed"
-      }
-    ],
-    "aiErrors": [
-      {
-        "key": "coords",
-        "value": ", Kyiv{ lat: 50.45, lng: 30.523333 }",
-        "error": "invalid coords"
       }
     ]
   },
@@ -1265,6 +1107,7 @@
     "sourceMessagePlainText": "Chat , invitation link ! \n\n https://t.me/+ZM7gZZfM8Wc2YWM6  ",
     "gmapLink": null,
     "address": "This text does not contain a physical location.",
+    "coords": "This text does not contain a physical location.",
     "sentiment": [
       {
         "category": "Food",
@@ -1317,13 +1160,6 @@
         "q": "Choose one of those categories:\n\n    - Food\n    - Shelter\n    - Health Services\n    - Transportation\n    - Translation\n    - Legal\n    - Volunteering\n    - Volunteers Needed\n    \n    based on this text:",
         "a": "Volunteers Needed"
       }
-    ],
-    "aiErrors": [
-      {
-        "key": "coords",
-        "value": "This text does not contain a physical location.",
-        "error": "invalid coords"
-      }
     ]
   },
   {
@@ -1341,6 +1177,7 @@
     "date": "2022-02-26T01:37:24",
     "sourceMessagePlainText": "Friends! I'm struggling, I need help administering the chat. Who wants to help?",
     "address": "The text does not contain enough information to determine a physical location.",
+    "coords": "The text does not contain enough information to determine a physical location.",
     "sentiment": [
       {
         "category": "Volunteering",
@@ -1369,13 +1206,6 @@
         "q": "Choose one of those categories:\n\n    - Food\n    - Shelter\n    - Health Services\n    - Transportation\n    - Translation\n    - Legal\n    - Volunteering\n    - Volunteers Needed\n    \n    based on this text:",
         "a": "Volunteers Needed"
       }
-    ],
-    "aiErrors": [
-      {
-        "key": "coords",
-        "value": "The text does not contain enough information to determine a physical location.",
-        "error": "invalid coords"
-      }
     ]
   },
   {
@@ -1396,8 +1226,9 @@
     "date": "2022-02-26T04:11:03",
     "sourceMessagePlainText": "Friends! Collecting aid to Ukraine for the victims :",
     "address": "))This text does not contain enough information to determine a physical location.",
+    "coords": "{ lat, lng } JSON object cannot be extracted from this text.",
     "sentiment": null,
-    "category": "Volunteering",
+    "category": "-(Volunteering",
     "aiLog": [
       {
         "q": "Extract physical location from this text: ",
@@ -1414,18 +1245,6 @@
       {
         "q": "Choose one of those categories:\n\n    - Food\n    - Shelter\n    - Health Services\n    - Transportation\n    - Translation\n    - Legal\n    - Volunteering\n    - Volunteers Needed\n    \n    based on this text:",
         "a": "-(Volunteering"
-      }
-    ],
-    "aiErrors": [
-      {
-        "key": "coords",
-        "value": "{ lat, lng } JSON object cannot be extracted from this text.",
-        "error": "invalid coords"
-      },
-      {
-        "key": "category",
-        "value": "-(Volunteering",
-        "error": "extra chars"
       }
     ]
   },
@@ -1444,8 +1263,9 @@
     "date": "2022-02-26T05:22:37",
     "sourceMessagePlainText": "Humanitarian aid in Berlin, where to bring medicines, food, hygiene products: \n\nKrausnickstraße 23, 10115 Berlin \n\nRestaurant KINZA",
     "address": ", Krausnickstraße 23, 10115 Berlin",
+    "coords": ", Germany{ lat: 52.530908, lng: 13.385005 }",
     "sentiment": null,
-    "category": "Other",
+    "category": "Mon-Sat: 11:30-14:30, 17:30-22:30Food",
     "aiLog": [
       {
         "q": "Extract physical location from this text: ",
@@ -1462,18 +1282,6 @@
       {
         "q": "Choose one of those categories:\n\n    - Food\n    - Shelter\n    - Health Services\n    - Transportation\n    - Translation\n    - Legal\n    - Volunteering\n    - Volunteers Needed\n    \n    based on this text:",
         "a": "Mon-Sat: 11:30-14:30, 17:30-22:30Food"
-      }
-    ],
-    "aiErrors": [
-      {
-        "key": "coords",
-        "value": ", Germany{ lat: 52.530908, lng: 13.385005 }",
-        "error": "invalid coords"
-      },
-      {
-        "key": "category",
-        "value": "Mon-Sat: 11:30-14:30, 17:30-22:30Food",
-        "error": "unknown"
       }
     ]
   },
@@ -1500,10 +1308,7 @@
     "sourceMessagePlainText": "I remind you ‼️‼️‼️ There is a chat where you can offer or get help 🇺🇦🇺🇦🇺🇦\n\n https://t.me/+ZM7gZZfM8Wc2YWM6  ",
     "gmapLink": null,
     "address": "This text is from a chatbot located in Ukraine.",
-    "coords": {
-      "lat": 50.45466,
-      "lng": 30.5238
-    },
+    "coords": "{lat: 50.45466,lng: 30.5238}",
     "sentiment": null,
     "category": "Volunteers Needed",
     "aiLog": [
@@ -1523,8 +1328,7 @@
         "q": "Choose one of those categories:\n\n    - Food\n    - Shelter\n    - Health Services\n    - Transportation\n    - Translation\n    - Legal\n    - Volunteering\n    - Volunteers Needed\n    \n    based on this text:",
         "a": "Volunteers Needed"
       }
-    ],
-    "aiErrors": []
+    ]
   },
   {
     "sourceData": {
@@ -1549,10 +1353,7 @@
     "sourceMessagePlainText": "Transport from Ukraine to the border: \n0 (50) 789 46 45 - Coordinator Roman1 \n \n0 (73) 370 36 66 - Vladimir (Lviv) \n \n0 (73) 837 36 66 - Maxim (Lviv) \n \n0 (73) 397 93 33 - Kolya (Lviv) \n \n0 (68) 180 01 35 - Roman2 (Lviv) \n \n0 (98) 566 87 12 - Vitalik (Lviv) \n \n0 (63) 989 26 20 - Rostik (Kyiv) \n \n0 (68) 193 90 23 - Rostik (Kyiv) \n \n0 (50) 789 46 45 - Roman1 (Kyiv) \n \n  +380961017110  ",
     "gmapLink": null,
     "address": " - Sasha (Kyiv)The location mentioned in the text is Ukraine.",
-    "coords": {
-      "lat": 50.45,
-      "lng": 30.523333
-    },
+    "coords": "{ lat: 50.45, lng: 30.523333 }",
     "sentiment": [
       {
         "Food": 0.1
@@ -1597,8 +1398,7 @@
         "q": "Choose one of those categories:\n\n    - Food\n    - Shelter\n    - Health Services\n    - Transportation\n    - Translation\n    - Legal\n    - Volunteering\n    - Volunteers Needed\n    \n    based on this text:",
         "a": "Transportation"
       }
-    ],
-    "aiErrors": []
+    ]
   },
   {
     "sourceData": {
@@ -1753,12 +1553,9 @@
     "sourceMessagePlainText": "evacuation chat for each city. \n\nLuhansk region https://t.me/luhanskevaquation \n\n\nIvanovo-Frankivsk https://t.me/+nzeP_stFB3I1MjU0 \n \n \nZaporozhye https://t.me/+ynRJn88RxgswYmU0 \n\n\nужгород  https://t.me/+5WlQQHIKJ4NjMGNk \n \n \nZhytomyr https://t.me/+QD2EEIJqf_xhYjQ8 \n\n\nднепр  https://t.me/+LpQlRQvCas1jNmI0 \n \nPavlograd https://t.me/pavlogradevak \n\n\nлуцк  https://t.me/+R49w2c4seXw5MzJk \n\n\nвинница  https://t.me/+LeEGgnB7RwcxYWI0 \n \n \nBerdychiv https://t.me/+g1vCeKfEve5lNTM6 \n\nЧеркассы -  https://t.me/EvacuationCherkasy \n\nЧерновцы -  https://t.me/evacuationChernovtsy \n\nЧернiгiв  https://t.me/+i1Np0FJLhs4zMzli \n\nDonetsk region (Pokrovsky district) -  https://t.me/pokrovsk_don \n\n\nКиев   https://t.me/+68JG-qKNvm9kNjZi \n\nKhmelnitsky  https://t.me/+qORus3EoBnEzZmNk \n\nРовно  https://t.me/+hwq625pYpfUzOWI8 \n\nПолтава  https://t.me/+AGqMw2Sl4ABjMmI0 \n\nСумы  https://t.me/+-oVnhuNnwpU1ZWVk \n\nОдесса  https://t.me/+Dg2rSrkmuN03NGFk \n \nNikolaev https://t.me/+isy_Cw5MrptmZjlk \n\nЛьвов  https://t.me/+UNdwIrUYEBgwOWE8 \n \nTernopil https://t.me/+HK4nfvMpAeM1MWZk  \n\nКировоград  https://t.me/+z5TkEVbqiatkOGE0 \n\nBelaya Tserkov  https://t.me/+A4vJpMa-iqY3NzJi \n \nKharkov https://t.me/+vSsvEw-pfNA4NDdi \n \nKryvyi Rih https://t.me/+SguKJv2dQGRkM2Zk  ",
     "gmapLink": null,
     "address": "Cherkassy, Ukraine",
-    "coords": {
-      "lat": 49.433333,
-      "lng": 32.066667
-    },
+    "coords": "{ lat: 49.433333, lng: 32.066667 }",
     "sentiment": null,
-    "category": "Other",
+    "category": "Chernigov https://t.me/+9v9q1qejYX5jNmI0 Translation",
     "aiLog": [
       {
         "q": "Extract physical location from this text: ",
@@ -1775,18 +1572,6 @@
       {
         "q": "Choose one of those categories:\n\n    - Food\n    - Shelter\n    - Health Services\n    - Transportation\n    - Translation\n    - Legal\n    - Volunteering\n    - Volunteers Needed\n    \n    based on this text:",
         "a": "Chernigov https://t.me/+9v9q1qejYX5jNmI0 Translation"
-      }
-    ],
-    "aiErrors": [
-      {
-        "key": "category",
-        "value": "Chernigov https://t.me/+9v9q1qejYX5jNmI0 Translation",
-        "error": "extra chars"
-      },
-      {
-        "key": "category",
-        "value": "Chernigov https://tme/+9v9q1qejYX5jNmI0 Translation",
-        "error": "unknown"
       }
     ]
   },
@@ -1817,10 +1602,7 @@
     "sourceMessagePlainText": "#Гамбург Help Collection Contact \n \n https://instagram.com/hh.deutsch?utm_medium=copy_link  ",
     "gmapLink": null,
     "address": "Hamburg, Germany",
-    "coords": {
-      "lat": 53.55,
-      "lng": 10
-    },
+    "coords": "{ lat: 53.55, lng: 10.00 }",
     "sentiment": [
       {
         "category": "Food",
@@ -1873,8 +1655,7 @@
         "q": "Choose one of those categories:\n\n    - Food\n    - Shelter\n    - Health Services\n    - Transportation\n    - Translation\n    - Legal\n    - Volunteering\n    - Volunteers Needed\n    \n    based on this text:",
         "a": "Volunteers Needed"
       }
-    ],
-    "aiErrors": []
+    ]
   },
   {
     "sourceData": {
@@ -1903,6 +1684,7 @@
     "sourceMessagePlainText": "#Гамбург  ‼️‼️‼️ALL information and help for refugees in Hamburg. Checked! \n\n https://hilfe-ua.de  ",
     "gmapLink": null,
     "address": "Hamburg",
+    "coords": ", Germany{lat: 53.55,lng: 9.99}",
     "sentiment": {
       "food": 0.2,
       "shelter": 0.2,
@@ -1913,7 +1695,7 @@
       "volunteering": 0.2,
       "volunteers_needed": 0.2
     },
-    "category": "Other",
+    "category": "Refugees in Hamburg can get help with food, shelter, health services, transportation, translation, legal services, and volunteering through the website hilfe-ua.de.",
     "aiLog": [
       {
         "q": "Extract physical location from this text: ",
@@ -1930,23 +1712,6 @@
       {
         "q": "Choose one of those categories:\n\n    - Food\n    - Shelter\n    - Health Services\n    - Transportation\n    - Translation\n    - Legal\n    - Volunteering\n    - Volunteers Needed\n    \n    based on this text:",
         "a": "Refugees in Hamburg can get help with food, shelter, health services, transportation, translation, legal services, and volunteering through the website hilfe-ua.de."
-      }
-    ],
-    "aiErrors": [
-      {
-        "key": "coords",
-        "value": ", Germany{lat: 53.55,lng: 9.99}",
-        "error": "invalid coords"
-      },
-      {
-        "key": "category",
-        "value": "Refugees in Hamburg can get help with food, shelter, health services, transportation, translation, legal services, and volunteering through the website hilfe-ua.de.",
-        "error": "extra chars"
-      },
-      {
-        "key": "category",
-        "value": "Refugees in Hamburg can get help with food, shelter, health services, transportation, translation, legal services, and volunteering through the website hilfe-uade.",
-        "error": "unknown"
       }
     ]
   },
@@ -1972,10 +1737,7 @@
     "sourceMessagePlainText": "#Оснабрюк refugee registration \n\nim Rehhagen 8, Bramsche ,49565 ",
     "gmapLink": null,
     "address": "This text is the address of a refugee registration center in Bramsche, Germany.",
-    "coords": {
-      "lat": 52.273056,
-      "lng": 7.5
-    },
+    "coords": "{ lat: 52.273056, lng: 7.5 }",
     "sentiment": {
       "Food": 0.2,
       "Shelter": 0.1,
@@ -1986,7 +1748,7 @@
       "Volunteering": 0.2,
       "Volunteers Needed": 0.2
     },
-    "category": "Other",
+    "category": "Refugee registration",
     "aiLog": [
       {
         "q": "Extract physical location from this text: ",
@@ -2003,13 +1765,6 @@
       {
         "q": "Choose one of those categories:\n\n    - Food\n    - Shelter\n    - Health Services\n    - Transportation\n    - Translation\n    - Legal\n    - Volunteering\n    - Volunteers Needed\n    \n    based on this text:",
         "a": "Refugee registration"
-      }
-    ],
-    "aiErrors": [
-      {
-        "key": "category",
-        "value": "Refugee registration",
-        "error": "unknown"
       }
     ]
   },
@@ -2055,10 +1810,7 @@
     "sourceMessagePlainText": "#штутгарт   #помощьштутгарт   #Stuttgart \n\nWe greet you!\n\n We, Ukrainian girls and men in Stuttgart and the surrounding area, have joined forces and founded the Help🇺🇦 UKRAINE group!\n\n We have now set up a PayPal donation account.\n\n Purpose of collection: purchase of necessary medicines that are not available in Ukraine today.\n\n PayPal:  helpforukraine22@gmail.com . (Matthias Schmidt)\n\n Medicines are taken to a warehouse in Poland, then a truck with a special permit immediately crosses the border of our country along the green corridor!\n\nWe work directly with  https://www.plast.org.ua/  Together.\n\nOur strength lies in unity! ",
     "gmapLink": null,
     "address": "Stuttgart, Germany",
-    "coords": {
-      "lat": 48.78232,
-      "lng": 9.17702
-    },
+    "coords": "{ lat: 48.78232, lng: 9.17702 }",
     "sentiment": [
       {
         "category": "Food",
@@ -2111,8 +1863,7 @@
         "q": "Choose one of those categories:\n\n    - Food\n    - Shelter\n    - Health Services\n    - Transportation\n    - Translation\n    - Legal\n    - Volunteering\n    - Volunteers Needed\n    \n    based on this text:",
         "a": "Health Services"
       }
-    ],
-    "aiErrors": []
+    ]
   },
   {
     "sourceData": {
@@ -2132,8 +1883,9 @@
     "date": "2022-02-27T01:16:26",
     "sourceMessagePlainText": "‼️‼️‼️Be careful when sending money to strangers",
     "address": "This text does not contain a physical location.",
+    "coords": "This text does not contain a physical location.",
     "sentiment": null,
-    "category": "Legal",
+    "category": "- Legal",
     "aiLog": [
       {
         "q": "Extract physical location from this text: ",
@@ -2150,18 +1902,6 @@
       {
         "q": "Choose one of those categories:\n\n    - Food\n    - Shelter\n    - Health Services\n    - Transportation\n    - Translation\n    - Legal\n    - Volunteering\n    - Volunteers Needed\n    \n    based on this text:",
         "a": "- Legal"
-      }
-    ],
-    "aiErrors": [
-      {
-        "key": "coords",
-        "value": "This text does not contain a physical location.",
-        "error": "invalid coords"
-      },
-      {
-        "key": "category",
-        "value": "- Legal",
-        "error": "extra chars"
       }
     ]
   },
@@ -2181,15 +1921,7 @@
     "id": "36",
     "source": "telegram",
     "date": "2022-02-27T01:34:09",
-    "sourceMessagePlainText": "",
-    "aiErrors": [
-      {
-        "key": "category",
-        "value": null,
-        "error": "empty"
-      }
-    ],
-    "category": "Other"
+    "sourceMessagePlainText": ""
   },
   {
     "sourceData": {
@@ -2206,6 +1938,7 @@
     "date": "2022-02-27T06:09:52",
     "sourceMessagePlainText": "Friends, we need help with the transportation of humanitarian aid. The truck could not arrive at 15:00 at the Ring Center Frankfurter Allee 113-117. The car will arrive only in the evening. Now we need to go to the ring center, whoever can, and take boxes and packages at Rosa-Valetti-Str., 2a, 12623 Berlin\n\n‼️‼️‼️‼️Urgent !!!!!!",
     "address": "The truck could not arrive at 15:00 at the Ring Center Frankfurter Allee 113-117. The car will arrive only in the evening. Now we need to go to the ring center, whoever can, and take boxes and packages at Rosa-Valetti-Str., 2a, 12623 Berlin",
+    "coords": "This text does not contain latitude and longitude coordinates.",
     "sentiment": null,
     "category": "Transportation",
     "aiLog": [
@@ -2224,13 +1957,6 @@
       {
         "q": "Choose one of those categories:\n\n    - Food\n    - Shelter\n    - Health Services\n    - Transportation\n    - Translation\n    - Legal\n    - Volunteering\n    - Volunteers Needed\n    \n    based on this text:",
         "a": "Transportation"
-      }
-    ],
-    "aiErrors": [
-      {
-        "key": "coords",
-        "value": "This text does not contain latitude and longitude coordinates.",
-        "error": "invalid coords"
       }
     ]
   },
@@ -2257,10 +1983,7 @@
     "sourceMessagePlainText": "Friends, the warehouse on Rosa Valetti is already full. We found the second one - \n\nImbis an der B1\n https://maps.app.goo.gl/1TtR17HEvmYJxEt68  ",
     "gmapLink": null,
     "address": "The location is \"Imbis an der B1.\"",
-    "coords": {
-      "lat": 0,
-      "lng": 0
-    },
+    "coords": "{ lat: 0, lng: 0 }",
     "sentiment": {
       "Food": 0.1,
       "Shelter": 0.2,
@@ -2289,8 +2012,7 @@
         "q": "Choose one of those categories:\n\n    - Food\n    - Shelter\n    - Health Services\n    - Transportation\n    - Translation\n    - Legal\n    - Volunteering\n    - Volunteers Needed\n    \n    based on this text:",
         "a": "Volunteers Needed"
       }
-    ],
-    "aiErrors": []
+    ]
   },
   {
     "sourceData": {
@@ -2307,6 +2029,7 @@
     "date": "2022-02-27T07:21:29",
     "sourceMessagePlainText": "Hello. There is a crib and furniture for it. Also baby things. Where to take? Berlin.",
     "address": "Berlin",
+    "coords": " is located 52.5200° N, 13.4050° E{  lat: 52.5200,  lng: 13.4050}",
     "sentiment": [
       0.125,
       0.25,
@@ -2335,13 +2058,6 @@
         "q": "Choose one of those categories:\n\n    - Food\n    - Shelter\n    - Health Services\n    - Transportation\n    - Translation\n    - Legal\n    - Volunteering\n    - Volunteers Needed\n    \n    based on this text:",
         "a": "Shelter"
       }
-    ],
-    "aiErrors": [
-      {
-        "key": "coords",
-        "value": " is located 52.5200° N, 13.4050° E{  lat: 52.5200,  lng: 13.4050}",
-        "error": "invalid coords"
-      }
     ]
   },
   {
@@ -2359,6 +2075,7 @@
     "date": "2022-02-27T08:09:53",
     "sourceMessagePlainText": "New warehouse to help with the Ring Center :‼️‼️‼️‼️‼️\n\nJessnerstrasse 33 10247 ‼️‼️‼️‼️‼️",
     "address": "",
+    "coords": "lat: 40.7128, lng: -74.0060{ lat: 40.7128, lng: -74.006 }",
     "sentiment": null,
     "category": "Volunteers Needed",
     "aiLog": [
@@ -2378,13 +2095,6 @@
         "q": "Choose one of those categories:\n\n    - Food\n    - Shelter\n    - Health Services\n    - Transportation\n    - Translation\n    - Legal\n    - Volunteering\n    - Volunteers Needed\n    \n    based on this text:",
         "a": "Volunteers Needed"
       }
-    ],
-    "aiErrors": [
-      {
-        "key": "coords",
-        "value": "lat: 40.7128, lng: -74.0060{ lat: 40.7128, lng: -74.006 }",
-        "error": "invalid coords"
-      }
     ]
   },
   {
@@ -2402,10 +2112,7 @@
     "date": "2022-02-27T23:42:07",
     "sourceMessagePlainText": "‼️‼️‼️Today at 10:00 we will meet as a focus group to further coordinate the work of the group and volunteers. \n\nSpontaneous fundraisers are currently on pause, as we do not have time to check cars, drivers, where and \n\nHumanitarian aid will leave the 'Help to Ukrainians in Germany' group ONLY with verified LKW and to specific destinations. The Verkhovna Rada is in touch with us, and we will focus only on their requests at the moment.\n \n‼️We do not collect furniture, clothes, toys‼️ But we are looking for volunteers who work with refugee centers to donate what we have ALREADY collected.",
     "address": "The location mentioned in the text is Germany.",
-    "coords": {
-      "lat": 51.165691,
-      "lng": 10.451526
-    },
+    "coords": "{ lat: 51.165691, lng: 10.451526 }",
     "sentiment": [
       {
         "category": "Food",
@@ -2458,8 +2165,7 @@
         "q": "Choose one of those categories:\n\n    - Food\n    - Shelter\n    - Health Services\n    - Transportation\n    - Translation\n    - Legal\n    - Volunteering\n    - Volunteers Needed\n    \n    based on this text:",
         "a": "Volunteers Needed"
       }
-    ],
-    "aiErrors": []
+    ]
   },
   {
     "sourceData": {
@@ -2476,6 +2182,7 @@
     "date": "2022-02-27T23:50:33",
     "sourceMessagePlainText": "List of NEEDED assistance in Ukraine at the moment",
     "address": "Ukraine",
+    "coords": ", Kyiv{ lat: 50.45, lng: 30.523333 }",
     "sentiment": [
       {
         "category": "Food",
@@ -2528,13 +2235,6 @@
         "q": "Choose one of those categories:\n\n    - Food\n    - Shelter\n    - Health Services\n    - Transportation\n    - Translation\n    - Legal\n    - Volunteering\n    - Volunteers Needed\n    \n    based on this text:",
         "a": "Volunteers Needed"
       }
-    ],
-    "aiErrors": [
-      {
-        "key": "coords",
-        "value": ", Kyiv{ lat: 50.45, lng: 30.523333 }",
-        "error": "invalid coords"
-      }
     ]
   },
   {
@@ -2553,15 +2253,7 @@
     "id": "43",
     "source": "telegram",
     "date": "2022-02-27T23:50:33",
-    "sourceMessagePlainText": "",
-    "aiErrors": [
-      {
-        "key": "category",
-        "value": null,
-        "error": "empty"
-      }
-    ],
-    "category": "Other"
+    "sourceMessagePlainText": ""
   },
   {
     "sourceData": {
@@ -2586,10 +2278,7 @@
     "sourceMessagePlainText": "Warehouse help needed right now in BERLIN!!!\nJessnerstrasse 33 10247\n https://goo.gl/maps/cqqBELjpQoukgAaH6 \n\nCome there, they'll explain everything there ",
     "gmapLink": "https://goo.gl/maps/cqqBELjpQoukgAaH6",
     "address": "Jessnerstrasse 33 10247, BERLIN",
-    "coords": {
-      "lat": 52.503564,
-      "lng": 13.452294
-    },
+    "coords": "{ lat: 52.503564, lng: 13.452294 }",
     "sentiment": [
       {
         "category": "Volunteering",
@@ -2618,8 +2307,7 @@
         "q": "Choose one of those categories:\n\n    - Food\n    - Shelter\n    - Health Services\n    - Transportation\n    - Translation\n    - Legal\n    - Volunteering\n    - Volunteers Needed\n    \n    based on this text:",
         "a": "Volunteers Needed"
       }
-    ],
-    "aiErrors": []
+    ]
   },
   {
     "sourceData": {
@@ -2654,6 +2342,7 @@
     "sourceMessagePlainText": "❌ THIS CHAT IS NO LONGER LINKED TO A CHANNEL ❌\n\n Go to the new general chat at the link: https://t.me/helpUkraine_Gemany\n\n Канал  https://t.me/germanyhelpsukraine remains active ",
     "gmapLink": null,
     "address": "This text does not contain a physical location.",
+    "coords": "This text does not contain a physical location.",
     "sentiment": [
       0.1,
       0.2,
@@ -2664,7 +2353,7 @@
       0.7,
       0.8
     ],
-    "category": "Other",
+    "category": "This chat is no longer linked to a channel. Go to the new general chat at the link: https://t.me/helpUkraine_Gemany. The channel https://t.me/germanyhelpsukraine remains active.",
     "aiLog": [
       {
         "q": "Extract physical location from this text: ",
@@ -2681,23 +2370,6 @@
       {
         "q": "Choose one of those categories:\n\n    - Food\n    - Shelter\n    - Health Services\n    - Transportation\n    - Translation\n    - Legal\n    - Volunteering\n    - Volunteers Needed\n    \n    based on this text:",
         "a": "This chat is no longer linked to a channel. Go to the new general chat at the link: https://t.me/helpUkraine_Gemany. The channel https://t.me/germanyhelpsukraine remains active."
-      }
-    ],
-    "aiErrors": [
-      {
-        "key": "coords",
-        "value": "This text does not contain a physical location.",
-        "error": "invalid coords"
-      },
-      {
-        "key": "category",
-        "value": "This chat is no longer linked to a channel. Go to the new general chat at the link: https://t.me/helpUkraine_Gemany. The channel https://t.me/germanyhelpsukraine remains active.",
-        "error": "extra chars"
-      },
-      {
-        "key": "category",
-        "value": "This chat is no longer linked to a channel Go to the new general chat at the link: https://t.me/helpUkraine_Gemany. The channel https://t.me/germanyhelpsukraine remains active.",
-        "error": "unknown"
       }
     ]
   },
@@ -2724,6 +2396,7 @@
     "sourceMessagePlainText": "Guys, we need 15 people at Jessnerstraße 33 to help with the sorting of humanitarian aid. We need to bring boxes, tape and markers. Write to me +4917661538449 . ",
     "gmapLink": null,
     "address": "Jessnerstraße 33",
+    "coords": ", 10247 Berlin, Germany{ lat: 52.5074, lng: 13.4514 }",
     "sentiment": [
       0,
       0,
@@ -2752,13 +2425,6 @@
         "q": "Choose one of those categories:\n\n    - Food\n    - Shelter\n    - Health Services\n    - Transportation\n    - Translation\n    - Legal\n    - Volunteering\n    - Volunteers Needed\n    \n    based on this text:",
         "a": "Volunteering"
       }
-    ],
-    "aiErrors": [
-      {
-        "key": "coords",
-        "value": ", 10247 Berlin, Germany{ lat: 52.5074, lng: 13.4514 }",
-        "error": "invalid coords"
-      }
     ]
   },
   {
@@ -2776,10 +2442,7 @@
     "date": "2022-02-28T03:00:11",
     "sourceMessagePlainText": "Jessnerstrasse - applications closed! Thank you!",
     "address": "This text is from Jessnerstrasse in Germany.",
-    "coords": {
-      "lat": 52.49972,
-      "lng": 13.42583
-    },
+    "coords": "{ lat: 52.49972, lng: 13.42583 }",
     "sentiment": [
       {
         "category": "Food",
@@ -2832,8 +2495,7 @@
         "q": "Choose one of those categories:\n\n    - Food\n    - Shelter\n    - Health Services\n    - Transportation\n    - Translation\n    - Legal\n    - Volunteering\n    - Volunteers Needed\n    \n    based on this text:",
         "a": "Volunteers Needed"
       }
-    ],
-    "aiErrors": []
+    ]
   },
   {
     "sourceData": {
@@ -2850,8 +2512,9 @@
     "date": "2022-02-28T08:39:27",
     "sourceMessagePlainText": "Friends! We help other regional groups with shipments! We have cars! \n\nWe can't purposefully deliver to cities, it's dangerous. Volunteers from the Ukrainian side are already taking them where they can get to",
     "address": " the people who need themThe text is talking about a city.",
+    "coords": "The text is not talking about a city.",
     "sentiment": null,
-    "category": "Other",
+    "category": " the people who need them.Volunteering",
     "aiLog": [
       {
         "q": "Extract physical location from this text: ",
@@ -2868,23 +2531,6 @@
       {
         "q": "Choose one of those categories:\n\n    - Food\n    - Shelter\n    - Health Services\n    - Transportation\n    - Translation\n    - Legal\n    - Volunteering\n    - Volunteers Needed\n    \n    based on this text:",
         "a": " the people who need them.Volunteering"
-      }
-    ],
-    "aiErrors": [
-      {
-        "key": "coords",
-        "value": "The text is not talking about a city.",
-        "error": "invalid coords"
-      },
-      {
-        "key": "category",
-        "value": " the people who need them.Volunteering",
-        "error": "extra chars"
-      },
-      {
-        "key": "category",
-        "value": " the people who need themVolunteering",
-        "error": "unknown"
       }
     ]
   },
@@ -2911,10 +2557,7 @@
     "sourceMessagePlainText": "Please sign up for the list of Berlin volunteers. You will be contacted when help is needed:  https://forms.gle/WQC5Y4XRMW7SZ9KaA  ",
     "gmapLink": null,
     "address": "Berlin, Germany",
-    "coords": {
-      "lat": 52.52,
-      "lng": 13.405
-    },
+    "coords": "{ lat: 52.5200, lng: 13.4050 }",
     "sentiment": [
       0.125,
       0.125,
@@ -2943,8 +2586,7 @@
         "q": "Choose one of those categories:\n\n    - Food\n    - Shelter\n    - Health Services\n    - Transportation\n    - Translation\n    - Legal\n    - Volunteering\n    - Volunteers Needed\n    \n    based on this text:",
         "a": "Volunteers Needed"
       }
-    ],
-    "aiErrors": []
+    ]
   },
   {
     "sourceData": {
@@ -2962,6 +2604,7 @@
     "date": "2022-03-01T04:49:59",
     "sourceMessagePlainText": "Cardboard boxes for packing are needed at the humanitarian aid point at Otto-Braun str. 70-72 10178.",
     "address": "Otto-Braun str. 70-72 10178",
+    "coords": " Berlin{ lat: 52.518611, lng: 13.401667 }",
     "sentiment": [
       0.125,
       0.125,
@@ -2990,13 +2633,6 @@
         "q": "Choose one of those categories:\n\n    - Food\n    - Shelter\n    - Health Services\n    - Transportation\n    - Translation\n    - Legal\n    - Volunteering\n    - Volunteers Needed\n    \n    based on this text:",
         "a": "Volunteers Needed"
       }
-    ],
-    "aiErrors": [
-      {
-        "key": "coords",
-        "value": " Berlin{ lat: 52.518611, lng: 13.401667 }",
-        "error": "invalid coords"
-      }
     ]
   },
   {
@@ -3023,10 +2659,7 @@
     "sourceMessagePlainText": "Open channel to help Ukraine in Germany: https://t.me/helpUkraine_Gemany  ",
     "gmapLink": null,
     "address": "Germany",
-    "coords": {
-      "lat": 51.165691,
-      "lng": 10.451526
-    },
+    "coords": "{ lat: 51.165691, lng: 10.451526 }",
     "sentiment": [
       {
         "Food": 0.1
@@ -3071,8 +2704,7 @@
         "q": "Choose one of those categories:\n\n    - Food\n    - Shelter\n    - Health Services\n    - Transportation\n    - Translation\n    - Legal\n    - Volunteering\n    - Volunteers Needed\n    \n    based on this text:",
         "a": "Volunteering"
       }
-    ],
-    "aiErrors": []
+    ]
   },
   {
     "sourceData": {
@@ -3098,10 +2730,7 @@
     "sourceMessagePlainText": "The reception point for humanitarian aid at Alexanderplatz in Berlin https://goo.gl/maps/oNvYySLUvz5rHT68A NECESSARY ITEMS: protective equipment (bulletproof vests, helmets, knee pads, etc.), medicines (list below), sleeping bags, karemats, canned food (not glass). Clothing should NOT be carried yet. Please distribute. ",
     "gmapLink": "https://goo.gl/maps/oNvYySLUvz5rHT68A",
     "address": "The physical location from the text is Alexanderplatz in Berlin, which is located at https://goo.gl/maps/oNvYySLUvz5rHT68A.",
-    "coords": {
-      "lat": 52.5219184,
-      "lng": 13.4132147
-    },
+    "coords": "{  lat: 52.5219184,  lng: 13.4132147}",
     "sentiment": [
       {
         "category": "Food",
@@ -3154,8 +2783,7 @@
         "q": "Choose one of those categories:\n\n    - Food\n    - Shelter\n    - Health Services\n    - Transportation\n    - Translation\n    - Legal\n    - Volunteering\n    - Volunteers Needed\n    \n    based on this text:",
         "a": "Volunteers Needed"
       }
-    ],
-    "aiErrors": []
+    ]
   },
   {
     "sourceData": {
@@ -3173,6 +2801,7 @@
     "date": "2022-03-01T08:32:17",
     "sourceMessagePlainText": "Extended list of essential medicines in several languages",
     "address": "This text does not contain enough information to extract a physical location.",
+    "coords": "This text does not contain enough information to extract a physical location.",
     "sentiment": [
       {
         "Food": 0.2
@@ -3217,13 +2846,6 @@
         "q": "Choose one of those categories:\n\n    - Food\n    - Shelter\n    - Health Services\n    - Transportation\n    - Translation\n    - Legal\n    - Volunteering\n    - Volunteers Needed\n    \n    based on this text:",
         "a": "Translation"
       }
-    ],
-    "aiErrors": [
-      {
-        "key": "coords",
-        "value": "This text does not contain enough information to extract a physical location.",
-        "error": "invalid coords"
-      }
     ]
   },
   {
@@ -3246,6 +2868,7 @@
     "date": "2022-03-01T08:32:17",
     "sourceMessagePlainText": "updated medication list",
     "address": "The physical location of this text is on a computer or other electronic device.",
+    "coords": "This text does not contain latitude and longitude coordinates.",
     "sentiment": [
       {
         "category": "Food",
@@ -3298,13 +2921,6 @@
         "q": "Choose one of those categories:\n\n    - Food\n    - Shelter\n    - Health Services\n    - Transportation\n    - Translation\n    - Legal\n    - Volunteering\n    - Volunteers Needed\n    \n    based on this text:",
         "a": "Health Services"
       }
-    ],
-    "aiErrors": [
-      {
-        "key": "coords",
-        "value": "This text does not contain latitude and longitude coordinates.",
-        "error": "invalid coords"
-      }
     ]
   },
   {
@@ -3331,10 +2947,7 @@
     "sourceMessagePlainText": "Friends, We need boxes 📦 to the collection point on Alexander Plats https://goo.gl/maps/Tt8pPDQpRzfFgGHU6 Please bring it when you can. Size doesn't matter. There will be a use for everything! ",
     "gmapLink": "https://goo.gl/maps/Tt8pPDQpRzfFgGHU6",
     "address": "The collection point is on Alexander Plats, which is a physical location.",
-    "coords": {
-      "lat": 59.334591,
-      "lng": 18.06324
-    },
+    "coords": "{ lat: 59.334591, lng: 18.063240 }",
     "sentiment": [
       0.125,
       0.125,
@@ -3363,8 +2976,7 @@
         "q": "Choose one of those categories:\n\n    - Food\n    - Shelter\n    - Health Services\n    - Transportation\n    - Translation\n    - Legal\n    - Volunteering\n    - Volunteers Needed\n    \n    based on this text:",
         "a": "Volunteers Needed"
       }
-    ],
-    "aiErrors": []
+    ]
   },
   {
     "sourceData": {
@@ -3383,15 +2995,7 @@
     "id": "56",
     "source": "telegram",
     "date": "2022-03-02T02:27:15",
-    "sourceMessagePlainText": "",
-    "aiErrors": [
-      {
-        "key": "category",
-        "value": null,
-        "error": "empty"
-      }
-    ],
-    "category": "Other"
+    "sourceMessagePlainText": ""
   },
   {
     "sourceData": {
@@ -3449,10 +3053,7 @@
     "sourceMessagePlainText": "🩺 Free medical care:\n\n https://www.malteser.de/menschen-ohne-krankenversicherung.html you can contact these medical institutions no insurance, free  (personally called, asked).\n\nThey provide Hausarzt services, that is,  family doctor who can examine you, prescribe medications, refer you to a specialist. For example, he cannot perform operations.\n\n 🐣Pregnant (Berlin)\n Consultation, prevention without insurance, free\n https://www.berlin.de/ba-friedrichshain-kreuzberg/politik-und-verwaltung/aemter/gesundheitsamt/zentrum-fuer-sexuale-gesundheit-und-familienplanung/russ_flyer-zentrum-fk-15x15 .pdf \n\nMore addresses of medical services of various kinds can be found here:\n http://www.gesundheit-ein-menschenrecht.de/kontaktstellen  ",
     "gmapLink": null,
     "address": "Berlin, Germany",
-    "coords": {
-      "lat": 52.52,
-      "lng": 13.405
-    },
+    "coords": "{ lat: 52.5200, lng: 13.4050 }",
     "sentiment": {
       "Food": 0.2,
       "Shelter": 0,
@@ -3481,8 +3082,7 @@
         "q": "Choose one of those categories:\n\n    - Food\n    - Shelter\n    - Health Services\n    - Transportation\n    - Translation\n    - Legal\n    - Volunteering\n    - Volunteers Needed\n    \n    based on this text:",
         "a": "Health Services"
       }
-    ],
-    "aiErrors": []
+    ]
   },
   {
     "sourceData": {
@@ -3513,6 +3113,7 @@
     "sourceMessagePlainText": "Guys! Someone will be able to pick up 65 kg of food here by car tomorrow, closer to dinner, https://goo.gl/maps/dGyZTi8vufwmnVYD9 and bring it to the humanitarian aid collection center here https://goo.gl/maps/jwgZNP6xSwePajhu8  ??? ",
     "gmapLink": "https://goo.gl/maps/dGyZTi8vufwmnVYD9",
     "address": "The first location is Guys!, 65 kg of food by car tomorrow, closer to dinner, https://goo.gl/maps/dGyZTi8vufwmnVYD9. The second location is the humanitarian aid collection center, https://goo.gl/maps/jwgZNP6xSwePajhu8.",
+    "coords": "The first location is { lat: -33.8688, lng: 151.2093 }. The second location is { lat: -33.8688, lng: 151.2093 }.",
     "sentiment": [
       0.65,
       0.65,
@@ -3541,13 +3142,6 @@
         "q": "Choose one of those categories:\n\n    - Food\n    - Shelter\n    - Health Services\n    - Transportation\n    - Translation\n    - Legal\n    - Volunteering\n    - Volunteers Needed\n    \n    based on this text:",
         "a": "Food"
       }
-    ],
-    "aiErrors": [
-      {
-        "key": "coords",
-        "value": "The first location is { lat: -33.8688, lng: 151.2093 }. The second location is { lat: -33.8688, lng: 151.2093 }.",
-        "error": "invalid coords"
-      }
     ]
   },
   {
@@ -3566,6 +3160,7 @@
     "date": "2022-03-03T00:04:29",
     "sourceMessagePlainText": "Info. Bus, 56 empty seats. Left Berlin by bus to Przemyśl, Polen. If without incident, it should be around 8 o'clock in the evening. Tomorrow morning people can be picked up.",
     "address": "The text mentions a bus travelling from Berlin, Germany to Przemyśl, Poland.",
+    "coords": "Berlin, Germany is located at 52.520008, 13.404954. Przemyśl, Poland is located at 49.782222, 22.769722.{  lat: 52.520008,  lng: 13.404954}",
     "sentiment": [
       0.125,
       0.25,
@@ -3594,13 +3189,6 @@
         "q": "Choose one of those categories:\n\n    - Food\n    - Shelter\n    - Health Services\n    - Transportation\n    - Translation\n    - Legal\n    - Volunteering\n    - Volunteers Needed\n    \n    based on this text:",
         "a": "Transportation"
       }
-    ],
-    "aiErrors": [
-      {
-        "key": "coords",
-        "value": "Berlin, Germany is located at 52.520008, 13.404954. Przemyśl, Poland is located at 49.782222, 22.769722.{  lat: 52.520008,  lng: 13.404954}",
-        "error": "invalid coords"
-      }
     ]
   },
   {
@@ -3620,6 +3208,7 @@
     "date": "2022-03-03T02:42:47",
     "sourceMessagePlainText": "At the warehouse - lights out. Already released. Many thanks to all who responded!",
     "address": "The warehouse is most likely in a commercial or industrial area.",
+    "coords": "This text does not contain latitude and longitude coordinates.",
     "sentiment": [
       0.125,
       0.125,
@@ -3647,13 +3236,6 @@
       {
         "q": "Choose one of those categories:\n\n    - Food\n    - Shelter\n    - Health Services\n    - Transportation\n    - Translation\n    - Legal\n    - Volunteering\n    - Volunteers Needed\n    \n    based on this text:",
         "a": "Volunteers Needed"
-      }
-    ],
-    "aiErrors": [
-      {
-        "key": "coords",
-        "value": "This text does not contain latitude and longitude coordinates.",
-        "error": "invalid coords"
       }
     ]
   },
@@ -3693,10 +3275,7 @@
     "sourceMessagePlainText": "Самые  first steps  after arriving in Berlin by train\n\nFrom Berlin  travel to final destination is free\n https://t.me/helpUkraine_Gemany/3682  ",
     "gmapLink": null,
     "address": "The physical location is Berlin, Germany.",
-    "coords": {
-      "lat": 52.52,
-      "lng": 13.405
-    },
+    "coords": "{ lat: 52.5200, lng: 13.4050 }",
     "sentiment": [
       {
         "category": "Food",
@@ -3749,8 +3328,7 @@
         "q": "Choose one of those categories:\n\n    - Food\n    - Shelter\n    - Health Services\n    - Transportation\n    - Translation\n    - Legal\n    - Volunteering\n    - Volunteers Needed\n    \n    based on this text:",
         "a": "Transportation"
       }
-    ],
-    "aiErrors": []
+    ]
   },
   {
     "sourceData": {
@@ -3771,8 +3349,9 @@
     "date": "2022-03-03T04:34:32",
     "sourceMessagePlainText": "Just arrived by train in Berlin?",
     "address": "The text does not contain enough information to answer the question.",
+    "coords": "The text does not contain enough information to answer the question.",
     "sentiment": null,
-    "category": "Other",
+    "category": " Looking for a place to stay?Shelter",
     "aiLog": [
       {
         "q": "Extract physical location from this text: ",
@@ -3789,18 +3368,6 @@
       {
         "q": "Choose one of those categories:\n\n    - Food\n    - Shelter\n    - Health Services\n    - Transportation\n    - Translation\n    - Legal\n    - Volunteering\n    - Volunteers Needed\n    \n    based on this text:",
         "a": " Looking for a place to stay?Shelter"
-      }
-    ],
-    "aiErrors": [
-      {
-        "key": "coords",
-        "value": "The text does not contain enough information to answer the question.",
-        "error": "invalid coords"
-      },
-      {
-        "key": "category",
-        "value": " Looking for a place to stay?Shelter",
-        "error": "unknown"
       }
     ]
   },
@@ -3820,10 +3387,7 @@
     "date": "2022-03-03T06:10:20",
     "sourceMessagePlainText": "Otto-Braun-Straße 70-72, 10178 Berlin needs plastic containers for food packaging and rodent protection. Please bring them if you can. We would also appreciate food for volunteers working in The point is open until 8 pm Thank you 🙏",
     "address": "Otto-Braun-Straße 70-72, 10178 Berlin",
-    "coords": {
-      "lat": 52.528611,
-      "lng": 13.41111
-    },
+    "coords": "{ lat: 52.528611, lng: 13.41111 }",
     "sentiment": null,
     "category": "Volunteers Needed",
     "aiLog": [
@@ -3843,8 +3407,7 @@
         "q": "Choose one of those categories:\n\n    - Food\n    - Shelter\n    - Health Services\n    - Transportation\n    - Translation\n    - Legal\n    - Volunteering\n    - Volunteers Needed\n    \n    based on this text:",
         "a": "Volunteers Needed"
       }
-    ],
-    "aiErrors": []
+    ]
   },
   {
     "sourceData": {
@@ -3862,6 +3425,7 @@
     "date": "2022-03-04T03:49:00",
     "sourceMessagePlainText": "Aid collection point Otto-Braun-Straße 70-72, 10178 Berlin needs volunteers to sort things, open until 20:00. Thank you 🙏",
     "address": "🏼Otto-Braun-Straße 70-72, 10178 Berlin",
+    "coords": ", Germany{  lat: 52.528871,  lng: 13.426536}",
     "sentiment": [
       {
         "category": "Volunteering",
@@ -3890,13 +3454,6 @@
         "q": "Choose one of those categories:\n\n    - Food\n    - Shelter\n    - Health Services\n    - Transportation\n    - Translation\n    - Legal\n    - Volunteering\n    - Volunteers Needed\n    \n    based on this text:",
         "a": "Volunteers Needed"
       }
-    ],
-    "aiErrors": [
-      {
-        "key": "coords",
-        "value": ", Germany{  lat: 52.528871,  lng: 13.426536}",
-        "error": "invalid coords"
-      }
     ]
   },
   {
@@ -3923,10 +3480,7 @@
     "sourceMessagePlainText": "A new point for receiving humanitarian aid has opened here https://goo.gl/maps/Vu423azGfK7zzCXA7  Philipp-Pforr-Straße 9A, 16761 (KaroMotors garage) Open Mon-Sat 9:00-16:00 Tel: 0176 566 195 47 ",
     "gmapLink": "https://goo.gl/maps/Vu423azGfK7zzCXA7",
     "address": "The physical location is Philipp-Pforr-Straße 9A, 16761 (KaroMotors garage).",
-    "coords": {
-      "lat": 52.3875,
-      "lng": 13.05139
-    },
+    "coords": "{ lat: 52.3875, lng: 13.05139 }",
     "sentiment": [
       {
         "category": "Food",
@@ -3961,7 +3515,7 @@
         "probability": 0.1
       }
     ],
-    "category": "Food",
+    "category": "- Food",
     "aiLog": [
       {
         "q": "Extract physical location from this text: ",
@@ -3978,13 +3532,6 @@
       {
         "q": "Choose one of those categories:\n\n    - Food\n    - Shelter\n    - Health Services\n    - Transportation\n    - Translation\n    - Legal\n    - Volunteering\n    - Volunteers Needed\n    \n    based on this text:",
         "a": "- Food"
-      }
-    ],
-    "aiErrors": [
-      {
-        "key": "category",
-        "value": "- Food",
-        "error": "extra chars"
       }
     ]
   },
@@ -4012,6 +3559,7 @@
     "sourceMessagePlainText": "Guys, we need a bus to transport the gum aid from the collection point https://goo.gl/maps/a4Jp9bnfMg1Dp6Wo7 to Berlin Hbf. Who can drive up within an hour, let me know. I'll write a confirmation in a personal message so as not to drive everyone ;) ",
     "gmapLink": "https://goo.gl/maps/a4Jp9bnfMg1Dp6Wo7",
     "address": "The collection point is https://goo.gl/maps/a4Jp9bnfMg1Dp6Wo7 and the destination is Berlin Hbf.",
+    "coords": "The collection point is https://goo.gl/maps/a4Jp9bnfMg1Dp6Wo7 and the destination is Berlin Hbf.{  lat: 52.5170365,  lng: 13.3888599}",
     "sentiment": [
       {
         "category": "Transportation",
@@ -4035,13 +3583,6 @@
       {
         "q": "Choose one of those categories:\n\n    - Food\n    - Shelter\n    - Health Services\n    - Transportation\n    - Translation\n    - Legal\n    - Volunteering\n    - Volunteers Needed\n    \n    based on this text:",
         "a": "Transportation"
-      }
-    ],
-    "aiErrors": [
-      {
-        "key": "coords",
-        "value": "The collection point is https://goo.gl/maps/a4Jp9bnfMg1Dp6Wo7 and the destination is Berlin Hbf.{  lat: 52.5170365,  lng: 13.3888599}",
-        "error": "invalid coords"
       }
     ]
   },
@@ -4069,10 +3610,7 @@
     "sourceMessagePlainText": "Hello everyone! We have created a chat to coordinate volunteers at the humanitarian aid collection point in Haus der Statistik (Otto-Braun-Straße 70-72, building B), 10178 Berlin \nIn the chat in the attached message you will find a schedule table. Enter your names to free timeslots.\nPlease forward to anyone who wants to help!\n \n https://t.me/volunteersberlin  ",
     "gmapLink": null,
     "address": "Haus der Statistik (Otto-Braun-Straße 70-72, building B), 10178 Berlin",
-    "coords": {
-      "lat": 52.52787,
-      "lng": 13.402335
-    },
+    "coords": "{ lat: 52.52787, lng: 13.402335 }",
     "sentiment": [
       {
         "category": "Food",
@@ -4125,8 +3663,7 @@
         "q": "Choose one of those categories:\n\n    - Food\n    - Shelter\n    - Health Services\n    - Transportation\n    - Translation\n    - Legal\n    - Volunteering\n    - Volunteers Needed\n    \n    based on this text:",
         "a": "Volunteering"
       }
-    ],
-    "aiErrors": []
+    ]
   },
   {
     "sourceData": {
@@ -4144,8 +3681,9 @@
     "date": "2022-03-05T03:13:39",
     "sourceMessagePlainText": "Friends! PLEASE DO NOT SEND PEOPLE FOR CLOTHES TO THE Otto-Braun-Str.",
     "address": " 110Otto-Braun-Str. 110",
+    "coords": "52 Berlin{ lat: 52.5027778, lng: 13.3916667 }",
     "sentiment": null,
-    "category": "Other",
+    "category": " 110. We are overwhelmed with clothes donations and we can not take in any more. We urgently need people who can speak Arabic and Farsi for interpretation services.Translation",
     "aiLog": [
       {
         "q": "Extract physical location from this text: ",
@@ -4162,23 +3700,6 @@
       {
         "q": "Choose one of those categories:\n\n    - Food\n    - Shelter\n    - Health Services\n    - Transportation\n    - Translation\n    - Legal\n    - Volunteering\n    - Volunteers Needed\n    \n    based on this text:",
         "a": " 110. We are overwhelmed with clothes donations and we can not take in any more. We urgently need people who can speak Arabic and Farsi for interpretation services.Translation"
-      }
-    ],
-    "aiErrors": [
-      {
-        "key": "coords",
-        "value": "52 Berlin{ lat: 52.5027778, lng: 13.3916667 }",
-        "error": "invalid coords"
-      },
-      {
-        "key": "category",
-        "value": " 110. We are overwhelmed with clothes donations and we can not take in any more. We urgently need people who can speak Arabic and Farsi for interpretation services.Translation",
-        "error": "extra chars"
-      },
-      {
-        "key": "category",
-        "value": " 110 We are overwhelmed with clothes donations and we can not take in any more. We urgently need people who can speak Arabic and Farsi for interpretation services.Translation",
-        "error": "unknown"
       }
     ]
   },
@@ -4206,6 +3727,7 @@
     "sourceMessagePlainText": "Answers to the most frequently asked questions will be gladly given to you by our chat bot: @uahelp_FAQ_bot  ",
     "gmapLink": null,
     "address": "The physical location is not given in the text.",
+    "coords": "The physical location is not given in the text.",
     "sentiment": [
       {
         "category": "Food",
@@ -4258,13 +3780,6 @@
         "q": "Choose one of those categories:\n\n    - Food\n    - Shelter\n    - Health Services\n    - Transportation\n    - Translation\n    - Legal\n    - Volunteering\n    - Volunteers Needed\n    \n    based on this text:",
         "a": "Volunteering"
       }
-    ],
-    "aiErrors": [
-      {
-        "key": "coords",
-        "value": "The physical location is not given in the text.",
-        "error": "invalid coords"
-      }
     ]
   },
   {
@@ -4283,10 +3798,7 @@
     "date": "2022-03-05T03:56:34",
     "sourceMessagePlainText": "❗️❗️❗️Dear friends! Please do not send people to the humanitarian aid collection point at Otto-Braun-Straße 70-72 to receive clothes. Hbf. We send the sorted things there. Thank you for your understanding!",
     "address": "Otto-Braun-Straße 70-72 is in Berlin, Germany.",
-    "coords": {
-      "lat": 52.5167,
-      "lng": 13.3833
-    },
+    "coords": "{ lat: 52.5167, lng: 13.3833 }",
     "sentiment": null,
     "category": "Volunteers Needed",
     "aiLog": [
@@ -4306,8 +3818,7 @@
         "q": "Choose one of those categories:\n\n    - Food\n    - Shelter\n    - Health Services\n    - Transportation\n    - Translation\n    - Legal\n    - Volunteering\n    - Volunteers Needed\n    \n    based on this text:",
         "a": "Volunteers Needed"
       }
-    ],
-    "aiErrors": []
+    ]
   },
   {
     "sourceData": {
@@ -4333,6 +3844,7 @@
     "sourceMessagePlainText": "We remind you that our channel has a chat in the telegram group:  https://t.me/helpUkraine_Gemany  ",
     "gmapLink": null,
     "address": "This text does not contain a physical location.",
+    "coords": "This text does not contain a physical location.",
     "sentiment": [
       {
         "Food": 0.125
@@ -4376,13 +3888,6 @@
       {
         "q": "Choose one of those categories:\n\n    - Food\n    - Shelter\n    - Health Services\n    - Transportation\n    - Translation\n    - Legal\n    - Volunteering\n    - Volunteers Needed\n    \n    based on this text:",
         "a": "Volunteering"
-      }
-    ],
-    "aiErrors": [
-      {
-        "key": "coords",
-        "value": "This text does not contain a physical location.",
-        "error": "invalid coords"
       }
     ]
   },
@@ -4459,14 +3964,6 @@
         },
         " will be available soon.\n\nOrganizers: Allianz ukrainischer Organisationen, GermanDream and Alliance4Ukraine"
       ]
-    },
-    "aiErrors": [
-      {
-        "key": "category",
-        "value": null,
-        "error": "empty"
-      }
-    ],
-    "category": "Other"
+    }
   }
 ]
