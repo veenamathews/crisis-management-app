@@ -1,23 +1,21 @@
 <mat-card class="my-card">
   <mat-card-subtitle>{{getDate().toString()}}</mat-card-subtitle>
   <!-- TODO: timeago was giving some errors; check why some messages don't have correct data? -->
-  <mat-card-title *ngIf="model?.date">({{ model?.date | timeago:false }})</mat-card-title>
+  <mat-card-subtitle *ngIf="model?.date">({{ model?.date | timeago:false }})</mat-card-subtitle>
   <mat-card-content>
     <div *ngIf="showOriginalData">
-      <br><div class="header">Original message:</div><br>Processed message:</div>
+      <br>
+      <div class="header">Original message:</div><br>Processed message:
+    </div>
     <app-telegram-content [model]="model?.sourceData?.text"></app-telegram-content>
     <div *ngIf="showOriginalData">
-      <br><div class="header">Original message:</div><br>
+      <br>
+      <div class="header">Original message:</div><br>
       {{ model?.sourceData | json }}
     </div>
   </mat-card-content>
   <mat-divider inset></mat-divider>
   <mat-card-actions fxLayout="row" fxLayoutAlign="space-between center">
-
-    <div>
-      <button mat-button>LIKE</button>
-      <button mat-button>SHARE</button>
-    </div>
     <div>
       <button mat-icon-button [routerLink]="['/details', model?.id]">
         <mat-icon>
