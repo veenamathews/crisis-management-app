@@ -1,0 +1,38 @@
+:host {
+  overflow: auto;
+  display: flex;
+  flex-direction: column;
+  padding: 16px 8px;
+  max-width: 860px;
+  margin: 0 auto;
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  font-size: 16px;
+  margin-bottom: 16px;
+}
+
+.content {
+  padding: 0 16px;
+  flex: 1;
+  overflow: auto;
+}
+
+mat-expansion-panel {
+  margin-bottom: 16px;
+}
+
+mat-expansion-panel-header,
+mat-expansion-panel-header:hover {
+  border-bottom: 1px solid #ddd;
+  background-color: #f7f7f7;
+}
+
+::ng-deep {
+  .mat-expansion-panel-content {
+    margin-top: 16px;
+  }
+}

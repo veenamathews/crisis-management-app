@@ -51,6 +51,8 @@ import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatTabsModule } from '@angular/material/tabs';
 import { MatMenuModule } from '@angular/material/menu';
+import { MatExpansionModule } from '@angular/material/expansion';
+import { AnalysisViewComponent } from './analysis-view/analysis-view.component';
 
 registerLocaleData(en);
 
@@ -64,6 +66,7 @@ registerLocaleData(en);
     TelegramContentComponent,
     ProcessMessageComponent,
     SearchMenuComponent,
+    AnalysisViewComponent,
   ],
   imports: [
     BrowserModule,
@@ -105,6 +108,7 @@ registerLocaleData(en);
     MatToolbarModule,
     MatTabsModule,
     MatMenuModule,
+    MatExpansionModule,
   ],
   providers: [{ provide: NZ_I18N, useValue: en_US }],
   bootstrap: [AppComponent]

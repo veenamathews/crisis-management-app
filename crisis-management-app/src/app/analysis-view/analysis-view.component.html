@@ -1,0 +1,61 @@
+<div class="header">
+  <button mat-icon-button [disabled]="currentIdx <= 0" (click)="prevMessage()">
+    <mat-icon>arrow_back</mat-icon>
+  </button>
+
+  <div>Message Id: {{ message?.id }}</div>
+
+  <button mat-icon-button [disabled]="currentIdx >= messages.length - 1" (click)="nextMessage()">
+    <mat-icon>arrow_forward</mat-icon>
+  </button>
+</div>
+
+<div class="content">
+
+  <mat-expansion-panel [expanded]="true">
+    <mat-expansion-panel-header>
+      <mat-panel-title>
+        Message
+      </mat-panel-title>
+    </mat-expansion-panel-header>
+    <p>{{ message?.sourceMessagePlainText }}</p>
+  </mat-expansion-panel>
+
+  <mat-expansion-panel [expanded]="true">
+    <mat-expansion-panel-header>
+      <mat-panel-title>
+        Extracted Data
+      </mat-panel-title>
+    </mat-expansion-panel-header>
+    <pre>{{ data | json }}</pre>
+  </mat-expansion-panel>
+
+  <mat-expansion-panel [expanded]="true">
+    <mat-expansion-panel-header>
+      <mat-panel-title>
+        AI Issues
+      </mat-panel-title>
+    </mat-expansion-panel-header>
+    <pre *ngIf="message?.aiErrors?.length">{{ message?.aiErrors | json }}</pre>
+    <div *ngIf="!message?.aiErrors?.length">No issues!</div>
+  </mat-expansion-panel>
+
+  <mat-expansion-panel [expanded]="true">
+    <mat-expansion-panel-header>
+      <mat-panel-title>
+        AI Conversation Log
+      </mat-panel-title>
+    </mat-expansion-panel-header>
+    <pre>{{ message?.aiLog | json }}</pre>
+  </mat-expansion-panel>
+
+  <mat-expansion-panel [expanded]="false">
+    <mat-expansion-panel-header>
+      <mat-panel-title>
+        Message (RAW)
+      </mat-panel-title>
+    </mat-expansion-panel-header>
+    <pre>{{ message | json }}</pre>
+  </mat-expansion-panel>
+
+</div>
