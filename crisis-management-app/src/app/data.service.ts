@@ -14,69 +14,76 @@ export class DataService {
 
   private messagesSubject = new BehaviorSubject<Information[]>(MESSAGES_DATASET_002);
   messages$ = this.messagesSubject.asObservable();
+  private masterMessage: Information[] = MESSAGES_DATASET_002;
 
   knownTags = [
     {
       name: 'Food',
       color: '#37b24d',
       icon: 'fastfood',
-      checked: true
+      checked: false
     },
     {
       name: 'Shelter',
       color: '#f08c00',
       icon: 'hotel',
-      checked: true
+      checked: false
     },
     {
       name: 'Health Services',
       color: '#d6336c',
       icon: 'local_hospital',
-      checked: true
+      checked: false
     },
     {
       name: 'Transportation',
       color: '#1c7ed6',
       icon: 'directions_bus_filled',
-      checked: true
+      checked: false
     },
     {
       name: 'Translation',
       color: '#ae3ec9',
       icon: 'interpreter_mode',
-      checked: true
+      checked: false
     },
     {
       name: 'Legal',
       color: '#22b8cf',
       icon: 'gavel',
-      checked: true
+      checked: false
     },
     {
       name: 'Volunteering',
       color: '#20c997',
       icon: 'sports_kabaddi',
-      checked: true
+      checked: false
     },
     {
       name: 'Volunteers Needed',
       color: '#f06595',
       icon: 'group_add',
-      checked: true
+      checked: false
     },
     {
       name: 'Other',
       color: '#adb5bd',
       icon: 'info',
-      checked: true
+      checked: false
     },
   ];
 
   constructor(private http: HttpClient) { }
 
-  filter(category: string): void {
-    const filteredMessages = this.messagesSubject.value.filter(item => item.category === category);
-    this.messagesSubject.next(filteredMessages);
+  filter(checkedList: string[]): void {
+    const filteredMessages = this.messagesSubject.value.filter(item => item.category === "Food");
+
+    checkedList.forEach(element => {
+      this.messagesSubject.value.filter(item => item.category === element);
+    });
+
+    const filteredMessages1 = this.messagesSubject;
+    this.messagesSubject.next(filteredMessages1.value);
   }
 
   getDataById(id: string): Promise<Information> {
