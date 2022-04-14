@@ -1,34 +1,19 @@
 <div fxLayout="row" fxLayoutAlign="space-between center">
     <h2>Search Box</h2>
     <button mat-icon-button [mat-dialog-close]><i class="fab fa-cloud-showers"></i>
-        <mat-icon><span class="material-icons-outlined">
-                close
-            </span></mat-icon>
+        <mat-icon><span class="material-icons-outlined">close</span></mat-icon>
     </button>
-</div>
-
-<h3>Search here</h3>
-<div>
-    <form class="example-form">
-        <input type="text" placeholder="Type here..." aria-label="Type here..." matInput [formControl]="myControl"
-            [matAutocomplete]="auto">
-        <mat-autocomplete #auto="matAutocomplete">
-            <mat-option *ngFor="let option of options" [value]="option">
-                {{option}}
-            </mat-option>
-        </mat-autocomplete>
-    </form>
 </div>
 
 <div class="parent">
     <div *ngFor="let item of dataService?.knownTags ; let i = index">
-        <mat-button-toggle [checked]="item.checked" (click)="setValue(i, item.checked)">
-            <mat-icon>{{item.icon}}</mat-icon>
+        <mat-button-toggle fxLayout="row" fxLayoutAlign="start center" [checked]="item.checked"
+            (click)="setValue(i, item.checked)">
+            <mat-icon [style.color]="item.color">{{item.icon}}</mat-icon>
             {{item.name}}
         </mat-button-toggle>
     </div>
 </div>
 <mat-dialog-actions fxLayout="row" fxLayoutAlign="end center">
-    <button mat-flat-button  (click)="search()"  color="accent">Search</button>
-</mat-dialog-actions> 
-
+    <button mat-flat-button (click)="search()" color="accent">Search</button>
+</mat-dialog-actions>
