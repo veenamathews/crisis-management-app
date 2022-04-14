@@ -19,7 +19,7 @@
             <mat-icon>sentiment_very_satisfied</mat-icon>
             <p>Sentiment:</p>
           </div>
-          <div>{{data?.sentiment}}</div>
+          <div>{{data?.sentiment | json}}</div>
         </div>
         <div *ngIf="data?.sourceData" class="info-box">
           <div class="sectionHeader">

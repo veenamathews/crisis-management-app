@@ -1,6 +1,6 @@
 <mat-accordion>
   <div *ngFor="let tag of dataService.knownTags">
-    <mat-expansion-panel>
+    <mat-expansion-panel *ngIf="tag.checked">
       <mat-expansion-panel-header>
         <mat-panel-title>
           <mat-icon [style.color]="tag.color">{{tag.icon}}</mat-icon>
