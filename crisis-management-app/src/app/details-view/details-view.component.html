@@ -1,8 +1,9 @@
 <div fxLayout="row" fxLayoutAlign="center center">
   <mat-card class="example-card">
-    <mat-card-title>{{data?.category}} <mat-chip>{{data?.source}}</mat-chip>
+    <mat-card-title>{{data?.category}} 
     </mat-card-title>
     <mat-card-subtitle>{{getDate().toString()}}({{ data?.date | timeago:false }})</mat-card-subtitle>
+    <mat-chip>{{data?.source}}</mat-chip>
     <mat-card-content>
       <p>{{data?.sourceMessagePlainText}}</p>
       <div class="parent">
