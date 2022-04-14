@@ -1,7 +1,8 @@
 :host {
   overflow: auto;
-  display: block;
-  padding: 16px;
+  display: flex;
+  flex-direction: column;
+  padding: 16px 8px;
   max-width: 860px;
   margin: 0 auto;
 }
@@ -9,8 +10,15 @@
 .header {
   display: flex;
   justify-content: space-between;
-  align-items: center;
+  align-items: baseline;
+  font-size: 16px;
   margin-bottom: 16px;
+}
+
+.content {
+  padding: 0 16px;
+  flex: 1;
+  overflow: auto;
 }
 
 mat-expansion-panel {

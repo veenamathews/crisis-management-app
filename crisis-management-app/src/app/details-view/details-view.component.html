@@ -1,2 +1,6 @@
 <p>id: {{ id }}</p>
 <p>id: {{ data | json }}</p>
+
+<div>
+  <button mat-stroked-button [routerLink]="['/analysis', { id }]">Analysis</button>
+</div>
