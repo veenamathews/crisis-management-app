@@ -2,3 +2,42 @@
   display: block;
   padding: 8px;
 }
+.example-card {
+  max-width: 600px;
+}
+
+.sectionHeader {
+  font-size: 18px;
+  font-weight: 200;
+  color: black;
+  margin: 0 0 20px;
+  text-align: center;
+}
+.info-box {
+  height: 270px;
+  width: 270px;
+  padding: 20px;
+  border: ridge;
+  background-color: #f5f5f5;
+  word-wrap: break-word;
+  white-space: pre-wrap;
+  word-break: break-word;
+  text-align: center;
+  float:left;
+overflow-y: auto;
+}
+.parent {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-template-rows: repeat(2, 1fr);
+  grid-column-gap: 0px;
+  grid-row-gap: 0px;
+}
+
+.example-box.cdk-drag-animating {
+  transition: transform 250ms cubic-bezier(0, 0, 0.2, 1);
+}
+
+.example-chip .cdk-drop-list-dragging {
+  transition: transform 250ms cubic-bezier(0, 0, 0.2, 1);
+}

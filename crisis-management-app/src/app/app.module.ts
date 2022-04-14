@@ -53,6 +53,7 @@ import { MatTabsModule } from '@angular/material/tabs';
 import { MatMenuModule } from '@angular/material/menu';
 import { MatExpansionModule } from '@angular/material/expansion';
 import { AnalysisViewComponent } from './analysis-view/analysis-view.component';
+import { MatChipsModule } from '@angular/material/chips';
 
 registerLocaleData(en);
 
@@ -109,6 +110,7 @@ registerLocaleData(en);
     MatTabsModule,
     MatMenuModule,
     MatExpansionModule,
+    MatChipsModule,
   ],
   providers: [{ provide: NZ_I18N, useValue: en_US }],
   bootstrap: [AppComponent]
