@@ -1,19 +1,18 @@
-<nz-list nzGrid class="grid-style">
-  <div fxLayout="column" fxLayoutAlign="space-around center">
-    <div fxLayout="column" fxLayoutAlign="center stretch">
-      <div *ngFor="let category of categoryList">
-        <nz-card [nzTitle]="category">
-          <div fxLayout="column" fxLayoutAlign="space-around center">
-            <nz-list-item fxLayout="column" fxLayoutAlign="space-around center">
-              <div *ngFor="let item of data">
-                <app-information-view *ngIf="item.category == category" [model]="item">
-                </app-information-view>
-              </div>
-            </nz-list-item>
-          </div>
-        </nz-card>
-        <br />
+<mat-accordion>
+  <div *ngFor="let tag of dataService.knownTags">
+    <mat-expansion-panel>
+      <mat-expansion-panel-header>
+        <mat-panel-title>
+          <mat-icon [style.color]="tag.color">{{tag.icon}}</mat-icon>
+          {{tag.name}}
+        </mat-panel-title>
+      </mat-expansion-panel-header>
+      <div>
+        <div *ngFor="let item of data">
+          <app-information-view *ngIf="item.category==tag.name" [model]="item">
+          </app-information-view>
+        </div>
       </div>
-    </div>
+    </mat-expansion-panel>
   </div>
-</nz-list>
+</mat-accordion>
