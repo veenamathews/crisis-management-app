@@ -4,7 +4,8 @@
       <mat-expansion-panel-header>
         <mat-panel-title>
           <mat-icon [style.color]="tag.color">{{tag.icon}}</mat-icon>
-          {{tag.name}}
+          {{tag.name}}         
+          <span>({{ dataService.messagesInCategory[tag.name] }})</span>
         </mat-panel-title>
       </mat-expansion-panel-header>
       <div>

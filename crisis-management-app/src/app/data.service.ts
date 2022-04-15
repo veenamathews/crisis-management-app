@@ -16,6 +16,8 @@ export class DataService {
   private messagesSubject = new BehaviorSubject<Information[]>([]);
   messages$ = this.messagesSubject.asObservable();
   private allMessages: Information[] = [];
+  messagesInCategory: any = {};
+  messagesWithCoordsInCategory: any = {};
 
   knownTags = [
     {
@@ -81,6 +83,14 @@ export class DataService {
   setMessages(messages: Information[]): void {
     this.allMessages = messages;
     this.messagesSubject.next(this.allMessages);
+    this.messagesInCategory = {};
+    this.messagesWithCoordsInCategory = {};
+
+    for (const category of this.knownTags) {
+      const messagesInCategory = this.allMessages.filter(item => item.category === category.name);
+      this.messagesInCategory[category.name] = messagesInCategory.length;
+      this.messagesWithCoordsInCategory[category.name] = messagesInCategory.filter(item => !!item.coords).length;
+    }
   }
 
   filter(checkedList: string[]): void {
