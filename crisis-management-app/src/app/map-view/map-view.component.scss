@@ -58,7 +58,9 @@
   }
 
   app-information-view {
-    // overflow: auto;
+    flex: 1;
+    flex-shrink: 1;
+    overflow: auto;
   }
 
   ::ng-deep {

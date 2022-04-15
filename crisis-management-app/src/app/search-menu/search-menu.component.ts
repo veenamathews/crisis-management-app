@@ -51,5 +51,17 @@ export class SearchMenuComponent implements OnInit {
   setValue(i: number, checked: boolean) {
     this.dataService.knownTags[i].checked = !checked;
   }
+
+  selectNone(): void {
+    for (const tag of this.dataService.knownTags) {
+      tag.checked = false;
+    }
+  }
+
+  selectAll(): void {
+    for (const tag of this.dataService.knownTags) {
+      tag.checked = true;
+    }
+  }
 }
 

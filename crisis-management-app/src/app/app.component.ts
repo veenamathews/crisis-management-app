@@ -38,9 +38,9 @@ export class AppComponent implements OnInit {
 
   displaySearchBox(): void {
     const dialogRef = this.dialog.open(SearchMenuComponent, {
-      width: '500px',
-      maxWidth:'500px',
-      height: '400px',
+      // width: '500px',
+      // maxWidth:'500px',
+      minHeight: '400px',
       maxHeight:'600px',
       //data: { name: "x", animal: "x" },
     });

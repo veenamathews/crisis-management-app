@@ -2,6 +2,11 @@
     width: 250px;
     border: 10px;
 }
+
+h2 {
+  margin: 0;
+}
+
 .example-form {
     min-width: 150px;
     max-width: 500px;
@@ -24,7 +29,11 @@
   .parent {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
-    grid-template-rows: repeat(5, 1fr);
-    grid-column-gap: 0px;
-    grid-row-gap: 0px;
-    }
+    grid-column-gap: 4px;
+    grid-row-gap: 4px;
+    margin: 16px 0;
+  }
+
+.mat-dialog-actions {
+  margin-bottom: -10px;
+}
