@@ -1,6 +1,6 @@
 const { Configuration, OpenAIApi } = require('openai');
 
-const OPENAI_API_KEY = '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';
+const OPENAI_API_KEY = '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';
 
 // OpenAI setup
 const configuration = new Configuration({
@@ -61,7 +61,10 @@ function OpenAI() {
   
     question = 'Extract latitude and longitude from this text as { lat, lng } JSON object: ';
     result = cleanupAIResponse(await this.askAI({ prompt: question + result})); // use result from the previous question
-    response.data.coords = aiResponseToObject(result.replace(/\n/g, '').replace(/\"/g, ''));
+    const input = (result.includes('lat: '))
+      ? result.replace('lat:', '"lat":').replace('lng:', '"lng":')
+      : result;
+    response.data.coords = aiResponseToObject(input);
     response.log.push({
       q: question,
       a: result,

@@ -2,7 +2,7 @@
  * Config
  */
 
-const MESSAGES_CACHE_FILE = './api-cache/messages.json';
+const MESSAGES_CACHE_DIR = './api-cache/';
 
 
 /*
@@ -17,14 +17,14 @@ const puppeteer = require('puppeteer');
  * Functions
  */
 
-const getMessagesFromCache = (filepath = MESSAGES_CACHE_FILE) => {
-  const fileData = fs.readFileSync(filepath);
+const getMessagesFromCache = (filename) => {
+  const fileData = fs.readFileSync(MESSAGES_CACHE_DIR + filename);
   return JSON.parse(fileData);
 }
 
-const saveMessagesToCache = (messages, filepath = MESSAGES_CACHE_FILE) => {
+const saveMessagesToCache = (messages, filename) => {
   data = JSON.stringify(messages, null, 2);
-  fs.writeFileSync(filepath, data);
+  fs.writeFileSync(MESSAGES_CACHE_DIR + filename, data);
 }
 
 const stringToObject = (response) => {
@@ -71,14 +71,20 @@ async function getCoordsFromGMapUrl(url) {
   }
 };
 
-function storeTelegramMessages(messages) {
+function storeTelegramMessages(messages, filename) {
   console.log('Total Messages:', messages.length);
-  const results = messages.map(item => ({
-    sourceData: item,
-  }));
+
+  const results = messages    
+    .filter(item => ((item.type !== 'service') && (!!item.text) && (item.text !== '')))
+    .slice(0, 300)
+    .map(item => ({
+      sourceData: item,
+    }));
 
   data = JSON.stringify(results, null, 2);
-  fs.writeFileSync(MESSAGES_CACHE_FILE, data);
+  fs.writeFileSync(MESSAGES_CACHE_DIR + filename, data);
+
+  console.log('Total Messages after:', results.length);
 }
 
 const telegramMessageToPlainString = (input) => {
@@ -99,16 +105,20 @@ const telegramMessageToPlainString = (input) => {
   }
 }
 
-async function parseStoredMessages() {
+async function parseStoredMessages(filename) {
 
   const openAIModule = require('../core/openai');
   const openAI = new openAIModule.OpenAI();
   
-  const messages = getMessagesFromCache();
+  const messages = getMessagesFromCache(filename);
 
   for (let idx = 0; idx < messages.length; idx++) {
     const message = messages[idx];
     const sourceData = message.sourceData;
+
+    if (message.id) {
+      continue;
+    }
 
     // Basic properties
     message.id = (idx + 1).toString();
@@ -155,29 +165,43 @@ async function parseStoredMessages() {
       message.coords = await getCoordsFromGMapUrl(message.gmapLink);
     }
 
-    saveMessagesToCache(messages);
+    saveMessagesToCache(messages, filename);
   }
 
-  saveMessagesToCache(messages);
+  saveMessagesToCache(messages, filename);
 
   console.log('Messages processed:', messages.length);
 }
 
-async function cleanupStoredMessages() {
+async function cleanupStoredMessages(filename) {
 
   const knownCategories = ['Food', 'Shelter', 'Health Services', 'Transportation', 'Translation', 'Legal', 'Volunteering', 'Volunteers Needed', 'Other'];
+
+  const findCategory = (input) => {
+    for (const category of knownCategories) {
+      if (input.includes(category))  {
+        return category;
+      }
+    }
+    return null;
+  }
   
-  const messages = getMessagesFromCache();
+  const messages = getMessagesFromCache(filename);
 
   for (let idx = 0; idx < messages.length; idx++) {
     const message = messages[idx];
     message.aiErrors = [];
 
-    // Cleanup Coords
-    if (message.coords && (typeof message.coords === 'string')) {
-      console.log('Coords', message.id, message.coords);
+    // Cleanup Dates
+    message.date = message.date.replace(/ /g, '');
 
-      const input = message.coords.replace('lat:', '"lat":').replace('lng:', '"lng":');
+    // Cleanup Coords
+    if (message.coords && (typeof message.coords === 'string')) {      
+
+      // check if we have coords but not exactly in the correct JSON format
+      const input = (message.coords.includes('lat: '))
+        ? message.coords.replace('lat:', '"lat":').replace('lng:', '"lng":')
+        : message.coords;
 
       const result = stringToObject(input);
       if (result) {
@@ -199,8 +223,8 @@ async function cleanupStoredMessages() {
     if (message.category) {
 
       // Extra characters in the category string
-      const sanitizedcategory = message.category.replace('-(', '').replace('- ', '').replace('.', '');
-      if (sanitizedcategory !== message.category) {
+      const sanitizedcategory = findCategory(message.category);
+      if (sanitizedcategory) {
         console.error('Error: not valid category');
         message.aiErrors.push({
           key: 'category',
@@ -220,6 +244,7 @@ async function cleanupStoredMessages() {
         });
         message.category = 'Other';
       }
+
     } else {
       // Category was empty
       console.error('Error: category is empty');
@@ -231,10 +256,10 @@ async function cleanupStoredMessages() {
       message.category = 'Other';
     }
 
-    saveMessagesToCache(messages);
+    saveMessagesToCache(messages, filename);
   }
 
-  saveMessagesToCache(messages);
+  saveMessagesToCache(messages, filename);
 
   console.log('Messages processed:', messages.length);
 }

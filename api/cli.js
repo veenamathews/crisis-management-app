@@ -1,4 +1,4 @@
-const TELEGRAM_MOCK_DATA = require('./telegram/mockData.json');
+const TELEGRAM_MOCK_DATA = require('./telegram/source-data/poland');
 const parser = require('./telegram/parser');
 const openAIModule = require('./core/openai');
 
@@ -7,12 +7,12 @@ const openAIModule = require('./core/openai');
   process.stdout.write('\033c');
   // ------
   // Store messages from the Telegram channel in the cache
-  // parser.storeTelegramMessages(TELEGRAM_MOCK_DATA.messages);
+  // parser.storeTelegramMessages(TELEGRAM_MOCK_DATA.messages, 'poland.json');
 
   // ------ 
-  // Process messages stored in parser.MESSAGES_CACHE_FILE
-  // await parser.parseStoredMessages();
-  // await parser.cleanupStoredMessages();
+  // Process messages
+  // await parser.parseStoredMessages('poland.json');
+  await parser.cleanupStoredMessages('poland.json');
 
   // ------
   // OpenAI
