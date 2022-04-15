@@ -4,9 +4,8 @@ import { BehaviorSubject } from 'rxjs';
 import { Information } from './models';
 
 // import { MESSAGES_DATASET_001 } from './mock-data/messages_dataset_001';
-// import { MESSAGES_DATASET_002 } from './mock-data/messages_dataset_002';
+import { MESSAGES_DATASET_002 } from './mock-data/messages_dataset_002';
 import { MESSAGES_DATASET_003 } from './mock-data/messages_dataset_003';
-import { HttpClient } from '@angular/common/http';
 
 @Injectable({
   providedIn: 'root'
@@ -76,8 +75,8 @@ export class DataService {
     },
   ];
 
-  constructor(private http: HttpClient) {
-    this.setMessages(MESSAGES_DATASET_003);
+  constructor() {
+    this.setDataset(1);
   }
 
   setMessages(messages: Information[]): void {
@@ -90,6 +89,14 @@ export class DataService {
       const messagesInCategory = this.allMessages.filter(item => item.category === category.name);
       this.messagesInCategory[category.name] = messagesInCategory.length;
       this.messagesWithCoordsInCategory[category.name] = messagesInCategory.filter(item => !!item.coords).length;
+    }
+  }
+
+  setDataset(idx: number): void {
+    if (idx === 3) {
+      this.setMessages(MESSAGES_DATASET_003);    
+    } else {
+      this.setMessages(MESSAGES_DATASET_002);
     }
   }
 

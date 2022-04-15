@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
 import { Router } from '@angular/router';
+import { DataService } from './data.service';
 import { SearchMenuComponent } from './search-menu/search-menu.component';
 
 @Component({
@@ -14,7 +15,7 @@ export class AppComponent implements OnInit {
   activeLinkIndex = -1;
   navLinks: any[];
 
-  constructor(private router: Router, public dialog: MatDialog) {
+  constructor(private router: Router, public dialog: MatDialog, public dataService: DataService) {
     this.navLinks = [
       {
           label: 'List',
@@ -34,7 +35,6 @@ export class AppComponent implements OnInit {
         this.activeLinkIndex = this.navLinks.indexOf(this.navLinks.find(tab => tab.link === '.' + this.router.url));
     });
   }
-
 
   displaySearchBox(): void {
     const dialogRef = this.dialog.open(SearchMenuComponent, {

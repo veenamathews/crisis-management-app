@@ -1,6 +1,7 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { Information } from '../models';
 import * as moment from "moment"
+import { DataService } from '../data.service';
 
 @Component({
   selector: 'app-information-view',
@@ -10,11 +11,13 @@ import * as moment from "moment"
 export class InformationViewComponent implements OnInit {
 
   @Input() model?: Information;
-  @Input() showOriginalData = false;
+  @Input() showCategory = false;
+  category: any;
 
-  constructor() { }
+  constructor(private dataService: DataService) { }
 
   ngOnInit(): void {
+    this.category = this.dataService.knownTags.find(item => item.name === this.model?.category);
   }
 
   getDate() {

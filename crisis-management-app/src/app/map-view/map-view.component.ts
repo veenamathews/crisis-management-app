@@ -31,7 +31,11 @@ export class MapViewComponent implements OnInit {
         visible: true,
       };
     });
-    this.initializeMap();
+
+    this.dataService.messages$.subscribe(data => {
+      this.dataWithLocation = data.filter(item => !!item.coords);
+      this.initializeMap();
+    });
   }
 
   toogleLayer(tag: any): void {
@@ -52,7 +56,7 @@ export class MapViewComponent implements OnInit {
       container: 'map',
       style: 'mapbox://styles/mapbox/light-v10',
       // style: 'mapbox://styles/mapbox/streets-v11',
-      center: [center!.lng, center!.lat],
+      center: this.dataWithLocation![this.dataWithLocation!.length - 1].coords!,
       zoom: 9,
     });
 
@@ -60,19 +64,11 @@ export class MapViewComponent implements OnInit {
 
     this.map.on('load', () => {
       this.map?.resize();
-
-      this.dataService.messages$.subscribe(data => {
-        this.dataWithLocation = data.filter(item => !!item.coords);
-        this.setMapData();
-      });
+      this.setMapData();
     });
   }
 
   private setMapData(): void {
-    if (this.dataWithLocation?.length) {
-      this.map?.setCenter(this.dataWithLocation[this.dataWithLocation.length - 1].coords!);
-    }
-
     // Create a map layer for every tag
     for (const tag of this.tags!) {
       const items = this.dataWithLocation!.filter(item => item.category === tag.name);

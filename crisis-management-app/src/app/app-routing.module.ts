@@ -13,7 +13,7 @@ const routes: Routes = [
   { path: 'analysis', component: AnalysisViewComponent },
   { path: 'process-message', component: ProcessMessageComponent },
   { path: 'details/:id', component: DetailsViewComponent },
-  { path: '', redirectTo: '/list', pathMatch: 'full' },
+  { path: '', redirectTo: '/map', pathMatch: 'full' },
 ];
 
 @NgModule({
