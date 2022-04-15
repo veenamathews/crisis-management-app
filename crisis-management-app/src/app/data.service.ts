@@ -4,7 +4,8 @@ import { BehaviorSubject } from 'rxjs';
 import { Information } from './models';
 
 // import { MESSAGES_DATASET_001 } from './mock-data/messages_dataset_001';
-import { MESSAGES_DATASET_002 } from './mock-data/messages_dataset_002';
+// import { MESSAGES_DATASET_002 } from './mock-data/messages_dataset_002';
+import { MESSAGES_DATASET_003 } from './mock-data/messages_dataset_003';
 import { HttpClient } from '@angular/common/http';
 
 @Injectable({
@@ -12,10 +13,9 @@ import { HttpClient } from '@angular/common/http';
 })
 export class DataService {
 
-  private messagesSubject = new BehaviorSubject<Information[]>(MESSAGES_DATASET_002);
+  private messagesSubject = new BehaviorSubject<Information[]>([]);
   messages$ = this.messagesSubject.asObservable();
-  private masterMessageSubject = new BehaviorSubject<Information[]>(MESSAGES_DATASET_002);
-  mastermessages$ = this.messagesSubject.asObservable();
+  private allMessages: Information[] = [];
 
   knownTags = [
     {
@@ -74,12 +74,19 @@ export class DataService {
     },
   ];
 
-  constructor(private http: HttpClient) { }
+  constructor(private http: HttpClient) {
+    this.setMessages(MESSAGES_DATASET_003);
+  }
+
+  setMessages(messages: Information[]): void {
+    this.allMessages = messages;
+    this.messagesSubject.next(this.allMessages);
+  }
 
   filter(checkedList: string[]): void {
     let filteredMessages: any = [];
     checkedList.forEach(element => {
-      filteredMessages = filteredMessages.concat([...this.masterMessageSubject.value.filter(item => item.category == element)]);
+      filteredMessages = filteredMessages.concat(this.allMessages.filter(item => item.category === element));
     });
     this.messagesSubject.next(filteredMessages);
   }

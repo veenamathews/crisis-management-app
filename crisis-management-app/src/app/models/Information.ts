@@ -2,7 +2,7 @@ import { Coordinates } from '../shared/maps';
 
 export interface Information {
   id?: string;
-  coords?: Coordinates;
+  coords?: Coordinates | null;
   date?: string | Date;
   source?: string;
   sourceData?: any;

@@ -56,6 +56,8 @@ export class MapViewComponent implements OnInit {
       zoom: 9,
     });
 
+    this.map.addControl(new mapboxgl.NavigationControl());
+
     this.map.on('load', () => {
       this.map?.resize();
 
