@@ -18,6 +18,7 @@
     [nzColor]="tag.color"
     [style.opacity]="(tag.visible) ? 1 : .4"
     (click)="toogleLayer(tag)"
+    [title]="dataService.messagesWithCoordsInCategory[tag.name] + ' messages'"
   >
     {{ tag.name }}
   </nz-tag>
