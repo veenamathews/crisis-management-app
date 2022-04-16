@@ -4,6 +4,7 @@
   <mat-card-subtitle *ngIf="model?.date">({{ model?.date | timeago:false }})</mat-card-subtitle>
   <mat-card-content>
     <app-telegram-content [model]="model?.sourceData?.text"></app-telegram-content>
+    <div *ngIf="model && !model.sourceData && model?.sourceMessagePlainText"> {{ model?.sourceMessagePlainText }}</div>
   </mat-card-content>
   <mat-divider inset></mat-divider>
   <mat-card-actions>

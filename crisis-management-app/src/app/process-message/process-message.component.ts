@@ -1,5 +1,8 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { NzMessageService } from 'ng-zorro-antd/message';
+import { DataService } from '../data.service';
+import { Information } from '../models';
 import { OpenAIService } from '../openai.service';
 
 @Component({
@@ -9,15 +12,59 @@ import { OpenAIService } from '../openai.service';
 })
 export class ProcessMessageComponent implements OnInit {
 
-  exampleMessage = 'I live in Berlin Pankow, would like to volunteer for ukrainian crisis. I\'m a nurse with 10 years experience. I\'m available after 4pm on weekdays. My email: nurse@example.com';
+  exampleMessage = 'Hello! I live in Leipzig, would like to help refugees from Ukraine. I\'m a nurse with 10 years experience. I\'m available after 4pm on weekdays. My email: alice@example.com';
   model?: string | null;
   responseText?: string | null;
   processing = false;
-  extractedData?: any | null;
-  // data?: any | null = { "data": { "address": "Berlin, Germany", "email": "nurse@example.com" }, "log": [ { "q": "Extract home address from this text: ", "a": "Berlin, Germany" }, { "q": "Extract email address from this text: ", "a": "nurse@example.com" }, { "q": "Extract skills from this text: ", "a": "-Live in Berlin \n-Wants to volunteer for Ukrainian crisis \n-10 years of nursing experience \n-Available after 4pm on weekdays" }, { "q": "For each of those categories:\n - food\n - shelter\n - health\n - legal\n - transport \n assign the probability based on this text: ", "a": "food: 0.1\nshelter: 0.2\nhealth: 0.6\nlegal: 0.1\ntransport: 0.0" } ] };
   originalMessage?: string | null;
+  extractedData?: any | null;
+  // extractedData?: any | null = {
+  //   data: {
+  //     address: 'Leipzig, Germany',
+  //     coords: {
+  //       lat: 51.3408,
+  //       lng: 12.3713
+  //     },
+  //     sentiment: [
+  //       {
+  //         category: 'Food',
+  //         probability: 0.1
+  //       },
+  //       {
+  //         category: 'Shelter',
+  //         probability: 0.1
+  //       },
+  //       {
+  //         category: 'Health Services',
+  //         probability: 0.8
+  //       },
+  //       {
+  //         category: 'Transportation',
+  //         probability: 0.1
+  //       },
+  //       {
+  //         category: 'Translation',
+  //         probability: 0.1
+  //       },
+  //       {
+  //         category: 'Legal',
+  //         probability: 0.1
+  //       },
+  //       {
+  //         category: 'Volunteering',
+  //         probability: 0.1
+  //       },
+  //       {
+  //         category: 'Volunteers Needed',
+  //         probability: 0.1
+  //       }
+  //     ],
+  //     category: 'Health Services'
+  //   }
+  // };
 
-  constructor(private openAIService: OpenAIService, private message: NzMessageService) {}
+  constructor(private openAIService: OpenAIService, private message: NzMessageService,
+              private dataService: DataService, private router: Router) { }
 
   ngOnInit(): void {
   }
@@ -47,6 +94,15 @@ export class ProcessMessageComponent implements OnInit {
   }
 
   addToMessages(): void {
-    //
+    const newMessage: Information = {
+      id: (Math.floor(Math.random() * (11000 - 10000) + 10000)).toString(),
+      date: Date.now(),
+      sourceMessagePlainText: this.model,
+      log: this.extractedData.log,
+      ...this.extractedData.data,
+    };
+    this.dataService.addMessage(newMessage);
+
+    this.router.navigate(['/map']);
   }
 }

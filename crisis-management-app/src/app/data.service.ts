@@ -94,7 +94,7 @@ export class DataService {
 
   setDataset(idx: number): void {
     if (idx === 3) {
-      this.setMessages(MESSAGES_DATASET_003);    
+      this.setMessages(MESSAGES_DATASET_003);
     } else {
       this.setMessages(MESSAGES_DATASET_002);
     }
@@ -111,5 +111,10 @@ export class DataService {
   getDataById(id: string): Promise<Information> {
     const result = this.messagesSubject.value.find(item => item.id === id);
     return (result) ? Promise.resolve(result) : Promise.reject(`Item not found: ${id}`);
+  }
+
+  addMessage(message: Information): void {
+    const messages = [message].concat(this.messagesSubject.value);
+    this.messagesSubject.next(messages);
   }
 }
