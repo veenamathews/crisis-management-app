@@ -71,18 +71,22 @@ app.get('/api/getMessages', async (req, res) => {
   }  
 });
   
-app.post('/openai/processMessage', async (req, res) => {
+app.post('/openai/processMessage', async (req, res, next) => {
+  try {
+    console.log('/openai/processMessage', req.body);
 
-  console.log('/openai/processMessage', req.body);
+    // Get results from AI
+    const result = await openAI.processMessage(req.body.message);
 
-  // Get results from AI
-  const result = await openAI.processMessage(req.body.message);
+    console.log('result', result);
+    console.log('---');
 
-  console.log('result', result);
-  console.log('---');
+    // Response
+    res.end(JSON.stringify(result));
 
-  // Response
-  res.end(JSON.stringify(result));
+  } catch (error) {
+    next(error);
+  }
 });
 
 app.listen(port, () => {

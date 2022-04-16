@@ -60,7 +60,7 @@ function OpenAI() {
     });
   
     question = 'Extract latitude and longitude from this text as { lat, lng } JSON object: ';
-    result = cleanupAIResponse(await this.askAI({ prompt: question + result})); // use result from the previous question
+    result = cleanupAIResponse(await this.askAI({ prompt: question + result + '\n\n' })); // use result from the previous question
     const input = (result.includes('lat: '))
       ? result.replace('lat:', '"lat":').replace('lng:', '"lng":')
       : result;
